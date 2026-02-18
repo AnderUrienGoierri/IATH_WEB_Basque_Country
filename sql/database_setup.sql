@@ -3417,7 +3417,6 @@ VALUES (
         26,
         2.21
     );
-
 -- NEW GAMES BATCH 2 --
 INSERT INTO videoGames (
         name,
@@ -4519,7 +4518,6 @@ VALUES (
         28,
         6.56
     );
-
 -- NEW GAMES BATCH 3 --
 INSERT INTO videoGames (
         name,
@@ -5632,7 +5630,6 @@ VALUES (
         27,
         1.52
     );
-
 -- NEW GAMES TOP 100 & 2025/2026 --
 INSERT INTO videoGames (
         name,
@@ -6734,7 +6731,6 @@ VALUES (
         28,
         7.43
     );
-    
 -- ====================================================== --
 -- USERS TABLE --
 -- ====================================================== --
@@ -6744,14 +6740,9 @@ CREATE TABLE users (
     device VARCHAR(100),
     available_time_minutes INT,
     mood VARCHAR(100),
+    age INT,
+    gender ENUM('male', 'female', 'non-binary'),
     recommended_game_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (recommended_game_id) REFERENCES videoGames(id)
 );
-
-
-
-
-
-
-
