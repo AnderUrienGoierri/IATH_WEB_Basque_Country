@@ -1,0 +1,17 @@
+Kaixo! Aztertu dut sql/database_setup.sql fitxategia. Zoritxarrez, Project_Documentation.md.docx formatu bitarra da eta ezin dut zuzenean irakurri. Hala ere, "GameMatch AI" bat eraikitzeko datu-basea aztertu dut eta hemen dituzu nire ondorioak:
+
+Ona da:
+
+Jokoen Ezaugarriak: videoGames taulak datu interesgarriak ditu AI-arentzat: average_playgame_duration, average_player_age, male_female_ratio. Hauek oso baliagarriak dira Content-Based Filtering egiteko.
+Erabiltzailearen Context-a: users taulak mood (aldartea) eta available_time_minutes ditu. Horrek iradokitzen du gomendioak momentuko egoeraren araberakoak direla.
+Zer falta da / Hobetzeko:
+
+Gomendio Anitzak: users taulak recommended_game_id eremu bakarra du. Horrek esan nahi du erabiltzaile bakoitzari joko bakarra eslei dakiokeela. Normalean, "Top 5" edo zerrenda bat gomendatzen da.
+Irtenbidea: Recommendations taula berri bat (user_id, game_id, score/rank).
+Interakzioen Historia: Ez dago taularik erabiltzaileak zer jokoetara jokatu duen edo zer gustatu zaion gordetzeko (Likes, Ratings, PlayHistory). AI-ak ikasteko (Machine Learning), datu historikoak behar ditu.
+Irtenbidea: UserRatings edo UserHistory taula bat.
+Feedback-a: Gomendioa egin ondoren, erabiltzaileak onartu duen edo gustatu zaion jakiteko modurik ez dago.
+Erabiltzaile vs Saioa: users taulak profil datuak (age, gender) eta saio datuak (mood, time) nahasten ditu. Erabiltzaile berberak hainbat aldiz erabiltzen badu sistema, nola gordetzen da?
+Laburbilduz: Datu-basea sarrera bakarreko gomendio sistema sinple baterako dago prestatuta. Benetako AI sistema adimentsu bat nahi baduzu (erabiltzailearen gustuetan oinarritua eta ebolutiboa), Recommendations eta History taulak gehitzea gomendatzen dizut.
+
+Nahi al duzu aldaketa hauek aplikatzea SQL fitxategian? Eta mesedez, dokumentazioaren testua pasatzerik bazenu, hobeto doituko nuke analisia.

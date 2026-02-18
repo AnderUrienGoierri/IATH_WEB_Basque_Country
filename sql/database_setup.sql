@@ -8,6 +8,7 @@ CREATE TABLE genres (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE
 );
+-- ====================================================== --
 INSERT INTO genres (name)
 VALUES ('Action-Adventure'),
     ('Action RPG'),
@@ -93,6 +94,9 @@ CREATE TABLE videoGames (
     FOREIGN KEY (genre_id) REFERENCES genres(id),
     FOREIGN KEY (platform_id) REFERENCES platforms(id)
 );
+-- ====================================================== --
+-- NEW GAMES BATCH 1 --
+-- ====================================================== --
 INSERT INTO videoGames (
         name,
         platform_id,
@@ -1204,6 +1208,9 @@ VALUES (
         31,
         6.10
     );
+-- ====================================================== --
+-- NEW GAMES BATCH 2 --
+-- ====================================================== --
 INSERT INTO videoGames (
         name,
         platform_id,
@@ -2315,8 +2322,9 @@ VALUES (
         29,
         2.35
     );
--- =========================================
--- NEW GAMES BATCH 1 --
+-- ======================================================
+-- NEW GAMES BATCH 3 --
+-- ======================================================
 INSERT INTO videoGames (
         name,
         platform_id,
@@ -3417,7 +3425,9 @@ VALUES (
         26,
         2.21
     );
--- NEW GAMES BATCH 2 --
+-- ======================================================
+-- NEW GAMES BATCH 4     --
+-- ======================================================
 INSERT INTO videoGames (
         name,
         platform_id,
@@ -4518,7 +4528,9 @@ VALUES (
         28,
         6.56
     );
--- NEW GAMES BATCH 3 --
+-- ======================================================
+-- NEW GAMES BATCH 5 --
+-- ======================================================
 INSERT INTO videoGames (
         name,
         platform_id,
@@ -5630,7 +5642,9 @@ VALUES (
         27,
         1.52
     );
+-- ====================================================== --
 -- NEW GAMES TOP 100 & 2025/2026 --
+-- ====================================================== --
 INSERT INTO videoGames (
         name,
         platform_id,
@@ -6731,6 +6745,8 @@ VALUES (
         28,
         7.43
     );
+
+
 -- ====================================================== --
 -- ====================================================== --
 -- USERS TABLE (PROFILES) --
