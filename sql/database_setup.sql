@@ -299,7 +299,8 @@ VALUES (
         2,
         2020,
         'Remake of the classic action RPG developed by Bluepoint Games.',
-        90
+        90,
+        30
     ),
     (
         'Ratchet & Clank: Rift Apart',
@@ -428,7 +429,8 @@ VALUES (
         NULL,
         2023,
         'Role-playing video game developed and published by Larian Studios.',
-        68
+        68,
+        28
     ),
     (
         'Diablo IV',
@@ -2110,19 +2112,7 @@ VALUES (
         139,
         29
     );
--- ====================================================== --
--- USERS TABLE --
--- ====================================================== --
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
-    device VARCHAR(100),
-    available_time_minutes INT,
-    mood VARCHAR(100),
-    recommended_game_id INT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (recommended_game_id) REFERENCES videoGames(id)
-);
+-- =========================================
 -- NEW GAMES BATCH 1 --
 INSERT INTO videoGames (
         name,
@@ -2271,7 +2261,8 @@ VALUES (
         11,
         2018,
         'Tear up the asphalt and take on the world\'s best fearless street racer pros.',
-        12
+        12,
+        25
     ),
     (
         'Shadow Fight 3',
@@ -2300,7 +2291,8 @@ VALUES (
         49,
         2018,
         'Endless sandboarding journey.',
-        15
+        15,
+        25
     ),
     (
         'Stardew Valley',
@@ -2509,7 +2501,8 @@ VALUES (
         36,
         2010,
         'Slice fruit, don\'t slice bombs.',
-        5
+        5,
+        25
     ),
     (
         'Plants vs. Zombies 2',
@@ -2968,7 +2961,8 @@ VALUES (
         35,
         2023,
         'Cowabunga!',
-        10
+        10,
+        25
     ),
     (
         'Vampire Survivors',
@@ -3027,6 +3021,7 @@ VALUES (
         2,
         2020,
         'Souls-like on mobile.',
+        25,
         25
     ),
     (
@@ -3056,7 +3051,8 @@ VALUES (
         4,
         2014,
         'Fluff ball adventure.',
-        6
+        6,
+        25
     ),
     (
         'Badland',
@@ -3177,7 +3173,8 @@ VALUES (
         20,
         2000,
         'Quintessential CRPG.',
-        80
+        80,
+        28
     ),
     (
         'Planescape: Torment',
@@ -3646,7 +3643,8 @@ VALUES (
         29,
         2002,
         'Stealth redefined.',
-        12
+        12,
+        25
     ),
     (
         'Hitman: Blood Money',
@@ -3685,7 +3683,8 @@ VALUES (
         26,
         2000,
         'Skateboarding perfection.',
-        40
+        40,
+        25
     ),
     (
         'Burnout 3: Takedown',
@@ -4216,7 +4215,8 @@ VALUES (
         18,
         2013,
         'Tim Burton style survival.',
-        40
+        40,
+        25
     ),
     (
         'This War of Mine',
@@ -4295,7 +4295,8 @@ VALUES (
         20,
         2015,
         'RPG where you don\'t have to kill.',
-        6
+        6,
+        25
     ),
     (
         'Deltarune',
@@ -4304,7 +4305,8 @@ VALUES (
         20,
         2018,
         'Don\'t forget.',
-        4
+        4,
+        25
     ),
     (
         'Celeste',
@@ -4493,7 +4495,8 @@ VALUES (
         18,
         2016,
         'Infinite universe.',
-        60
+        60,
+        25
     ),
     (
         'Elite Dangerous',
@@ -4572,6 +4575,7 @@ VALUES (
         20,
         2011,
         'Geralt\'s memory returns.',
+        30,
         30
     ),
     (
@@ -4601,7 +4605,8 @@ VALUES (
         20,
         2023,
         'D&D 5e perfection.',
-        100
+        100,
+        28
     ),
     (
         'Divinity: Original Sin',
@@ -4620,7 +4625,8 @@ VALUES (
         20,
         2015,
         'Obsidian\'s classic RPG.',
-        50
+        50,
+        25
     ),
     (
         'Pillars of Eternity II: Deadfire',
@@ -4799,7 +4805,8 @@ VALUES (
         24,
         2018,
         'Don\'t ask.',
-        2
+        2,
+        25
     ),
     (
         'Mount Your Friends',
@@ -5410,6 +5417,7 @@ VALUES (
         1,
         2026,
         'Snikt.',
+        25,
         25
     ),
     (
@@ -5699,7 +5707,8 @@ VALUES (
         2,
         2025,
         'AC in China on mobile.',
-        50
+        50,
+        25
     ),
     (
         'Valorant Mobile',
@@ -6121,5 +6130,20 @@ VALUES (
         20,
         28
     );
+    
+-- ====================================================== --
+-- USERS TABLE --
+-- ====================================================== --
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    device VARCHAR(100),
+    available_time_minutes INT,
+    mood VARCHAR(100),
+    recommended_game_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (recommended_game_id) REFERENCES videoGames(id)
+);
+
 
 
