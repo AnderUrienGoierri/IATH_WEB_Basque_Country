@@ -2288,7 +2288,7 @@ VALUES (
         'Alto\'s Odyssey',
         16,
         0.2,
-        49,
+        4,
         2018,
         'Endless sandboarding journey.',
         15,
@@ -6144,6 +6144,7 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (recommended_game_id) REFERENCES videoGames(id)
 );
+
 
 
 
