@@ -923,9 +923,9 @@ VALUES (
     );
 INSERT INTO videoGames (
         name,
-,
+        platform_id,
         size_gb,
-,
+        genre_id,
         release_year,
         more_data,
         average_playgame_duration

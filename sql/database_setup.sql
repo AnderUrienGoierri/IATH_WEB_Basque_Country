@@ -1,82 +1,76 @@
-CREATE DATABASE IF NOT EXISTS video_games_quiz_db;
+DROP DATABASE IF EXISTS video_games_quiz_db;
+CREATE DATABASE video_games_quiz_db;
 USE video_games_quiz_db;
-
 -- GENRES TABLE --
 CREATE TABLE genres (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE
 );
-
-INSERT INTO genres (name) VALUES
-('Action-Adventure'),
-('Action RPG'),
-('Sandbox'),
-('Platformer'),
-('FPS'),
-('Battle Royale'),
-('Survival Horror'),
-('Roguelike'),
-('Simulation'),
-('Social Simulation'),
-('Racing'),
-('Fighting'),
-('TPS'),
-('JRPG'),
-('MOBA'),
-('VR FPS'),
-('Puzzle-Platformer'),
-('Survival'),
-('Metroidvania'),
-('RPG'),
-('Run and Gun'),
-('Roguelite'),
-('Deckbuilder'),
-('Social Deduction'),
-('Platform Battle Royale'),
-('Sports'),
-('Hack and Slash'),
-('Action'),
-('Stealth'),
-('Immersive Sim'),
-('Turn-based RPG'),
-('Adventure'),
-('Life Simulation'),
-('City-building'),
-('Strategy'),
-('Grand Strategy'),
-('Construction and Management Simulation'),
-('MMORPG'),
-('Puzzle'),
-('Top-down Shooter'),
-('Action-Platformer'),
-('FPS/TPS'),
-('Fishing');
-
-
+INSERT INTO genres (name)
+VALUES ('Action-Adventure'),
+    ('Action RPG'),
+    ('Sandbox'),
+    ('Platformer'),
+    ('FPS'),
+    ('Battle Royale'),
+    ('Survival Horror'),
+    ('Roguelike'),
+    ('Simulation'),
+    ('Social Simulation'),
+    ('Racing'),
+    ('Fighting'),
+    ('TPS'),
+    ('JRPG'),
+    ('MOBA'),
+    ('VR FPS'),
+    ('Puzzle-Platformer'),
+    ('Survival'),
+    ('Metroidvania'),
+    ('RPG'),
+    ('Run and Gun'),
+    ('Roguelite'),
+    ('Deckbuilder'),
+    ('Social Deduction'),
+    ('Platform Battle Royale'),
+    ('Sports'),
+    ('Hack and Slash'),
+    ('Action'),
+    ('Stealth'),
+    ('Immersive Sim'),
+    ('Turn-based RPG'),
+    ('Adventure'),
+    ('Life Simulation'),
+    ('City-building'),
+    ('Strategy'),
+    ('Grand Strategy'),
+    ('Construction and Management Simulation'),
+    ('MMORPG'),
+    ('Puzzle'),
+    ('Top-down Shooter'),
+    ('Action-Platformer'),
+    ('FPS/TPS'),
+    ('Fishing');
 -- PLATFORMS TABLE --
 CREATE TABLE platforms (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL UNIQUE
 );
-
-INSERT INTO platforms (name) VALUES
-('Nintendo Switch'),
-('PlayStation 5'),
-('PC'),
-('PS5'),
-('Xbox Series X/S'),
-('PS4'),
-('Xbox One'),
-('Switch'),
-('Multi-platform'),
-('PlayStation 4'),
-('PC (VR)'),
-('PS3'),
-('Xbox 360'),
-('Xbox'),
-('PlayStation 3');
-
-
+INSERT INTO platforms (name)
+VALUES ('Nintendo Switch'),
+    ('PlayStation 5'),
+    ('PC'),
+    ('PS5'),
+    ('Xbox Series X/S'),
+    ('PS4'),
+    ('Xbox One'),
+    ('Switch'),
+    ('Multi-platform'),
+    ('PlayStation 4'),
+    ('PC (VR)'),
+    ('PS3'),
+    ('Xbox 360'),
+    ('Xbox'),
+    ('PlayStation 3');
 -- VIDEOGAMES TABLE --
 CREATE TABLE videoGames (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -1001,9 +995,9 @@ VALUES (
     );
 INSERT INTO videoGames (
         name,
-,
+        platform_id,
         size_gb,
-,
+        genre_id,
         release_year,
         more_data,
         average_playgame_duration
@@ -1908,7 +1902,6 @@ VALUES (
         'Mecha-based vehicular combat game developed by FromSoftware.',
         139
     );
-
 -- USERS TABLE --
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
