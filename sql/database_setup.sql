@@ -89,6 +89,7 @@ CREATE TABLE videoGames (
     more_data TEXT,
     average_playgame_duration INT,
     average_player_age INT,
+    male_female_ratio DECIMAL(5, 2),
     FOREIGN KEY (genre_id) REFERENCES genres(id),
     FOREIGN KEY (platform_id) REFERENCES platforms(id)
 );
@@ -100,7 +101,8 @@ INSERT INTO videoGames (
         release_year,
         more_data,
         average_playgame_duration,
-        average_player_age
+        average_player_age,
+        male_female_ratio
     )
 VALUES (
         'The Legend of Zelda: Breath of the Wild',
@@ -110,7 +112,8 @@ VALUES (
         2017,
         'An open-world action-adventure game developed and published by Nintendo.',
         129,
-        34
+        34,
+        1.07
     ),
     (
         'God of War Ragnarök',
@@ -120,7 +123,8 @@ VALUES (
         2022,
         'Action-adventure game developed by Santa Monica Studio and published by Sony Interactive Entertainment.',
         60,
-        34
+        34,
+        5.66
     ),
     (
         'Elden Ring',
@@ -130,7 +134,8 @@ VALUES (
         2022,
         'A fantasy action-RPG adventure set within the world created by Hidetaka Miyazaki and George R.R. Martin.',
         123,
-        27
+        27,
+        3.94
     ),
     (
         'Red Dead Redemption 2',
@@ -140,7 +145,8 @@ VALUES (
         2018,
         'Epic tale of life in America’s unforgiving heartland.',
         77,
-        29
+        29,
+        5.93
     ),
     (
         'The Witcher 3: Wild Hunt',
@@ -150,7 +156,8 @@ VALUES (
         2015,
         'Story-driven open world RPG set in a visually stunning fantasy universe.',
         65,
-        27
+        27,
+        2.18
     ),
     (
         'Cyberpunk 2077',
@@ -160,7 +167,8 @@ VALUES (
         2020,
         'Open-world, action-adventure story set in Night City.',
         137,
-        27
+        27,
+        4.82
     ),
     (
         'Grand Theft Auto V',
@@ -170,7 +178,8 @@ VALUES (
         2013,
         'Open world game set in the fictional state of San Andreas.',
         53,
-        19
+        19,
+        4.48
     ),
     (
         'Minecraft',
@@ -180,7 +189,8 @@ VALUES (
         2011,
         'Sandbox game developed by Mojang Studios.',
         128,
-        14
+        14,
+        1.17
     ),
     (
         'Super Mario Odyssey',
@@ -190,7 +200,8 @@ VALUES (
         2017,
         '3D platform game developed and published by Nintendo.',
         85,
-        19
+        19,
+        2.33
     ),
     (
         'Horizon Forbidden West',
@@ -200,7 +211,8 @@ VALUES (
         2022,
         'Sequel to Horizon Zero Dawn, following Aloy in a post-apocalyptic western United States.',
         29,
-        28
+        28,
+        2.14
     ),
     (
         'Call of Duty: Modern Warfare II',
@@ -210,7 +222,8 @@ VALUES (
         2022,
         'First-person shooter game developed by Infinity Ward.',
         113,
-        25
+        25,
+        6.34
     ),
     (
         'Overwatch 2',
@@ -220,7 +233,8 @@ VALUES (
         2022,
         'Team-based multiplayer first-person shooter.',
         110,
-        25
+        25,
+        3.00
     ),
     (
         'Fortnite',
@@ -230,7 +244,8 @@ VALUES (
         2017,
         'Free-to-play battle royale game developed by Epic Games.',
         44,
-        19
+        19,
+        1.21
     ),
     (
         'Apex Legends',
@@ -240,7 +255,8 @@ VALUES (
         2019,
         'Free-to-play battle royale-hero shooter game developed by Respawn Entertainment.',
         132,
-        24
+        24,
+        3.70
     ),
     (
         'Final Fantasy VII Remake',
@@ -250,7 +266,8 @@ VALUES (
         2020,
         'Action role-playing game developed and published by Square Enix.',
         61,
-        25
+        25,
+        1.11
     ),
     (
         'Resident Evil 4 Remake',
@@ -260,7 +277,8 @@ VALUES (
         2023,
         'Survival horror game developed and published by Capcom.',
         47,
-        33
+        33,
+        1.21
     ),
     (
         'Hogwarts Legacy',
@@ -270,7 +288,8 @@ VALUES (
         2023,
         'Immersive, open-world action RPG set in the world first introduced in the Harry Potter books.',
         124,
-        26
+        26,
+        1.48
     ),
     (
         'Spider-Man: Miles Morales',
@@ -280,7 +299,8 @@ VALUES (
         2020,
         'Action-adventure game developed by Insomniac Games.',
         134,
-        30
+        30,
+        1.44
     ),
     (
         'Ghost of Tsushima',
@@ -290,7 +310,8 @@ VALUES (
         2020,
         'Action-adventure game developed by Sucker Punch Productions.',
         4,
-        34
+        34,
+        1.70
     ),
     (
         'Demon\'s Souls',
@@ -300,7 +321,8 @@ VALUES (
         2020,
         'Remake of the classic action RPG developed by Bluepoint Games.',
         90,
-        30
+        30,
+        2.44
     ),
     (
         'Ratchet & Clank: Rift Apart',
@@ -310,7 +332,8 @@ VALUES (
         2021,
         'Third-person shooter platform game developed by Insomniac Games.',
         45,
-        14
+        14,
+        1.95
     ),
     (
         'Returnal',
@@ -320,7 +343,8 @@ VALUES (
         2021,
         'Third-person shooter roguelike video game developed by Housemarque.',
         143,
-        22
+        22,
+        2.29
     ),
     (
         'It Takes Two',
@@ -330,7 +354,8 @@ VALUES (
         2021,
         'Co-op action-adventure platformer developed by Hazelight Studios.',
         133,
-        20
+        20,
+        1.46
     ),
     (
         'Hades',
@@ -340,7 +365,8 @@ VALUES (
         2020,
         'Roguelike action dungeon crawler developed by Supergiant Games.',
         39,
-        20
+        20,
+        1.91
     ),
     (
         'Stardew Valley',
@@ -350,7 +376,8 @@ VALUES (
         2016,
         'Simulation role-playing video game developed by Eric "ConcernedApe" Barone.',
         10,
-        31
+        31,
+        0.30
     ),
     (
         'Animal Crossing: New Horizons',
@@ -360,7 +387,8 @@ VALUES (
         2020,
         'Life simulation game developed and published by Nintendo.',
         131,
-        19
+        19,
+        0.33
     ),
     (
         'Mario Kart 8 Deluxe',
@@ -370,7 +398,8 @@ VALUES (
         2017,
         'Kart racing game developed and published by Nintendo.',
         116,
-        19
+        19,
+        0.48
     ),
     (
         'Super Smash Bros. Ultimate',
@@ -380,7 +409,8 @@ VALUES (
         2018,
         'Crossover fighting game developed by Bandai Namco Studios and Sora Ltd.',
         73,
-        28
+        28,
+        6.72
     ),
     (
         'Splatoon 3',
@@ -390,7 +420,8 @@ VALUES (
         2022,
         'Third-person shooter game developed and published by Nintendo.',
         52,
-        17
+        17,
+        2.30
     ),
     (
         'Xenoblade Chronicles 3',
@@ -400,7 +431,8 @@ VALUES (
         2022,
         'Action role-playing game developed by Monolith Soft.',
         60,
-        25
+        25,
+        1.27
     ),
     (
         'Persona 5 Royal',
@@ -410,7 +442,8 @@ VALUES (
         2019,
         'Role-playing video game developed by Atlus.',
         115,
-        25
+        25,
+        1.23
     ),
     (
         'Dragon Quest XI S: Echoes of an Elusive Age',
@@ -420,7 +453,8 @@ VALUES (
         2019,
         'Role-playing video game developed by Square Enix.',
         2,
-        25
+        25,
+        1.49
     ),
     (
         'Baldur\'s Gate 3',
@@ -430,7 +464,8 @@ VALUES (
         2023,
         'Role-playing video game developed and published by Larian Studios.',
         68,
-        28
+        28,
+        1.75
     ),
     (
         'Diablo IV',
@@ -440,7 +475,8 @@ VALUES (
         2023,
         'Action role-playing game developed and published by Blizzard Entertainment.',
         135,
-        30
+        30,
+        2.35
     ),
     (
         'Starfield',
@@ -450,7 +486,8 @@ VALUES (
         2023,
         'Action role-playing game developed by Bethesda Game Studios.',
         64,
-        30
+        30,
+        2.37
     ),
     (
         'Forza Horizon 5',
@@ -460,7 +497,8 @@ VALUES (
         2021,
         'Racing game set in an open world environment based in Mexico.',
         61,
-        25
+        25,
+        5.56
     ),
     (
         'Halo Infinite',
@@ -470,7 +508,8 @@ VALUES (
         2021,
         'First-person shooter game developed by 343 Industries.',
         71,
-        24
+        24,
+        8.95
     ),
     (
         'Gears 5',
@@ -480,7 +519,8 @@ VALUES (
         2019,
         'Third-person shooter developed by The Coalition.',
         128,
-        27
+        27,
+        5.74
     ),
     (
         'Sea of Thieves',
@@ -490,7 +530,8 @@ VALUES (
         2018,
         'Action-adventure game developed by Rare.',
         69,
-        30
+        30,
+        2.14
     ),
     (
         'Microsoft Flight Simulator',
@@ -500,7 +541,8 @@ VALUES (
         2020,
         'Amateur flight simulator developed by Asobo Studio.',
         120,
-        27
+        27,
+        1.82
     ),
     (
         'Valorant',
@@ -510,7 +552,8 @@ VALUES (
         2020,
         'Free-to-play first-person tactical hero shooter developed by Riot Games.',
         106,
-        21
+        21,
+        3.15
     ),
     (
         'League of Legends',
@@ -520,7 +563,8 @@ VALUES (
         2009,
         'Multiplayer online battle arena video game developed by Riot Games.',
         143,
-        24
+        24,
+        7.24
     ),
     (
         'Dota 2',
@@ -530,7 +574,8 @@ VALUES (
         2013,
         'Multiplayer online battle arena video game developed by Valve.',
         135,
-        18
+        18,
+        3.35
     ),
     (
         'Counter-Strike 2',
@@ -540,7 +585,8 @@ VALUES (
         2023,
         'Multiplayer tactical first-person shooter developed by Valve.',
         134,
-        21
+        21,
+        7.69
     ),
     (
         'Team Fortress 2',
@@ -550,7 +596,8 @@ VALUES (
         2007,
         'Multiplayer first-person shooter game developed by Valve.',
         121,
-        23
+        23,
+        6.57
     ),
     (
         'Half-Life: Alyx',
@@ -560,7 +607,8 @@ VALUES (
         2020,
         'Virtual reality first-person shooter developed by Valve.',
         16,
-        27
+        27,
+        2.14
     ),
     (
         'Portal 2',
@@ -570,7 +618,8 @@ VALUES (
         2011,
         'Puzzle-platform game developed by Valve.',
         136,
-        27
+        27,
+        1.59
     ),
     (
         'Left 4 Dead 2',
@@ -580,7 +629,8 @@ VALUES (
         2009,
         'Cooperative first-person shooter developed by Valve.',
         67,
-        29
+        29,
+        5.28
     ),
     (
         'Rust',
@@ -590,7 +640,8 @@ VALUES (
         2013,
         'Multiplayer-only survival video game developed by Facepunch Studios.',
         145,
-        29
+        29,
+        2.44
     ),
     (
         'Ark: Survival Evolved',
@@ -600,7 +651,8 @@ VALUES (
         2017,
         'Action-adventure survival video game developed by Studio Wildcard.',
         72,
-        27
+        27,
+        1.54
     ),
     (
         'Valheim',
@@ -610,7 +662,8 @@ VALUES (
         2021,
         'Survival and sandbox video game developed by Iron Gate Studio.',
         105,
-        35
+        35,
+        1.54
     ),
     (
         'Terraria',
@@ -620,7 +673,8 @@ VALUES (
         2011,
         'Action-adventure sandbox game developed by Re-Logic.',
         77,
-        20
+        20,
+        1.97
     ),
     (
         'Hollow Knight',
@@ -630,7 +684,8 @@ VALUES (
         2017,
         'Metroidvania video game developed and published by Team Cherry.',
         99,
-        28
+        28,
+        1.79
     ),
     (
         'Celeste',
@@ -640,7 +695,8 @@ VALUES (
         2018,
         'Platforming video game developed by Maddy Makes Games.',
         51,
-        18
+        18,
+        2.12
     ),
     (
         'Undertale',
@@ -650,7 +706,8 @@ VALUES (
         2015,
         'Role-playing video game created by indie developer Toby Fox.',
         64,
-        24
+        24,
+        1.42
     ),
     (
         'Cuphead',
@@ -660,7 +717,8 @@ VALUES (
         2017,
         'Run and gun video game developed and published by Studio MDHR.',
         127,
-        23
+        23,
+        1.40
     ),
     (
         'Dead Cells',
@@ -670,7 +728,8 @@ VALUES (
         2018,
         'Roguelite-metroidvania hybrid developed by Motion Twin.',
         126,
-        26
+        26,
+        1.48
     ),
     (
         'Slay the Spire',
@@ -680,7 +739,8 @@ VALUES (
         2019,
         'Roguelike deck-building video game developed by Mega Crit.',
         61,
-        21
+        21,
+        2.36
     ),
     (
         'Among Us',
@@ -690,7 +750,8 @@ VALUES (
         2018,
         'Online multiplayer social deduction game developed by Innersloth.',
         22,
-        15
+        15,
+        1.55
     ),
     (
         'Fall Guys',
@@ -700,7 +761,8 @@ VALUES (
         2020,
         'Platform battle royale game developed by Mediatonic.',
         127,
-        31
+        31,
+        1.72
     ),
     (
         'Rocket League',
@@ -710,7 +772,8 @@ VALUES (
         2015,
         'Vehicular soccer video game developed by Psyonix.',
         30,
-        27
+        27,
+        1.58
     ),
     (
         'FIFA 23',
@@ -720,7 +783,8 @@ VALUES (
         2022,
         'Football simulation video game published by Electronic Arts.',
         88,
-        21
+        21,
+        3.60
     ),
     (
         'NBA 2K23',
@@ -730,7 +794,8 @@ VALUES (
         2022,
         'Basketball simulation video game developed by Visual Concepts.',
         131,
-        19
+        19,
+        5.02
     ),
     (
         'Madden NFL 23',
@@ -740,7 +805,8 @@ VALUES (
         2022,
         'American football video game based on the National Football League.',
         88,
-        24
+        24,
+        6.66
     ),
     (
         'Gran Turismo 7',
@@ -750,7 +816,8 @@ VALUES (
         2022,
         'Racing simulation video game developed by Polyphony Digital.',
         108,
-        28
+        28,
+        7.62
     ),
     (
         'F1 23',
@@ -760,7 +827,8 @@ VALUES (
         2023,
         'Racing video game developed by Codemasters.',
         40,
-        27
+        27,
+        5.62
     ),
     (
         'Street Fighter 6',
@@ -770,7 +838,8 @@ VALUES (
         2023,
         'Fighting game developed and published by Capcom.',
         9,
-        27
+        27,
+        5.75
     ),
     (
         'Tekken 8',
@@ -780,7 +849,8 @@ VALUES (
         2024,
         'Fighting game developed by Bandai Namco Studios and Arika.',
         146,
-        29
+        29,
+        5.98
     ),
     (
         'Mortal Kombat 1',
@@ -790,7 +860,8 @@ VALUES (
         2023,
         'Fighting game developed by NetherRealm Studios.',
         17,
-        26
+        26,
+        5.77
     ),
     (
         'Guilty Gear Strive',
@@ -800,7 +871,8 @@ VALUES (
         2021,
         'Fighting video game developed and published by Arc System Works.',
         125,
-        30
+        30,
+        6.76
     ),
     (
         'Monster Hunter: World',
@@ -810,7 +882,8 @@ VALUES (
         2018,
         'Action role-playing game developed and published by Capcom.',
         136,
-        23
+        23,
+        2.42
     ),
     (
         'Monster Hunter Rise',
@@ -820,7 +893,8 @@ VALUES (
         2021,
         'Action role-playing game developed and published by Capcom.',
         73,
-        22
+        22,
+        2.42
     ),
     (
         'Dark Souls III',
@@ -830,7 +904,8 @@ VALUES (
         2016,
         'Action role-playing game developed by FromSoftware.',
         96,
-        25
+        25,
+        3.55
     ),
     (
         'Bloodborne',
@@ -840,7 +915,8 @@ VALUES (
         2015,
         'Action role-playing game developed by FromSoftware.',
         58,
-        32
+        32,
+        2.48
     ),
     (
         'Sekiro: Shadows Die Twice',
@@ -850,7 +926,8 @@ VALUES (
         2019,
         'Action-adventure game developed by FromSoftware.',
         50,
-        24
+        24,
+        1.39
     ),
     (
         'Nier: Automata',
@@ -860,7 +937,8 @@ VALUES (
         2017,
         'Action role-playing game developed by PlatinumGames.',
         22,
-        21
+        21,
+        2.26
     ),
     (
         'Bayonetta 3',
@@ -870,7 +948,8 @@ VALUES (
         2022,
         'Action-adventure game developed by PlatinumGames.',
         36,
-        21
+        21,
+        2.00
     ),
     (
         'Devil May Cry 5',
@@ -880,7 +959,8 @@ VALUES (
         2019,
         'Action-adventure game developed and published by Capcom.',
         75,
-        26
+        26,
+        1.96
     ),
     (
         'Resident Evil Village',
@@ -890,7 +970,8 @@ VALUES (
         2021,
         'Survival horror game developed and published by Capcom.',
         76,
-        27
+        27,
+        2.33
     ),
     (
         'Silent Hill 2 Remake',
@@ -900,7 +981,8 @@ VALUES (
         2024,
         'Survival horror game developed by Bloober Team.',
         83,
-        26
+        26,
+        1.70
     ),
     (
         'Alan Wake 2',
@@ -910,7 +992,8 @@ VALUES (
         2023,
         'Survival horror game developed by Remedy Entertainment.',
         100,
-        27
+        27,
+        1.97
     ),
     (
         'Control',
@@ -920,7 +1003,8 @@ VALUES (
         2019,
         'Action-adventure game developed by Remedy Entertainment.',
         34,
-        29
+        29,
+        1.72
     ),
     (
         'Death Stranding',
@@ -930,7 +1014,8 @@ VALUES (
         2019,
         'Action game developed by Kojima Productions.',
         12,
-        21
+        21,
+        2.45
     ),
     (
         'Metal Gear Solid V: The Phantom Pain',
@@ -940,7 +1025,8 @@ VALUES (
         2015,
         'Stealth game developed by Kojima Productions.',
         78,
-        34
+        34,
+        1.94
     ),
     (
         'Hitman 3',
@@ -950,7 +1036,8 @@ VALUES (
         2021,
         'Stealth game developed by IO Interactive.',
         111,
-        27
+        27,
+        1.37
     ),
     (
         'Dishonored 2',
@@ -960,7 +1047,8 @@ VALUES (
         2016,
         'Action-adventure game developed by Arkane Studios.',
         118,
-        27
+        27,
+        2.46
     ),
     (
         'Prey',
@@ -970,7 +1058,8 @@ VALUES (
         2017,
         'First-person shooter developed by Arkane Austin.',
         93,
-        25
+        25,
+        1.32
     ),
     (
         'BioShock Infinite',
@@ -980,7 +1069,8 @@ VALUES (
         2013,
         'First-person shooter developed by Irrational Games.',
         147,
-        28
+        28,
+        6.63
     ),
     (
         'Mass Effect Legendary Edition',
@@ -990,7 +1080,8 @@ VALUES (
         2021,
         'Compilation of the video games in the Mass Effect trilogy.',
         29,
-        24
+        24,
+        1.56
     ),
     (
         'Fallout 4',
@@ -1000,7 +1091,8 @@ VALUES (
         2015,
         'Action role-playing game developed by Bethesda Game Studios.',
         133,
-        31
+        31,
+        2.19
     ),
     (
         'Skyrim: Special Edition',
@@ -1010,7 +1102,8 @@ VALUES (
         2016,
         'Action role-playing game developed by Bethesda Game Studios.',
         42,
-        25
+        25,
+        2.44
     ),
     (
         'Kingdom Hearts III',
@@ -1020,7 +1113,8 @@ VALUES (
         2019,
         'Action role-playing game developed and published by Square Enix.',
         95,
-        25
+        25,
+        1.31
     ),
     (
         'Final Fantasy XVI',
@@ -1030,7 +1124,8 @@ VALUES (
         2023,
         'Action role-playing game developed and published by Square Enix.',
         101,
-        24
+        24,
+        1.49
     ),
     (
         'Tales of Arise',
@@ -1040,7 +1135,8 @@ VALUES (
         2021,
         'Action role-playing game developed and published by Bandai Namco Entertainment.',
         59,
-        22
+        22,
+        1.35
     ),
     (
         'Yakuza: Like a Dragon',
@@ -1050,7 +1146,8 @@ VALUES (
         2020,
         'Role-playing video game developed by Ryu Ga Gotoku Studio.',
         139,
-        27
+        27,
+        1.24
     ),
     (
         'Judgment',
@@ -1060,7 +1157,8 @@ VALUES (
         2018,
         'Action-adventure game developed by Ryu Ga Gotoku Studio.',
         38,
-        20
+        20,
+        1.38
     ),
     (
         'Lost Judgment',
@@ -1070,7 +1168,8 @@ VALUES (
         2021,
         'Sequel to the 2018 game Judgment.',
         136,
-        26
+        26,
+        1.30
     ),
     (
         'Genshin Impact',
@@ -1080,7 +1179,8 @@ VALUES (
         2020,
         'Action role-playing game developed by miHoYo.',
         102,
-        23
+        23,
+        1.06
     ),
     (
         'Honkai: Star Rail',
@@ -1090,7 +1190,8 @@ VALUES (
         2023,
         'Role-playing video game developed by miHoYo.',
         124,
-        28
+        28,
+        0.62
     ),
     (
         'Destiny 2',
@@ -1100,7 +1201,8 @@ VALUES (
         2017,
         'Free-to-play online-only multiplayer first-person shooter developed by Bungie.',
         129,
-        31
+        31,
+        6.10
     );
 INSERT INTO videoGames (
         name,
@@ -1110,7 +1212,8 @@ INSERT INTO videoGames (
         release_year,
         more_data,
         average_playgame_duration,
-        average_player_age
+        average_player_age,
+        male_female_ratio
     )
 VALUES (
         'The Last of Us Part I',
@@ -1120,7 +1223,8 @@ VALUES (
         2022,
         'Action-adventure game developed by Naughty Dog.',
         135,
-        24
+        24,
+        1.23
     ),
     (
         'The Last of Us Part II',
@@ -1130,7 +1234,8 @@ VALUES (
         2020,
         'Action-adventure game developed by Naughty Dog.',
         88,
-        26
+        26,
+        2.15
     ),
     (
         'Uncharted 4: A Thief''s End',
@@ -1140,7 +1245,8 @@ VALUES (
         2016,
         'Action-adventure game developed by Naughty Dog.',
         122,
-        29
+        29,
+        2.04
     ),
     (
         'Detroit: Become Human',
@@ -1150,7 +1256,8 @@ VALUES (
         2018,
         'Adventure game developed by Quantic Dream.',
         117,
-        30
+        30,
+        0.67
     ),
     (
         'Heavy Rain',
@@ -1160,7 +1267,8 @@ VALUES (
         2010,
         'Interactive drama action-adventure video game developed by Quantic Dream.',
         90,
-        29
+        29,
+        0.54
     ),
     (
         'Beyond: Two Souls',
@@ -1170,7 +1278,8 @@ VALUES (
         2013,
         'Interactive drama action-adventure video game developed by Quantic Dream.',
         70,
-        30
+        30,
+        0.61
     ),
     (
         'Life is Strange',
@@ -1180,7 +1289,8 @@ VALUES (
         2015,
         'Episodic graphic adventure video game developed by Dontnod Entertainment.',
         116,
-        29
+        29,
+        0.84
     ),
     (
         'The Sims 4',
@@ -1190,7 +1300,8 @@ VALUES (
         2014,
         'Life simulation game developed by Maxis and published by Electronic Arts.',
         131,
-        40
+        40,
+        0.79
     ),
     (
         'Cities: Skylines',
@@ -1200,7 +1311,8 @@ VALUES (
         2015,
         'City-building game developed by Colossal Order.',
         16,
-        37
+        37,
+        1.89
     ),
     (
         'Planet Zoo',
@@ -1210,7 +1322,8 @@ VALUES (
         2019,
         'Construction and management simulation video game developed by Frontier Developments.',
         81,
-        24
+        24,
+        1.60
     ),
     (
         'Total War: Warhammer III',
@@ -1220,7 +1333,8 @@ VALUES (
         2022,
         'Turn-based strategy and real-time tactics video game developed by Creative Assembly.',
         127,
-        30
+        30,
+        6.11
     ),
     (
         'Crusader Kings III',
@@ -1230,7 +1344,8 @@ VALUES (
         2020,
         'Grand strategy role-playing video game developed by Paradox Development Studio.',
         35,
-        32
+        32,
+        6.39
     ),
     (
         'Europa Universalis IV',
@@ -1240,7 +1355,8 @@ VALUES (
         2013,
         'Grand strategy wargame developed by Paradox Development Studio.',
         56,
-        28
+        28,
+        7.38
     ),
     (
         'Hearts of Iron IV',
@@ -1250,7 +1366,8 @@ VALUES (
         2016,
         'Grand strategy computer wargame developed by Paradox Development Studio.',
         22,
-        33
+        33,
+        5.82
     ),
     (
         'Stellaris',
@@ -1260,7 +1377,8 @@ VALUES (
         2016,
         '4X grand strategy video game developed by Paradox Development Studio.',
         24,
-        40
+        40,
+        6.41
     ),
     (
         'RimWorld',
@@ -1270,7 +1388,8 @@ VALUES (
         2018,
         'Construction and management simulation created by Ludeon Studios.',
         74,
-        22
+        22,
+        1.90
     ),
     (
         'Factorio',
@@ -1280,7 +1399,8 @@ VALUES (
         2020,
         'Construction and management simulation game developed by Wube Software.',
         69,
-        36
+        36,
+        1.97
     ),
     (
         'Satisfactory',
@@ -1290,7 +1410,8 @@ VALUES (
         2020,
         'First-person open-world factory building game developed by Coffee Stain Studios.',
         44,
-        26
+        26,
+        2.05
     ),
     (
         'Deep Rock Galactic',
@@ -1300,7 +1421,8 @@ VALUES (
         2020,
         'Cooperative first-person shooter video game developed by Ghost Ship Games.',
         46,
-        28
+        28,
+        6.66
     ),
     (
         'Payday 2',
@@ -1310,7 +1432,8 @@ VALUES (
         2013,
         'Cooperative first-person shooter video game developed by Overkill Software.',
         131,
-        30
+        30,
+        4.35
     ),
     (
         'Warframe',
@@ -1320,7 +1443,8 @@ VALUES (
         2013,
         'Free-to-play action role-playing third-person shooter multiplayer online game developed by Digital Extremes.',
         67,
-        25
+        25,
+        2.40
     ),
     (
         'World of Warcraft',
@@ -1330,7 +1454,8 @@ VALUES (
         2004,
         'Massively multiplayer online role-playing game released by Blizzard Entertainment.',
         14,
-        24
+        24,
+        1.67
     ),
     (
         'Final Fantasy XIV',
@@ -1340,7 +1465,8 @@ VALUES (
         2013,
         'Massively multiplayer online role-playing game developed and published by Square Enix.',
         87,
-        24
+        24,
+        0.98
     ),
     (
         'The Elder Scrolls Online',
@@ -1350,7 +1476,8 @@ VALUES (
         2014,
         'Massively multiplayer online role-playing game developed by ZeniMax Online Studios.',
         43,
-        22
+        22,
+        1.95
     ),
     (
         'Guild Wars 2',
@@ -1360,7 +1487,8 @@ VALUES (
         2012,
         'Massively multiplayer online role-playing game developed by ArenaNet.',
         51,
-        26
+        26,
+        2.45
     ),
     (
         'Black Desert Online',
@@ -1370,7 +1498,8 @@ VALUES (
         2015,
         'Sandbox-oriented massively multiplayer online role-playing game by Korean video game developer Pearl Abyss.',
         142,
-        20
+        20,
+        2.43
     ),
     (
         'Lost Ark',
@@ -1380,7 +1509,8 @@ VALUES (
         2019,
         'Top-down 2.5D massive multiplayer online action role-playing game co-developed by Tripod Studio and Smilegate RPG.',
         143,
-        24
+        24,
+        2.36
     ),
     (
         'Path of Exile',
@@ -1390,7 +1520,8 @@ VALUES (
         2013,
         'Free-to-play action role-playing video game developed and published by Grinding Gear Games.',
         137,
-        27
+        27,
+        1.74
     ),
     (
         'Smite',
@@ -1400,7 +1531,8 @@ VALUES (
         2014,
         'Free-to-play, third-person multiplayer online battle arena video game developed and published by Hi-Rez Studios.',
         71,
-        31
+        31,
+        1.45
     ),
     (
         'Paladins',
@@ -1410,7 +1542,8 @@ VALUES (
         2018,
         'Free-to-play online hero shooter video game by Hi-Rez Studios.',
         52,
-        30
+        30,
+        7.91
     ),
     (
         'Realm Royale',
@@ -1420,7 +1553,8 @@ VALUES (
         2018,
         'Free-to-play battle royale game developed by Heroic Leap Games.',
         2,
-        31
+        31,
+        2.32
     ),
     (
         'PUBG: Battlegrounds',
@@ -1430,7 +1564,8 @@ VALUES (
         2017,
         'Online multiplayer battle royale game developed and published by PUBG Corporation.',
         142,
-        24
+        24,
+        1.41
     ),
     (
         'DayZ',
@@ -1440,7 +1575,8 @@ VALUES (
         2018,
         'Survival video game developed and published by Bohemia Interactive.',
         26,
-        34
+        34,
+        1.43
     ),
     (
         'SCUM',
@@ -1450,7 +1586,8 @@ VALUES (
         2018,
         'Multiplayer online survival game, developed by Croatian studio Gamepires.',
         46,
-        29
+        29,
+        1.68
     ),
     (
         '7 Days to Die',
@@ -1460,7 +1597,8 @@ VALUES (
         2013,
         'Survival horror video game set in an open world developed by The Fun Pimps.',
         133,
-        26
+        26,
+        1.98
     ),
     (
         'The Forest',
@@ -1470,7 +1608,8 @@ VALUES (
         2018,
         'Survival horror video game developed and published by Endnight Games.',
         8,
-        20
+        20,
+        2.01
     ),
     (
         'Sons of the Forest',
@@ -1480,7 +1619,8 @@ VALUES (
         2023,
         'Survival horror video game developed by Endnight Games and published by Newnight.',
         70,
-        24
+        24,
+        1.97
     ),
     (
         'Green Hell',
@@ -1490,7 +1630,8 @@ VALUES (
         2019,
         'Survival simulator set in an uncharted Amazonian rainforest developed by Creepy Jar.',
         58,
-        27
+        27,
+        2.32
     ),
     (
         'Stranded Deep',
@@ -1500,7 +1641,8 @@ VALUES (
         2015,
         'Survival video game developed by Australian studio Beam Team Games.',
         117,
-        31
+        31,
+        1.84
     ),
     (
         'Raft',
@@ -1510,7 +1652,8 @@ VALUES (
         2018,
         'Open world survival video game developed by Redbeet Interactive.',
         98,
-        36
+        36,
+        1.75
     ),
     (
         'Tunic',
@@ -1520,7 +1663,8 @@ VALUES (
         2022,
         'Action-adventure game developed by Andrew Shouldice.',
         25,
-        25
+        25,
+        1.76
     ),
     (
         'Cult of the Lamb',
@@ -1530,7 +1674,8 @@ VALUES (
         2022,
         'Roguelike video game developed by indie developer Massive Monster.',
         73,
-        25
+        25,
+        1.94
     ),
     (
         'Inscryption',
@@ -1540,7 +1685,8 @@ VALUES (
         2021,
         'Deck-building game developed by Daniel Mullins Games.',
         107,
-        31
+        31,
+        2.30
     ),
     (
         'Loop Hero',
@@ -1550,7 +1696,8 @@ VALUES (
         2021,
         'Endless RPG developed by Russian studio Four Quarters.',
         93,
-        26
+        26,
+        2.35
     ),
     (
         'Return of the Obra Dinn',
@@ -1560,7 +1707,8 @@ VALUES (
         2018,
         'Puzzle video game created by Lucas Pope.',
         111,
-        15
+        15,
+        0.78
     ),
     (
         'Papers, Please',
@@ -1570,7 +1718,8 @@ VALUES (
         2013,
         'Puzzle simulation video game created by indie developer Lucas Pope.',
         140,
-        18
+        18,
+        0.83
     ),
     (
         'Hotline Miami',
@@ -1580,7 +1729,8 @@ VALUES (
         2012,
         'Top-down shooter video game by Dennaton Games.',
         13,
-        26
+        26,
+        1.52
     ),
     (
         'Katana Zero',
@@ -1590,7 +1740,8 @@ VALUES (
         2019,
         '2D action platform video game developed by Askiisoft.',
         143,
-        31
+        31,
+        1.62
     ),
     (
         'Gris',
@@ -1600,7 +1751,8 @@ VALUES (
         2018,
         'Platform-adventure game by Spanish developer Nomada Studio.',
         137,
-        15
+        15,
+        2.10
     ),
     (
         'Journey',
@@ -1610,7 +1762,8 @@ VALUES (
         2012,
         'Indie adventure game developed by Thatgamecompany.',
         37,
-        27
+        27,
+        0.85
     ),
     (
         'Abzû',
@@ -1620,7 +1773,8 @@ VALUES (
         2016,
         'Adventure video game developed by Giant Squid Studios.',
         131,
-        23
+        23,
+        0.47
     ),
     (
         'Firewatch',
@@ -1630,7 +1784,8 @@ VALUES (
         2016,
         'Adventure game developed by Campo Santo.',
         53,
-        24
+        24,
+        0.87
     ),
     (
         'What Remains of Edith Finch',
@@ -1640,7 +1795,8 @@ VALUES (
         2017,
         'Adventure game developed by Giant Sparrow.',
         43,
-        27
+        27,
+        0.49
     ),
     (
         'Outer Wilds',
@@ -1650,7 +1806,8 @@ VALUES (
         2019,
         'Action-adventure game developed by Mobius Digital.',
         47,
-        21
+        21,
+        1.29
     ),
     (
         'The Stanley Parable: Ultra Deluxe',
@@ -1660,7 +1817,8 @@ VALUES (
         2022,
         'Interactive drama and walking simulator designed by Davey Wreden.',
         104,
-        30
+        30,
+        0.45
     ),
     (
         'Super Meat Boy',
@@ -1670,7 +1828,8 @@ VALUES (
         2010,
         'Platform game designed by Edmund McMillen and Tommy Refenes.',
         54,
-        17
+        17,
+        1.35
     ),
     (
         'The Binding of Isaac: Rebirth',
@@ -1680,7 +1839,8 @@ VALUES (
         2014,
         'Indie roguelike video game designed by Edmund McMillen.',
         21,
-        31
+        31,
+        1.97
     ),
     (
         'Spelunky 2',
@@ -1690,7 +1850,8 @@ VALUES (
         2020,
         'Platform game developed by Mossmouth and BlitWorks.',
         146,
-        14
+        14,
+        1.41
     ),
     (
         'Don''t Starve Together',
@@ -1700,7 +1861,8 @@ VALUES (
         2016,
         'Multiplayer expansion of the uncompromising wilderness survival game Don''t Starve.',
         75,
-        36
+        36,
+        2.18
     ),
     (
         'Oxygen Not Included',
@@ -1710,7 +1872,8 @@ VALUES (
         2019,
         'Survival simulation video game developed and published by Klei Entertainment.',
         92,
-        20
+        20,
+        2.32
     ),
     (
         'Kenshi',
@@ -1720,7 +1883,8 @@ VALUES (
         2018,
         'Role-playing video game developed and published by Lo-Fi Games.',
         70,
-        22
+        22,
+        1.77
     ),
     (
         'Mount & Blade II: Bannerlord',
@@ -1730,7 +1894,8 @@ VALUES (
         2022,
         'Strategy action role-playing video game developed by TaleWorlds Entertainment.',
         95,
-        29
+        29,
+        1.89
     ),
     (
         'Chivalry 2',
@@ -1740,7 +1905,8 @@ VALUES (
         2021,
         'Multiplayer hack and slash action video game developed by Torn Banner Studios.',
         20,
-        21
+        21,
+        2.02
     ),
     (
         'Mordhau',
@@ -1750,7 +1916,8 @@ VALUES (
         2019,
         'Multiplayer medieval hack and slash video game developed by Triternion.',
         141,
-        31
+        31,
+        1.20
     ),
     (
         'For Honor',
@@ -1760,7 +1927,8 @@ VALUES (
         2017,
         'Action fighting game developed and published by Ubisoft.',
         75,
-        21
+        21,
+        5.09
     ),
     (
         'Kingdom Come: Deliverance',
@@ -1770,7 +1938,8 @@ VALUES (
         2018,
         'Action role-playing video game developed by Warhorse Studios.',
         81,
-        29
+        29,
+        1.41
     ),
     (
         'Far Cry 6',
@@ -1780,7 +1949,8 @@ VALUES (
         2021,
         'First-person shooter game developed by Ubisoft Toronto.',
         62,
-        27
+        27,
+        7.40
     ),
     (
         'Far Cry 5',
@@ -1790,7 +1960,8 @@ VALUES (
         2018,
         'First-person shooter game developed by Ubisoft Montreal and Ubisoft Toronto.',
         80,
-        20
+        20,
+        5.89
     ),
     (
         'Far Cry 3',
@@ -1800,7 +1971,8 @@ VALUES (
         2012,
         'First-person shooter developed by Ubisoft Montreal.',
         119,
-        26
+        26,
+        5.95
     ),
     (
         'Assassin''s Creed Valhalla',
@@ -1810,7 +1982,8 @@ VALUES (
         2020,
         'Action role-playing video game developed by Ubisoft Montreal.',
         56,
-        26
+        26,
+        2.03
     ),
     (
         'Assassin''s Creed Odyssey',
@@ -1820,7 +1993,8 @@ VALUES (
         2018,
         'Action role-playing video game developed by Ubisoft Quebec.',
         141,
-        31
+        31,
+        2.12
     ),
     (
         'Assassin''s Creed Origins',
@@ -1830,7 +2004,8 @@ VALUES (
         2017,
         'Action role-playing video game developed by Ubisoft Montreal.',
         67,
-        21
+        21,
+        2.14
     ),
     (
         'Watch Dogs: Legion',
@@ -1840,7 +2015,8 @@ VALUES (
         2020,
         'Action-adventure game developed by Ubisoft Toronto.',
         142,
-        25
+        25,
+        1.84
     ),
     (
         'Tom Clancy''s Rainbow Six Siege',
@@ -1850,7 +2026,8 @@ VALUES (
         2015,
         'Online tactical shooter video game developed by Ubisoft Montreal.',
         58,
-        22
+        22,
+        6.38
     ),
     (
         'Tom Clancy''s The Division 2',
@@ -1860,7 +2037,8 @@ VALUES (
         2019,
         'Online-only action role-playing video game developed by Massive Entertainment.',
         59,
-        26
+        26,
+        1.36
     ),
     (
         'Tom Clancy''s Ghost Recon Breakpoint',
@@ -1870,7 +2048,8 @@ VALUES (
         2019,
         'Online tactical shooter video game developed by Ubisoft Paris.',
         52,
-        26
+        26,
+        2.40
     ),
     (
         'Just Cause 4',
@@ -1880,7 +2059,8 @@ VALUES (
         2018,
         'Action-adventure game developed by Avalanche Studios.',
         90,
-        25
+        25,
+        1.32
     ),
     (
         'Saints Row',
@@ -1890,7 +2070,8 @@ VALUES (
         2022,
         'Action-adventure game developed by Volition.',
         84,
-        22
+        22,
+        1.24
     ),
     (
         'Mafia: Definitive Edition',
@@ -1900,7 +2081,8 @@ VALUES (
         2020,
         'Action-adventure video game developed by Hangar 13.',
         102,
-        23
+        23,
+        2.28
     ),
     (
         'L.A. Noire',
@@ -1910,7 +2092,8 @@ VALUES (
         2011,
         'Neo-noir detective action-adventure video game developed by Team Bondi.',
         58,
-        29
+        29,
+        1.95
     ),
     (
         'Sleeping Dogs',
@@ -1920,7 +2103,8 @@ VALUES (
         2012,
         'Action-adventure video game developed by United Front Games.',
         137,
-        21
+        21,
+        2.39
     ),
     (
         'Max Payne 3',
@@ -1930,7 +2114,8 @@ VALUES (
         2012,
         'Third-person shooter video game developed by Rockstar Studios.',
         79,
-        27
+        27,
+        1.35
     ),
     (
         'Quantum Break',
@@ -1940,7 +2125,8 @@ VALUES (
         2016,
         'Science fiction action-adventure third-person shooter video game developed by Remedy Entertainment.',
         110,
-        30
+        30,
+        2.04
     ),
     (
         'Star Wars Jedi: Survivor',
@@ -1950,7 +2136,8 @@ VALUES (
         2023,
         'Action-adventure game developed by Respawn Entertainment.',
         108,
-        34
+        34,
+        2.30
     ),
     (
         'Star Wars Jedi: Fallen Order',
@@ -1960,7 +2147,8 @@ VALUES (
         2019,
         'Action-adventure game developed by Respawn Entertainment.',
         99,
-        29
+        29,
+        1.86
     ),
     (
         'Star Wars Battlefront II',
@@ -1970,7 +2158,8 @@ VALUES (
         2017,
         'Action shooter video game based on the Star Wars franchise.',
         148,
-        30
+        30,
+        1.67
     ),
     (
         'Lego Star Wars: The Skywalker Saga',
@@ -1980,7 +2169,8 @@ VALUES (
         2022,
         'Lego-themed action-adventure game developed by Traveller''s Tales.',
         149,
-        18
+        18,
+        1.22
     ),
     (
         'Marvel''s Guardians of the Galaxy',
@@ -1990,7 +2180,8 @@ VALUES (
         2021,
         'Action-adventure video game developed by Eidos-Montréal.',
         72,
-        20
+        20,
+        1.63
     ),
     (
         'Marvel''s Avengers',
@@ -2000,7 +2191,8 @@ VALUES (
         2020,
         'Action-adventure video game developed by Crystal Dynamics.',
         17,
-        22
+        22,
+        1.58
     ),
     (
         'Batman: Arkham Knight',
@@ -2010,7 +2202,8 @@ VALUES (
         2015,
         'Action-adventure game developed by Rocksteady Studios.',
         43,
-        34
+        34,
+        2.21
     ),
     (
         'Batman: Arkham City',
@@ -2020,7 +2213,8 @@ VALUES (
         2011,
         'Action-adventure game developed by Rocksteady Studios.',
         9,
-        33
+        33,
+        1.25
     ),
     (
         'Batman: Arkham Asylum',
@@ -2030,7 +2224,8 @@ VALUES (
         2009,
         'Action-adventure game developed by Rocksteady Studios.',
         56,
-        24
+        24,
+        1.92
     ),
     (
         'Suicide Squad: Kill the Justice League',
@@ -2040,7 +2235,8 @@ VALUES (
         2024,
         'Action-adventure game developed by Rocksteady Studios.',
         115,
-        31
+        31,
+        1.46
     ),
     (
         'Dredge',
@@ -2050,7 +2246,8 @@ VALUES (
         2023,
         'Sinister fishing adventure developed by Black Salt Games.',
         43,
-        30
+        30,
+        4.40
     ),
     (
         'Forspoken',
@@ -2060,7 +2257,8 @@ VALUES (
         2023,
         'Action role-playing video game developed by Luminous Productions.',
         23,
-        21
+        21,
+        1.42
     ),
     (
         'Immortals of Aveum',
@@ -2070,7 +2268,8 @@ VALUES (
         2023,
         'First-person shooter game developed by Ascendant Studios.',
         15,
-        21
+        21,
+        5.77
     ),
     (
         'Remnant 2',
@@ -2080,7 +2279,8 @@ VALUES (
         2023,
         'Third-person shooter action role-playing video game developed by Gunfire Games.',
         121,
-        25
+        25,
+        2.41
     ),
     (
         'Lies of P',
@@ -2090,7 +2290,8 @@ VALUES (
         2023,
         'Action role-playing video game developed by Neowiz Games and Round8 Studio.',
         20,
-        23
+        23,
+        1.57
     ),
     (
         'Lords of the Fallen',
@@ -2100,7 +2301,8 @@ VALUES (
         2023,
         'Action role-playing video game developed by Hexworks.',
         132,
-        30
+        30,
+        1.31
     ),
     (
         'Armored Core VI: Fires of Rubicon',
@@ -2110,7 +2312,8 @@ VALUES (
         2023,
         'Mecha-based vehicular combat game developed by FromSoftware.',
         139,
-        29
+        29,
+        2.35
     );
 -- =========================================
 -- NEW GAMES BATCH 1 --
@@ -2122,7 +2325,8 @@ INSERT INTO videoGames (
         release_year,
         more_data,
         average_playgame_duration,
-        average_player_age
+        average_player_age,
+        male_female_ratio
     )
 VALUES (
         'Candy Crush Saga',
@@ -2132,7 +2336,8 @@ VALUES (
         2012,
         'Legendary puzzle game loved by millions.',
         15,
-        12
+        12,
+        0.83
     ),
     (
         'Clash of Clans',
@@ -2142,7 +2347,8 @@ VALUES (
         2012,
         'Build your village, raise a clan, and compete in epic Clan Wars.',
         145,
-        19
+        19,
+        5.17
     ),
     (
         'PUBG Mobile',
@@ -2152,7 +2358,8 @@ VALUES (
         2018,
         'The original battle royale on mobile.',
         35,
-        29
+        29,
+        2.34
     ),
     (
         'Genshin Impact',
@@ -2162,7 +2369,8 @@ VALUES (
         2020,
         'Open-world action RPG with anime style.',
         150,
-        25
+        25,
+        0.80
     ),
     (
         'Call of Duty: Mobile',
@@ -2172,7 +2380,8 @@ VALUES (
         2019,
         'Console quality HD gaming on your phone.',
         45,
-        25
+        25,
+        7.22
     ),
     (
         'Pokémon GO',
@@ -2182,7 +2391,8 @@ VALUES (
         2016,
         'Join Trainers across the globe who are discovering Pokémon.',
         90,
-        20
+        20,
+        0.90
     ),
     (
         'Roblox',
@@ -2192,7 +2402,8 @@ VALUES (
         2006,
         'Global platform where millions of people gather together to imagine, create, and share experiences.',
         60,
-        12
+        12,
+        1.46
     ),
     (
         'Subway Surfers',
@@ -2202,7 +2413,8 @@ VALUES (
         2012,
         'Dash as fast as you can!',
         10,
-        14
+        14,
+        2.26
     ),
     (
         'Minecraft',
@@ -2212,7 +2424,8 @@ VALUES (
         2011,
         'Explore infinite worlds and build everything from the simplest of homes to the grandest of castles.',
         120,
-        15
+        15,
+        1.16
     ),
     (
         'Among Us',
@@ -2222,7 +2435,8 @@ VALUES (
         2018,
         'An online and local party game of teamwork and betrayal.',
         20,
-        12
+        12,
+        1.60
     ),
     (
         'Clash Royale',
@@ -2232,7 +2446,8 @@ VALUES (
         2016,
         'Real-time multiplayer game starring the Royales.',
         25,
-        18
+        18,
+        4.56
     ),
     (
         'Brawl Stars',
@@ -2242,7 +2457,8 @@ VALUES (
         2018,
         'Fast-paced 3v3 multiplayer and battle royale.',
         15,
-        18
+        18,
+        2.13
     ),
     (
         'Mobile Legends: Bang Bang',
@@ -2252,7 +2468,8 @@ VALUES (
         2016,
         'Join your friends in a brand new 5v5 MOBA showdown.',
         30,
-        28
+        28,
+        1.30
     ),
     (
         'Asphalt 9: Legends',
@@ -2262,7 +2479,8 @@ VALUES (
         2018,
         'Tear up the asphalt and take on the world\'s best fearless street racer pros.',
         12,
-        25
+        25,
+        6.06
     ),
     (
         'Shadow Fight 3',
@@ -2272,7 +2490,8 @@ VALUES (
         2017,
         'Epic fighting RPG game.',
         40,
-        31
+        31,
+        5.04
     ),
     (
         'Monument Valley',
@@ -2282,7 +2501,8 @@ VALUES (
         2014,
         'Surreal exploration through fantastical architecture.',
         4,
-        21
+        21,
+        0.72
     ),
     (
         'Alto\'s Odyssey',
@@ -2292,7 +2512,8 @@ VALUES (
         2018,
         'Endless sandboarding journey.',
         15,
-        25
+        25,
+        2.45
     ),
     (
         'Stardew Valley',
@@ -2302,7 +2523,8 @@ VALUES (
         2016,
         'Farming RPG.',
         80,
-        22
+        22,
+        0.41
     ),
     (
         'Terraria',
@@ -2312,7 +2534,8 @@ VALUES (
         2011,
         'Dig, Fight, Explore, Build.',
         90,
-        21
+        21,
+        2.32
     ),
     (
         'Dead Cells',
@@ -2322,7 +2545,8 @@ VALUES (
         2018,
         'Roguevania action-platformer.',
         50,
-        25
+        25,
+        1.40
     ),
     (
         'Slay the Spire',
@@ -2332,7 +2556,8 @@ VALUES (
         2019,
         'Roguelike deckbuilder.',
         60,
-        25
+        25,
+        2.24
     ),
     (
         'Hearthstone',
@@ -2342,7 +2567,8 @@ VALUES (
         2014,
         'Strategy card game.',
         45,
-        20
+        20,
+        1.92
     ),
     (
         'Legends of Runeterra',
@@ -2352,7 +2578,8 @@ VALUES (
         2020,
         'Strategy card game set in the world of League of Legends.',
         35,
-        21
+        21,
+        2.46
     ),
     (
         'Marvel Snap',
@@ -2362,7 +2589,8 @@ VALUES (
         2022,
         'Fast-paced card battler.',
         15,
-        27
+        27,
+        2.05
     ),
     (
         'Diablo Immortal',
@@ -2372,7 +2600,8 @@ VALUES (
         2022,
         'Mobile MMO Action RPG.',
         70,
-        26
+        26,
+        2.10
     ),
     (
         'Final Fantasy VII: Ever Crisis',
@@ -2382,7 +2611,8 @@ VALUES (
         2023,
         'Another possibility for a remake.',
         55,
-        34
+        34,
+        1.00
     ),
     (
         'Honkai Impact 3rd',
@@ -2392,7 +2622,8 @@ VALUES (
         2016,
         'Anime action RPG.',
         100,
-        20
+        20,
+        0.48
     ),
     (
         'Arknights',
@@ -2402,7 +2633,8 @@ VALUES (
         2019,
         'Tower defense RPG.',
         85,
-        31
+        31,
+        6.44
     ),
     (
         'Fate/Grand Order',
@@ -2412,7 +2644,8 @@ VALUES (
         2015,
         'Command spirits and save humanity.',
         150,
-        28
+        28,
+        1.83
     ),
     (
         'Azur Lane',
@@ -2422,7 +2655,8 @@ VALUES (
         2017,
         'Naval warfare side-scroller.',
         65,
-        26
+        26,
+        1.26
     ),
     (
         'Blue Archive',
@@ -2432,7 +2666,8 @@ VALUES (
         2021,
         'Youth x Academy x Military RPG.',
         50,
-        20
+        20,
+        1.24
     ),
     (
         'Nikke: Goddess of Victory',
@@ -2442,7 +2677,8 @@ VALUES (
         2022,
         'Sci-fi RPG shooter.',
         40,
-        23
+        23,
+        2.14
     ),
     (
         'Summoners War',
@@ -2452,7 +2688,8 @@ VALUES (
         2014,
         'Fantasy RPG.',
         120,
-        24
+        24,
+        2.45
     ),
     (
         'Raid: Shadow Legends',
@@ -2462,7 +2699,8 @@ VALUES (
         2018,
         'Turn-based RPG.',
         90,
-        28
+        28,
+        1.75
     ),
     (
         'AFK Arena',
@@ -2472,7 +2710,8 @@ VALUES (
         2019,
         'Casual idle RPG.',
         30,
-        25
+        25,
+        2.38
     ),
     (
         'Temple Run 2',
@@ -2482,7 +2721,8 @@ VALUES (
         2013,
         'Infinite runner.',
         8,
-        19
+        19,
+        1.30
     ),
     (
         'Jetpack Joyride',
@@ -2492,7 +2732,8 @@ VALUES (
         2011,
         'Bullet-powered jetpacks.',
         10,
-        15
+        15,
+        1.81
     ),
     (
         'Fruit Ninja',
@@ -2502,7 +2743,8 @@ VALUES (
         2010,
         'Slice fruit, don\'t slice bombs.',
         5,
-        25
+        25,
+        4.90
     ),
     (
         'Plants vs. Zombies 2',
@@ -2512,7 +2754,8 @@ VALUES (
         2013,
         'Defend your brain.',
         25,
-        23
+        23,
+        6.71
     ),
     (
         'Angry Birds 2',
@@ -2522,7 +2765,8 @@ VALUES (
         2015,
         'The birds are back.',
         15,
-        21
+        21,
+        0.48
     ),
     (
         'Cut the Rope',
@@ -2532,7 +2776,8 @@ VALUES (
         2010,
         'Feed candy to Om Nom.',
         6,
-        19
+        19,
+        0.43
     ),
     (
         'Hill Climb Racing',
@@ -2542,7 +2787,8 @@ VALUES (
         2012,
         'Physics based driving game.',
         12,
-        21
+        21,
+        4.57
     ),
     (
         'Real Racing 3',
@@ -2552,7 +2798,8 @@ VALUES (
         2013,
         'Award-winning franchise.',
         20,
-        23
+        23,
+        6.66
     ),
     (
         'Need for Speed: No Limits',
@@ -2562,7 +2809,8 @@ VALUES (
         2015,
         'Race for dominance.',
         18,
-        27
+        27,
+        7.20
     ),
     (
         'Mario Kart Tour',
@@ -2572,7 +2820,8 @@ VALUES (
         2019,
         'Mario Kart endless fun.',
         10,
-        16
+        16,
+        0.31
     ),
     (
         'Fire Emblem Heroes',
@@ -2582,7 +2831,8 @@ VALUES (
         2017,
         'Strategy RPG.',
         60,
-        26
+        26,
+        7.62
     ),
     (
         'Dragalia Lost',
@@ -2592,7 +2842,8 @@ VALUES (
         2018,
         'Action RPG.',
         75,
-        31
+        31,
+        1.87
     ),
     (
         'Animal Crossing: Pocket Camp',
@@ -2602,7 +2853,8 @@ VALUES (
         2017,
         'Relaxing camp manager.',
         45,
-        12
+        12,
+        0.50
     ),
     (
         'Dr. Mario World',
@@ -2612,7 +2864,8 @@ VALUES (
         2019,
         'Puzzle game.',
         8,
-        14
+        14,
+        0.75
     ),
     (
         'Harry Potter: Wizards Unite',
@@ -2622,7 +2875,8 @@ VALUES (
         2019,
         'Augmented reality game.',
         20,
-        21
+        21,
+        0.76
     ),
     (
         'Ingress Prime',
@@ -2632,7 +2886,8 @@ VALUES (
         2013,
         'The world is the game.',
         50,
-        14
+        14,
+        0.59
     ),
     (
         'Pikmin Bloom',
@@ -2642,7 +2897,8 @@ VALUES (
         2021,
         'Walk to grow Pikmin.',
         15,
-        17
+        17,
+        0.54
     ),
     (
         'Monster Hunter Now',
@@ -2652,7 +2908,8 @@ VALUES (
         2023,
         'Hunt monsters in the real world.',
         30,
-        23
+        23,
+        1.86
     ),
     (
         'Peridot',
@@ -2662,7 +2919,8 @@ VALUES (
         2023,
         'Virtual pets.',
         10,
-        19
+        19,
+        0.78
     ),
     (
         'Sky: Children of the Light',
@@ -2672,7 +2930,8 @@ VALUES (
         2019,
         'Social adventure game.',
         30,
-        27
+        27,
+        2.36
     ),
     (
         'Journey',
@@ -2682,7 +2941,8 @@ VALUES (
         2013,
         'Indie darling.',
         5,
-        30
+        30,
+        0.86
     ),
     (
         'Flower',
@@ -2692,7 +2952,8 @@ VALUES (
         2009,
         'Control the wind.',
         3,
-        27
+        27,
+        0.64
     ),
     (
         'Florence',
@@ -2702,7 +2963,8 @@ VALUES (
         2018,
         'Iteractive story.',
         2,
-        24
+        24,
+        0.86
     ),
     (
         'Gorogoa',
@@ -2712,7 +2974,8 @@ VALUES (
         2017,
         'Beautiful puzzle game.',
         4,
-        17
+        17,
+        0.42
     ),
     (
         'Donut County',
@@ -2722,7 +2985,8 @@ VALUES (
         2018,
         'Physics puzzle game.',
         3,
-        21
+        21,
+        0.75
     ),
     (
         'The Room',
@@ -2732,7 +2996,8 @@ VALUES (
         2012,
         'Physical puzzler.',
         5,
-        21
+        21,
+        0.69
     ),
     (
         'The Room Two',
@@ -2742,7 +3007,8 @@ VALUES (
         2013,
         'More puzzles.',
         6,
-        15
+        15,
+        0.51
     ),
     (
         'The Room Three',
@@ -2752,7 +3018,8 @@ VALUES (
         2015,
         'Even more puzzles.',
         8,
-        21
+        21,
+        0.68
     ),
     (
         'The Room: Old Sins',
@@ -2762,7 +3029,8 @@ VALUES (
         2018,
         'Haunted dollhouse puzzles.',
         9,
-        15
+        15,
+        0.86
     ),
     (
         'Limbo',
@@ -2772,7 +3040,8 @@ VALUES (
         2010,
         'Dark puzzle platformer.',
         6,
-        31
+        31,
+        2.20
     ),
     (
         'Inside',
@@ -2782,7 +3051,8 @@ VALUES (
         2016,
         'Atmospheric puzzle platformer.',
         5,
-        22
+        22,
+        2.10
     ),
     (
         'Little Nightmares',
@@ -2792,7 +3062,8 @@ VALUES (
         2019,
         'Dark whimsical tale.',
         7,
-        27
+        27,
+        1.80
     ),
     (
         'Very Little Nightmares',
@@ -2802,7 +3073,8 @@ VALUES (
         2019,
         'Prequel puzzle adventure.',
         6,
-        16
+        16,
+        0.41
     ),
     (
         'Life in Adventure',
@@ -2812,7 +3084,8 @@ VALUES (
         2021,
         'Text-based adventure.',
         8,
-        29
+        29,
+        1.24
     ),
     (
         '80 Days',
@@ -2822,7 +3095,8 @@ VALUES (
         2014,
         'Steampunk adventure.',
         10,
-        30
+        30,
+        1.89
     ),
     (
         'Sorcery!',
@@ -2832,7 +3106,8 @@ VALUES (
         2013,
         'Interactive gamebook.',
         12,
-        30
+        30,
+        1.82
     ),
     (
         'Reigns',
@@ -2842,7 +3117,8 @@ VALUES (
         2016,
         'Swipe to rule.',
         4,
-        34
+        34,
+        7.61
     ),
     (
         'Reigns: Her Majesty',
@@ -2852,7 +3128,8 @@ VALUES (
         2017,
         'Swipe to queen.',
         4,
-        30
+        30,
+        5.33
     ),
     (
         'Reigns: Game of Thrones',
@@ -2862,7 +3139,8 @@ VALUES (
         2018,
         'Winter is swiping.',
         5,
-        23
+        23,
+        5.01
     ),
     (
         'Downwell',
@@ -2872,7 +3150,8 @@ VALUES (
         2015,
         'Roguelike vertical shooter.',
         10,
-        20
+        20,
+        1.76
     ),
     (
         'Grid Autosport',
@@ -2882,7 +3161,8 @@ VALUES (
         2019,
         'Console quality racing.',
         25,
-        30
+        30,
+        6.30
     ),
     (
         'XCOM 2 Collection',
@@ -2892,7 +3172,8 @@ VALUES (
         2020,
         'Tactical alien fighting.',
         60,
-        39
+        39,
+        5.35
     ),
     (
         'Civilization VI',
@@ -2902,7 +3183,8 @@ VALUES (
         2020,
         'Build an empire.',
         100,
-        36
+        36,
+        6.47
     ),
     (
         'Tropico',
@@ -2912,7 +3194,8 @@ VALUES (
         2019,
         'Dictator simulator.',
         40,
-        28
+        28,
+        5.61
     ),
     (
         'Company of Heroes',
@@ -2922,7 +3205,8 @@ VALUES (
         2020,
         'WWII RTS.',
         30,
-        24
+        24,
+        5.85
     ),
     (
         'Total War: Medieval II',
@@ -2932,7 +3216,8 @@ VALUES (
         2022,
         'Epic battles.',
         50,
-        31
+        31,
+        4.31
     ),
     (
         'Alien: Isolation',
@@ -2942,7 +3227,8 @@ VALUES (
         2021,
         'Survival horror masterpiece.',
         20,
-        23
+        23,
+        1.75
     ),
     (
         'Streets of Rage 4',
@@ -2952,7 +3238,8 @@ VALUES (
         2022,
         'Classic beat em up.',
         12,
-        24
+        24,
+        5.76
     ),
     (
         'TMNT: Shredder\'s Revenge',
@@ -2962,7 +3249,8 @@ VALUES (
         2023,
         'Cowabunga!',
         10,
-        25
+        25,
+        6.35
     ),
     (
         'Vampire Survivors',
@@ -2972,7 +3260,8 @@ VALUES (
         2022,
         'Be the bullet hell.',
         30,
-        23
+        23,
+        2.27
     ),
     (
         '20 Minutes Till Dawn',
@@ -2982,7 +3271,8 @@ VALUES (
         2022,
         'Lovecraftian shooter.',
         15,
-        31
+        31,
+        2.23
     ),
     (
         'Brotato',
@@ -2992,7 +3282,8 @@ VALUES (
         2023,
         'Potato roguelite.',
         20,
-        30
+        30,
+        1.43
     ),
     (
         'Soul Knight',
@@ -3002,7 +3293,8 @@ VALUES (
         2017,
         'Pixel roguelike.',
         45,
-        21
+        21,
+        2.15
     ),
     (
         'Otherworld Legends',
@@ -3012,7 +3304,8 @@ VALUES (
         2020,
         'Action roguelike.',
         35,
-        29
+        29,
+        1.51
     ),
     (
         'Pascal\'s Wager',
@@ -3022,7 +3315,8 @@ VALUES (
         2020,
         'Souls-like on mobile.',
         25,
-        25
+        25,
+        1.28
     ),
     (
         'Grimvalor',
@@ -3032,7 +3326,8 @@ VALUES (
         2018,
         'Dark fantasy hack & slash.',
         12,
-        27
+        27,
+        2.25
     ),
     (
         'Oddmar',
@@ -3042,7 +3337,8 @@ VALUES (
         2018,
         'Viking platformer.',
         8,
-        18
+        18,
+        2.11
     ),
     (
         'Leo\'s Fortune',
@@ -3052,7 +3348,8 @@ VALUES (
         2014,
         'Fluff ball adventure.',
         6,
-        25
+        25,
+        1.96
     ),
     (
         'Badland',
@@ -3062,7 +3359,8 @@ VALUES (
         2013,
         'Atmospheric side-scroller.',
         10,
-        19
+        19,
+        1.81
     ),
     (
         'Badland 2',
@@ -3072,7 +3370,8 @@ VALUES (
         2015,
         'More clones.',
         12,
-        14
+        14,
+        2.20
     ),
     (
         'Vector',
@@ -3082,7 +3381,8 @@ VALUES (
         2012,
         'Parkour runner.',
         8,
-        16
+        16,
+        1.30
     ),
     (
         'Shadow Blade',
@@ -3092,7 +3392,8 @@ VALUES (
         2014,
         'Ninja action.',
         6,
-        27
+        27,
+        2.00
     ),
     (
         'Swordigo',
@@ -3102,7 +3403,8 @@ VALUES (
         2012,
         'Classic adventure platformer.',
         15,
-        28
+        28,
+        2.41
     ),
     (
         'Oceanhorn',
@@ -3112,7 +3414,8 @@ VALUES (
         2013,
         'Zelda-like adventure.',
         15,
-        26
+        26,
+        2.21
     );
 
 -- NEW GAMES BATCH 2 --
@@ -3124,7 +3427,8 @@ INSERT INTO videoGames (
         release_year,
         more_data,
         average_playgame_duration,
-        average_player_age
+        average_player_age,
+        male_female_ratio
     )
 VALUES (
         'Half-Life 2',
@@ -3134,7 +3438,8 @@ VALUES (
         2004,
         'Rise and shine, Mr. Freeman.',
         15,
-        31
+        31,
+        7.56
     ),
     (
         'Deus Ex',
@@ -3144,7 +3449,8 @@ VALUES (
         2000,
         'Original immersive sim masterpiece.',
         25,
-        26
+        26,
+        2.47
     ),
     (
         'System Shock 2',
@@ -3154,7 +3460,8 @@ VALUES (
         1999,
         'Look at you, hacker.',
         20,
-        27
+        27,
+        1.98
     ),
     (
         'Thief II: The Metal Age',
@@ -3164,7 +3471,8 @@ VALUES (
         2000,
         'Stealth classic.',
         25,
-        22
+        22,
+        1.29
     ),
     (
         'Baldur\'s Gate II: Shadows of Amn',
@@ -3174,7 +3482,8 @@ VALUES (
         2000,
         'Quintessential CRPG.',
         80,
-        28
+        28,
+        1.83
     ),
     (
         'Planescape: Torment',
@@ -3184,7 +3493,8 @@ VALUES (
         1999,
         'What can change the nature of a man?',
         40,
-        29
+        29,
+        1.80
     ),
     (
         'Fallout 2',
@@ -3194,7 +3504,8 @@ VALUES (
         1998,
         'Post-nuclear RPG.',
         50,
-        24
+        24,
+        1.84
     ),
     (
         'Fallout: New Vegas',
@@ -3204,7 +3515,8 @@ VALUES (
         2010,
         'The game was rigged from the start.',
         60,
-        30
+        30,
+        1.96
     ),
     (
         'Dragon Age: Origins',
@@ -3214,7 +3526,8 @@ VALUES (
         2009,
         'Dark fantasy RPG.',
         50,
-        29
+        29,
+        1.21
     ),
     (
         'Mass Effect 2',
@@ -3224,7 +3537,8 @@ VALUES (
         2010,
         'Suicide mission.',
         30,
-        24
+        24,
+        2.42
     ),
     (
         'BioShock',
@@ -3234,7 +3548,8 @@ VALUES (
         2007,
         'No Gods or Kings. Only Man.',
         12,
-        20
+        20,
+        7.65
     ),
     (
         'Dead Space',
@@ -3244,7 +3559,8 @@ VALUES (
         2008,
         'Cut off their limbs.',
         12,
-        24
+        24,
+        1.27
     ),
     (
         'XCOM: Enemy Unknown',
@@ -3254,7 +3570,8 @@ VALUES (
         2012,
         'Defend Earth.',
         30,
-        35
+        35,
+        5.34
     ),
     (
         'Darkest Dungeon',
@@ -3264,7 +3581,8 @@ VALUES (
         2016,
         'Remind yourself that overconfidence is a slow and insidious killer.',
         60,
-        21
+        21,
+        2.19
     ),
     (
         'Divinity: Original Sin 2',
@@ -3274,7 +3592,8 @@ VALUES (
         2017,
         'Godwoken rising.',
         100,
-        31
+        31,
+        1.49
     ),
     (
         'Disco Elysium',
@@ -3284,7 +3603,8 @@ VALUES (
         2019,
         'Detective role-playing game.',
         30,
-        23
+        23,
+        1.49
     ),
     (
         'Outer Wilds',
@@ -3294,7 +3614,8 @@ VALUES (
         2019,
         'Space exploration time loop.',
         20,
-        30
+        30,
+        1.30
     ),
     (
         'Subnautica',
@@ -3304,7 +3625,8 @@ VALUES (
         2018,
         'Underwater survival.',
         40,
-        30
+        30,
+        1.46
     ),
     (
         'Kerbal Space Program',
@@ -3314,7 +3636,8 @@ VALUES (
         2011,
         'Conquer space physics.',
         100,
-        24
+        24,
+        2.12
     ),
     (
         'FTL: Faster Than Light',
@@ -3324,7 +3647,8 @@ VALUES (
         2012,
         'Space ship simulation roguelike.',
         20,
-        31
+        31,
+        1.28
     ),
     (
         'Into the Breach',
@@ -3334,7 +3658,8 @@ VALUES (
         2018,
         'Tactical mech combat.',
         15,
-        26
+        26,
+        4.69
     ),
     (
         'Baba Is You',
@@ -3344,7 +3669,8 @@ VALUES (
         2019,
         'Rule-changing puzzler.',
         10,
-        19
+        19,
+        0.61
     ),
     (
         'The Witness',
@@ -3354,7 +3680,8 @@ VALUES (
         2016,
         'Island full of puzzles.',
         25,
-        16
+        16,
+        0.47
     ),
     (
         'Braid',
@@ -3364,7 +3691,8 @@ VALUES (
         2008,
         'Time manipulation platformer.',
         6,
-        30
+        30,
+        1.65
     ),
     (
         'Fez',
@@ -3374,7 +3702,8 @@ VALUES (
         2012,
         '2D world in 3D perspective.',
         8,
-        21
+        21,
+        1.57
     ),
     (
         'Spelunky',
@@ -3384,7 +3713,8 @@ VALUES (
         2008,
         'Roguelike platforming origin.',
         50,
-        19
+        19,
+        1.54
     ),
     (
         'Super Meat Boy',
@@ -3394,7 +3724,8 @@ VALUES (
         2010,
         'Hardcore platformer.',
         10,
-        15
+        15,
+        1.61
     ),
     (
         'Vannilla WoW',
@@ -3404,7 +3735,8 @@ VALUES (
         2004,
         'The beginning of an era.',
         300,
-        20
+        20,
+        2.06
     ),
     (
         'EverQuest',
@@ -3414,7 +3746,8 @@ VALUES (
         1999,
         'The grandfather of MMOs.',
         500,
-        28
+        28,
+        2.32
     ),
     (
         'EVE Online',
@@ -3424,7 +3757,8 @@ VALUES (
         2003,
         'Spreadsheets in space.',
         999,
-        30
+        30,
+        1.23
     ),
     (
         'StarCraft II',
@@ -3434,7 +3768,8 @@ VALUES (
         2010,
         'The RTS king.',
         50,
-        24
+        24,
+        7.55
     ),
     (
         'Warcraft III: Reign of Chaos',
@@ -3444,7 +3779,8 @@ VALUES (
         2002,
         'Hero RTS classic.',
         30,
-        21
+        21,
+        7.66
     ),
     (
         'Age of Empires II',
@@ -3454,7 +3790,8 @@ VALUES (
         1999,
         'Wololo.',
         40,
-        28
+        28,
+        6.45
     ),
     (
         'Total War: Shogun 2',
@@ -3464,7 +3801,8 @@ VALUES (
         2011,
         'Samurai warfare.',
         60,
-        36
+        36,
+        5.06
     ),
     (
         'Command & Conquer: Red Alert 2',
@@ -3474,7 +3812,8 @@ VALUES (
         2000,
         'Kirov reporting.',
         20,
-        21
+        21,
+        5.40
     ),
     (
         'Homeworld',
@@ -3484,7 +3823,8 @@ VALUES (
         1999,
         'Space RTS opera.',
         15,
-        29
+        29,
+        6.10
     ),
     (
         'Supreme Commander',
@@ -3494,7 +3834,8 @@ VALUES (
         2007,
         'Massive scale RTS.',
         25,
-        28
+        28,
+        5.77
     ),
     (
         'Counter-Strike 1.6',
@@ -3504,7 +3845,8 @@ VALUES (
         2000,
         'Tactical shooter roots.',
         100,
-        23
+        23,
+        4.35
     ),
     (
         'Quake III Arena',
@@ -3514,7 +3856,8 @@ VALUES (
         1999,
         'Arena shooter perfection.',
         50,
-        25
+        25,
+        7.18
     ),
     (
         'Unreal Tournament 2004',
@@ -3524,7 +3867,8 @@ VALUES (
         2004,
         'Vehicle capture the flag.',
         60,
-        23
+        23,
+        4.48
     ),
     (
         'Tribes: Ascend',
@@ -3534,7 +3878,8 @@ VALUES (
         2012,
         'Gotta go fast.',
         30,
-        22
+        22,
+        5.33
     ),
     (
         'Halo: Combat Evolved',
@@ -3544,7 +3889,8 @@ VALUES (
         2001,
         'Combat Evolved.',
         10,
-        31
+        31,
+        5.35
     ),
     (
         'GoldenEye 007',
@@ -3554,7 +3900,8 @@ VALUES (
         1997,
         'N64 classic.',
         20,
-        22
+        22,
+        6.70
     ),
     (
         'Perfect Dark',
@@ -3564,7 +3911,8 @@ VALUES (
         2000,
         'Rare shooter gem.',
         25,
-        20
+        20,
+        5.14
     ),
     (
         'Metroid Prime',
@@ -3574,7 +3922,8 @@ VALUES (
         2002,
         'First-person adventure.',
         15,
-        33
+        33,
+        1.37
     ),
     (
         'Resident Evil',
@@ -3584,7 +3933,8 @@ VALUES (
         1996,
         'Enter the survival horror.',
         10,
-        28
+        28,
+        1.70
     ),
     (
         'Resident Evil 2',
@@ -3594,7 +3944,8 @@ VALUES (
         1998,
         'Raccoon City outbreak.',
         8,
-        27
+        27,
+        2.12
     ),
     (
         'Silent Hill 2',
@@ -3604,7 +3955,8 @@ VALUES (
         2001,
         'In my restless dreams, I see that town.',
         10,
-        24
+        24,
+        1.33
     ),
     (
         'Metal Gear Solid',
@@ -3614,7 +3966,8 @@ VALUES (
         1998,
         'Tactical Espionage Action.',
         12,
-        33
+        33,
+        2.04
     ),
     (
         'Metal Gear Solid 2: Sons of Liberty',
@@ -3624,7 +3977,8 @@ VALUES (
         2001,
         'La-li-lu-le-lo.',
         15,
-        26
+        26,
+        1.82
     ),
     (
         'Metal Gear Solid 3: Snake Eater',
@@ -3634,7 +3988,8 @@ VALUES (
         2004,
         'Survival stealth in the jungle.',
         20,
-        34
+        34,
+        1.34
     ),
     (
         'Tom Clancy\'s Splinter Cell',
@@ -3644,7 +3999,8 @@ VALUES (
         2002,
         'Stealth redefined.',
         12,
-        25
+        25,
+        1.36
     ),
     (
         'Hitman: Blood Money',
@@ -3654,7 +4010,8 @@ VALUES (
         2006,
         'Creative assassination.',
         15,
-        21
+        21,
+        2.33
     ),
     (
         'Guitar Hero II',
@@ -3664,7 +4021,8 @@ VALUES (
         2006,
         'Rhythm game craze.',
         20,
-        21
+        21,
+        2.30
     ),
     (
         'Rock Band',
@@ -3674,7 +4032,8 @@ VALUES (
         2007,
         'Full band experience.',
         30,
-        23
+        23,
+        1.66
     ),
     (
         'Tony Hawk\'s Pro Skater 2',
@@ -3684,7 +4043,8 @@ VALUES (
         2000,
         'Skateboarding perfection.',
         40,
-        25
+        25,
+        1.27
     ),
     (
         'Burnout 3: Takedown',
@@ -3694,7 +4054,8 @@ VALUES (
         2004,
         'Arcade racing destruction.',
         15,
-        27
+        27,
+        5.79
     ),
     (
         'Need for Speed: Most Wanted',
@@ -3704,7 +4065,8 @@ VALUES (
         2005,
         'Open world police chases.',
         20,
-        23
+        23,
+        5.35
     ),
     (
         'Midnight Club 3: DUB Edition',
@@ -3714,7 +4076,8 @@ VALUES (
         2005,
         'Street racing culture.',
         25,
-        26
+        26,
+        6.07
     ),
     (
         'SSX Tricky',
@@ -3724,7 +4087,8 @@ VALUES (
         2001,
         'Snowboarding madness.',
         15,
-        25
+        25,
+        2.33
     ),
     (
         'Devil May Cry',
@@ -3734,7 +4098,8 @@ VALUES (
         2001,
         'Stylish action.',
         10,
-        22
+        22,
+        1.62
     ),
     (
         'Ninja Gaiden Black',
@@ -3744,7 +4109,8 @@ VALUES (
         2005,
         'Hardcore ninja action.',
         15,
-        26
+        26,
+        1.63
     ),
     (
         'God of War II',
@@ -3754,7 +4120,8 @@ VALUES (
         2007,
         'End of Olympus.',
         12,
-        27
+        27,
+        3.50
     ),
     (
         'Okami',
@@ -3764,7 +4131,8 @@ VALUES (
         2006,
         'Painting wolf adventure.',
         35,
-        28
+        28,
+        1.90
     ),
     (
         'Shadow of the Colossus',
@@ -3774,7 +4142,8 @@ VALUES (
         2005,
         'Giant slaying tragedy.',
         8,
-        20
+        20,
+        1.84
     ),
     (
         'Ico',
@@ -3784,7 +4153,8 @@ VALUES (
         2001,
         'Boy meets girl.',
         6,
-        25
+        25,
+        1.24
     ),
     (
         'Katamari Damacy',
@@ -3794,7 +4164,8 @@ VALUES (
         2004,
         'Roll everything up.',
         5,
-        18
+        18,
+        0.56
     ),
     (
         'Psychonauts',
@@ -3804,7 +4175,8 @@ VALUES (
         2005,
         'Mental platforming.',
         12,
-        18
+        18,
+        2.30
     ),
     (
         'Beyond Good & Evil',
@@ -3814,7 +4186,8 @@ VALUES (
         2003,
         'Journalist saves planet.',
         12,
-        21
+        21,
+        1.91
     ),
     (
         'Prince of Persia: The Sands of Time',
@@ -3824,7 +4197,8 @@ VALUES (
         2003,
         'Time rewinding acrobatics.',
         10,
-        23
+        23,
+        2.39
     ),
     (
         'Star Wars: Knights of the Old Republic',
@@ -3834,7 +4208,8 @@ VALUES (
         2003,
         'Star Wars RPG.',
         30,
-        26
+        26,
+        2.42
     ),
     (
         'Star Wars: Battlefront II (Original)',
@@ -3844,7 +4219,8 @@ VALUES (
         2005,
         'Classic battles.',
         50,
-        26
+        26,
+        1.42
     ),
     (
         'Jedi Knight II: Jedi Outcast',
@@ -3854,7 +4230,8 @@ VALUES (
         2002,
         'Best lightsaber combat.',
         15,
-        27
+        27,
+        2.35
     ),
     (
         'Republic Commando',
@@ -3864,7 +4241,8 @@ VALUES (
         2005,
         'Squad tactics.',
         8,
-        21
+        21,
+        6.44
     ),
     (
         'The Simpsons Hit & Run',
@@ -3874,7 +4252,8 @@ VALUES (
         2003,
         'GTA Springfield.',
         15,
-        29
+        29,
+        1.28
     ),
     (
         'SpongeBob SquarePants: Battle for Bikini Bottom',
@@ -3884,7 +4263,8 @@ VALUES (
         2003,
         'Licensed game done right.',
         12,
-        14
+        14,
+        2.19
     ),
     (
         'Bully',
@@ -3894,7 +4274,8 @@ VALUES (
         2006,
         'School simulator.',
         20,
-        27
+        27,
+        2.17
     ),
     (
         'Manhunt',
@@ -3904,7 +4285,8 @@ VALUES (
         2003,
         'Controversial stealth.',
         10,
-        26
+        26,
+        2.49
     ),
     (
         'The Warriors',
@@ -3914,7 +4296,8 @@ VALUES (
         2005,
         'Gang warfare.',
         12,
-        21
+        21,
+        6.33
     ),
     (
         'Max Payne 2: The Fall of Max Payne',
@@ -3924,7 +4307,8 @@ VALUES (
         2003,
         'Film noir shooter.',
         8,
-        25
+        25,
+        1.75
     ),
     (
         'F.E.A.R.',
@@ -3934,7 +4318,8 @@ VALUES (
         2005,
         'Slow-mo horror.',
         10,
-        26
+        26,
+        4.03
     ),
     (
         'Crysis',
@@ -3944,7 +4329,8 @@ VALUES (
         2007,
         'Can it run Crysis?',
         10,
-        21
+        21,
+        7.52
     ),
     (
         'Far Cry 2',
@@ -3954,7 +4340,8 @@ VALUES (
         2008,
         'Fire physics.',
         20,
-        24
+        24,
+        5.88
     ),
     (
         'S.T.A.L.K.E.R.: Shadow of Chernobyl',
@@ -3964,7 +4351,8 @@ VALUES (
         2007,
         'Cheeki Breeki.',
         30,
-        37
+        37,
+        1.86
     ),
     (
         'Metro 2033',
@@ -3974,7 +4362,8 @@ VALUES (
         2010,
         'Moscow underground.',
         10,
-        23
+        23,
+        7.72
     ),
     (
         'Spec Ops: The Line',
@@ -3984,7 +4373,8 @@ VALUES (
         2012,
         'Conrad is waiting.',
         6,
-        26
+        26,
+        2.40
     ),
     (
         'Bastion',
@@ -3994,7 +4384,8 @@ VALUES (
         2011,
         'Narrator voice.',
         8,
-        20
+        20,
+        1.29
     ),
     (
         'Transistor',
@@ -4004,7 +4395,8 @@ VALUES (
         2014,
         'Sci-fi strategic action.',
         6,
-        26
+        26,
+        2.04
     ),
     (
         'Pyre',
@@ -4014,7 +4406,8 @@ VALUES (
         2017,
         'Fantasy basketball.',
         10,
-        23
+        23,
+        2.02
     ),
     (
         'Papers, Please',
@@ -4024,7 +4417,8 @@ VALUES (
         2013,
         'Glory to Arstotzka.',
         5,
-        23
+        23,
+        2.14
     ),
     (
         'Return of the Obra Dinn',
@@ -4034,7 +4428,8 @@ VALUES (
         2018,
         'Insurance investigation.',
         8,
-        14
+        14,
+        0.64
     ),
     (
         'Her Story',
@@ -4044,7 +4439,8 @@ VALUES (
         2015,
         'FMV mystery.',
         4,
-        20
+        20,
+        2.00
     ),
     (
         'Gone Home',
@@ -4054,7 +4450,8 @@ VALUES (
         2013,
         'Walking simulator.',
         2,
-        24
+        24,
+        0.70
     ),
     (
         'Dear Esther',
@@ -4064,7 +4461,8 @@ VALUES (
         2012,
         'Poetic exploration.',
         1,
-        30
+        30,
+        0.65
     ),
     (
         'Stanley Parable',
@@ -4074,7 +4472,8 @@ VALUES (
         2013,
         'Choice illusion.',
         3,
-        26
+        26,
+        0.85
     ),
     (
         'The Talos Principle',
@@ -4084,7 +4483,8 @@ VALUES (
         2014,
         'Philosophical puzzles.',
         20,
-        19
+        19,
+        0.81
     ),
     (
         'Antichamber',
@@ -4094,7 +4494,8 @@ VALUES (
         2013,
         'Mind-bending geometry.',
         6,
-        17
+        17,
+        0.44
     ),
     (
         'Portal',
@@ -4104,7 +4505,8 @@ VALUES (
         2007,
         'The cake is a lie.',
         3,
-        24
+        24,
+        1.29
     ),
     (
         'Superhot',
@@ -4114,7 +4516,8 @@ VALUES (
         2016,
         'Time moves when you move.',
         4,
-        28
+        28,
+        6.56
     );
 
 -- NEW GAMES BATCH 3 --
@@ -4126,7 +4529,8 @@ INSERT INTO videoGames (
         release_year,
         more_data,
         average_playgame_duration,
-        average_player_age
+        average_player_age,
+        male_female_ratio
     )
 VALUES (
         'Factorio',
@@ -4136,7 +4540,8 @@ VALUES (
         2020,
         'The factory must grow.',
         500,
-        29
+        29,
+        2.15
     ),
     (
         'RimWorld',
@@ -4146,7 +4551,8 @@ VALUES (
         2018,
         'Story generator.',
         200,
-        21
+        21,
+        1.60
     ),
     (
         'Dwarf Fortress',
@@ -4156,7 +4562,8 @@ VALUES (
         2006,
         'Losing is fun.',
         1000,
-        25
+        25,
+        1.50
     ),
     (
         'Prison Architect',
@@ -4166,7 +4573,8 @@ VALUES (
         2015,
         'Build and manage a maximum security prison.',
         40,
-        28
+        28,
+        1.75
     ),
     (
         'Cities: Skylines',
@@ -4176,7 +4584,8 @@ VALUES (
         2015,
         'Modern city builder.',
         60,
-        36
+        36,
+        1.81
     ),
     (
         'Frostpunk',
@@ -4186,7 +4595,8 @@ VALUES (
         2018,
         'The city must survive.',
         20,
-        34
+        34,
+        2.44
     ),
     (
         'Banished',
@@ -4196,7 +4606,8 @@ VALUES (
         2014,
         'Medieval survival builder.',
         30,
-        31
+        31,
+        1.47
     ),
     (
         'Oxygen Not Included',
@@ -4206,7 +4617,8 @@ VALUES (
         2019,
         'Space colony simulation.',
         80,
-        27
+        27,
+        2.14
     ),
     (
         'Don\'t Starve',
@@ -4216,7 +4628,8 @@ VALUES (
         2013,
         'Tim Burton style survival.',
         40,
-        25
+        25,
+        1.53
     ),
     (
         'This War of Mine',
@@ -4226,7 +4639,8 @@ VALUES (
         2014,
         'In war, not everyone is a soldier.',
         15,
-        30
+        30,
+        2.05
     ),
     (
         'Project Zomboid',
@@ -4236,7 +4650,8 @@ VALUES (
         2013,
         'This is how you died.',
         100,
-        31
+        31,
+        2.46
     ),
     (
         'The Long Dark',
@@ -4246,7 +4661,8 @@ VALUES (
         2014,
         'Quiet apocalypse.',
         50,
-        27
+        27,
+        1.57
     ),
     (
         'Firewatch',
@@ -4256,7 +4672,8 @@ VALUES (
         2016,
         'Wyoming wilderness mystery.',
         5,
-        21
+        21,
+        0.82
     ),
     (
         'What Remains of Edith Finch',
@@ -4266,7 +4683,8 @@ VALUES (
         2017,
         'Collection of short stories.',
         3,
-        29
+        29,
+        0.65
     ),
     (
         'Oxenfree',
@@ -4276,7 +4694,8 @@ VALUES (
         2016,
         'Supernatural teen thriller.',
         5,
-        26
+        26,
+        0.50
     ),
     (
         'Night in the Woods',
@@ -4286,7 +4705,8 @@ VALUES (
         2017,
         'College dropout cat.',
         8,
-        23
+        23,
+        0.59
     ),
     (
         'Undertale',
@@ -4296,7 +4716,8 @@ VALUES (
         2015,
         'RPG where you don\'t have to kill.',
         6,
-        25
+        25,
+        1.49
     ),
     (
         'Deltarune',
@@ -4306,7 +4727,8 @@ VALUES (
         2018,
         'Don\'t forget.',
         4,
-        25
+        25,
+        2.31
     ),
     (
         'Celeste',
@@ -4316,7 +4738,8 @@ VALUES (
         2018,
         'Climb the mountain.',
         10,
-        17
+        17,
+        1.94
     ),
     (
         'Hollow Knight',
@@ -4326,7 +4749,8 @@ VALUES (
         2017,
         'Bug metroidvania.',
         40,
-        24
+        24,
+        1.39
     ),
     (
         'Ori and the Blind Forest',
@@ -4336,7 +4760,8 @@ VALUES (
         2015,
         'Beautiful platformer.',
         10,
-        28
+        28,
+        1.84
     ),
     (
         'Ori and the Will of the Wisps',
@@ -4346,7 +4771,8 @@ VALUES (
         2020,
         'Even more beautiful.',
         15,
-        24
+        24,
+        1.46
     ),
     (
         'Cuphead',
@@ -4356,7 +4782,8 @@ VALUES (
         2017,
         '1930s cartoon difficulty.',
         12,
-        22
+        22,
+        2.20
     ),
     (
         'Shovel Knight',
@@ -4366,7 +4793,8 @@ VALUES (
         2014,
         '8-bit love letter.',
         8,
-        19
+        19,
+        2.28
     ),
     (
         'The Messenger',
@@ -4376,7 +4804,8 @@ VALUES (
         2018,
         'Ninja gaiden tribute.',
         12,
-        20
+        20,
+        1.80
     ),
     (
         'Katana ZERO',
@@ -4386,7 +4815,8 @@ VALUES (
         2019,
         'Neo-noir samurai.',
         5,
-        30
+        30,
+        1.45
     ),
     (
         'Hotline Miami',
@@ -4396,7 +4826,8 @@ VALUES (
         2012,
         'Do you like hurting other people?',
         5,
-        28
+        28,
+        2.16
     ),
     (
         'Hotline Miami 2: Wrong Number',
@@ -4406,7 +4837,8 @@ VALUES (
         2015,
         'More violence.',
         8,
-        27
+        27,
+        1.30
     ),
     (
         'Enter the Gungeon',
@@ -4416,7 +4848,8 @@ VALUES (
         2016,
         'Gunfight dungeon crawler.',
         50,
-        31
+        31,
+        2.28
     ),
     (
         'The Binding of Isaac: Rebirth',
@@ -4426,7 +4859,8 @@ VALUES (
         2014,
         'Crying baby roguelike.',
         100,
-        28
+        28,
+        1.23
     ),
     (
         'Risk of Rain 2',
@@ -4436,7 +4870,8 @@ VALUES (
         2019,
         '3D roguelike chaos.',
         60,
-        22
+        22,
+        2.28
     ),
     (
         'Gunfire Reborn',
@@ -4446,7 +4881,8 @@ VALUES (
         2020,
         'FPS roguelite with cats.',
         40,
-        26
+        26,
+        1.77
     ),
     (
         'Deep Rock Galactic',
@@ -4456,7 +4892,8 @@ VALUES (
         2020,
         'Rock and Stone!',
         100,
-        25
+        25,
+        7.96
     ),
     (
         'Valheim',
@@ -4466,7 +4903,8 @@ VALUES (
         2021,
         'Viking purgatory.',
         80,
-        32
+        32,
+        1.93
     ),
     (
         'Satisfactory',
@@ -4476,7 +4914,8 @@ VALUES (
         2019,
         '3D Factorio.',
         150,
-        27
+        27,
+        1.68
     ),
     (
         'Dyson Sphere Program',
@@ -4486,7 +4925,8 @@ VALUES (
         2021,
         'Build a Dyson sphere.',
         100,
-        25
+        25,
+        2.25
     ),
     (
         'No Man\'s Sky',
@@ -4496,7 +4936,8 @@ VALUES (
         2016,
         'Infinite universe.',
         60,
-        25
+        25,
+        1.78
     ),
     (
         'Elite Dangerous',
@@ -4506,7 +4947,8 @@ VALUES (
         2014,
         '1:1 Milky Way galaxy.',
         100,
-        24
+        24,
+        1.31
     ),
     (
         'Star Citizen',
@@ -4516,7 +4958,8 @@ VALUES (
         2013,
         'The forever alpha.',
         200,
-        20
+        20,
+        2.25
     ),
     (
         'Mount & Blade II: Bannerlord',
@@ -4526,7 +4969,8 @@ VALUES (
         2020,
         'Medieval warfare sim.',
         80,
-        28
+        28,
+        1.27
     ),
     (
         'Chivalry 2',
@@ -4536,7 +4980,8 @@ VALUES (
         2021,
         'Medieval slasher.',
         40,
-        30
+        30,
+        2.31
     ),
     (
         'Mordhau',
@@ -4546,7 +4991,8 @@ VALUES (
         2019,
         'Complex melee combat.',
         50,
-        21
+        21,
+        1.51
     ),
     (
         'For Honor',
@@ -4556,7 +5002,8 @@ VALUES (
         2017,
         'Knights vs Vikings vs Samurai.',
         60,
-        25
+        25,
+        4.94
     ),
     (
         'Kingdom Come: Deliverance',
@@ -4566,7 +5013,8 @@ VALUES (
         2018,
         'Realistic medieval RPG.',
         70,
-        28
+        28,
+        2.12
     ),
     (
         'The Witcher 2: Assassins of Kings',
@@ -4576,7 +5024,8 @@ VALUES (
         2011,
         'Geralt\'s memory returns.',
         30,
-        30
+        30,
+        1.22
     ),
     (
         'The Witcher',
@@ -4586,7 +5035,8 @@ VALUES (
         2007,
         'Where it all began.',
         40,
-        25
+        25,
+        2.16
     ),
     (
         'Cyberpunk 2077: Phantom Liberty',
@@ -4596,7 +5046,8 @@ VALUES (
         2023,
         'Spy thriller expansion.',
         20,
-        24
+        24,
+        5.42
     ),
     (
         'Baldur\'s Gate 3',
@@ -4606,7 +5057,8 @@ VALUES (
         2023,
         'D&D 5e perfection.',
         100,
-        28
+        28,
+        1.80
     ),
     (
         'Divinity: Original Sin',
@@ -4616,7 +5068,8 @@ VALUES (
         2014,
         'Elemental combat.',
         60,
-        24
+        24,
+        1.71
     ),
     (
         'Pillars of Eternity',
@@ -4626,7 +5079,8 @@ VALUES (
         2015,
         'Obsidian\'s classic RPG.',
         50,
-        25
+        25,
+        1.38
     ),
     (
         'Pillars of Eternity II: Deadfire',
@@ -4636,7 +5090,8 @@ VALUES (
         2018,
         'Pirate RPG.',
         60,
-        24
+        24,
+        2.40
     ),
     (
         'Tyranny',
@@ -4646,7 +5101,8 @@ VALUES (
         2016,
         'Evil wins.',
         25,
-        30
+        30,
+        1.84
     ),
     (
         'Pathfinder: Kingmaker',
@@ -4656,7 +5112,8 @@ VALUES (
         2018,
         'Complex pathfinder rules.',
         80,
-        20
+        20,
+        1.92
     ),
     (
         'Pathfinder: Wrath of the Righteous',
@@ -4666,7 +5123,8 @@ VALUES (
         2021,
         'Crusade against demons.',
         100,
-        24
+        24,
+        1.56
     ),
     (
         'Wasteland 3',
@@ -4676,7 +5134,8 @@ VALUES (
         2020,
         'Post-apocalyptic squad RPG.',
         50,
-        24
+        24,
+        1.40
     ),
     (
         'Shadowrun Returns',
@@ -4686,7 +5145,8 @@ VALUES (
         2013,
         'Cyberpunk fantasy.',
         15,
-        22
+        22,
+        1.23
     ),
     (
         'Shadowrun: Dragonfall',
@@ -4696,7 +5156,8 @@ VALUES (
         2014,
         'Best Shadowrun story.',
         20,
-        20
+        20,
+        2.36
     ),
     (
         'Shadowrun: Hong Kong',
@@ -4706,7 +5167,8 @@ VALUES (
         2015,
         'Cyberpunk in Asia.',
         20,
-        21
+        21,
+        2.21
     ),
     (
         'XCOM 2',
@@ -4716,7 +5178,8 @@ VALUES (
         2016,
         'Resistance is futile.',
         40,
-        44
+        44,
+        6.44
     ),
     (
         'Phoenix Point',
@@ -4726,7 +5189,8 @@ VALUES (
         2019,
         'Spiritual successor to XCOM.',
         30,
-        21
+        21,
+        5.98
     ),
     (
         'Gears Tactics',
@@ -4736,7 +5200,8 @@ VALUES (
         2020,
         'Gears of War RTS.',
         25,
-        28
+        28,
+        8.24
     ),
     (
         'Desperados III',
@@ -4746,7 +5211,8 @@ VALUES (
         2020,
         'Wild West tactics.',
         30,
-        20
+        20,
+        6.10
     ),
     (
         'Shadow Tactics: Blades of the Shogun',
@@ -4756,7 +5222,8 @@ VALUES (
         2016,
         'Ninja tactics.',
         25,
-        30
+        30,
+        6.09
     ),
     (
         'Invisible, Inc.',
@@ -4766,7 +5233,8 @@ VALUES (
         2015,
         'Spy tactics.',
         15,
-        20
+        20,
+        4.32
     ),
     (
         'Mark of the Ninja',
@@ -4776,7 +5244,8 @@ VALUES (
         2012,
         '2D stealth perfection.',
         10,
-        22
+        22,
+        1.78
     ),
     (
         'Shank',
@@ -4786,7 +5255,8 @@ VALUES (
         2010,
         'Action brawler.',
         5,
-        22
+        22,
+        5.43
     ),
     (
         'Broforce',
@@ -4796,7 +5266,8 @@ VALUES (
         2015,
         'Action movie parody.',
         8,
-        27
+        27,
+        1.40
     ),
     (
         'Genital Jousting',
@@ -4806,7 +5277,8 @@ VALUES (
         2018,
         'Don\'t ask.',
         2,
-        25
+        25,
+        1.47
     ),
     (
         'Mount Your Friends',
@@ -4816,7 +5288,8 @@ VALUES (
         2014,
         'Climbing simulator.',
         3,
-        22
+        22,
+        1.41
     ),
     (
         'Gang Beasts',
@@ -4826,7 +5299,8 @@ VALUES (
         2014,
         'Jelly physics fighting.',
         10,
-        21
+        21,
+        4.19
     ),
     (
         'Human: Fall Flat',
@@ -4836,7 +5310,8 @@ VALUES (
         2016,
         'Physics puzzler.',
         10,
-        20
+        20,
+        0.55
     ),
     (
         'Totally Accurate Battle Simulator',
@@ -4846,7 +5321,8 @@ VALUES (
         2019,
         'Wobbly warfare.',
         15,
-        28
+        28,
+        2.49
     ),
     (
         'Goat Simulator',
@@ -4856,7 +5332,8 @@ VALUES (
         2014,
         'Goat chaos.',
         5,
-        28
+        28,
+        1.61
     ),
     (
         'Surgeon Simulator',
@@ -4866,7 +5343,8 @@ VALUES (
         2013,
         'Malpractice simulator.',
         4,
-        25
+        25,
+        2.29
     ),
     (
         'I Am Bread',
@@ -4876,7 +5354,8 @@ VALUES (
         2015,
         'Bread simulator.',
         5,
-        31
+        31,
+        1.49
     ),
     (
         'Octodad: Dadliest Catch',
@@ -4886,7 +5365,8 @@ VALUES (
         2014,
         'Nobody suspects a thing.',
         4,
-        21
+        21,
+        0.49
     ),
     (
         'Viscera Cleanup Detail',
@@ -4896,7 +5376,8 @@ VALUES (
         2015,
         'Space janitor.',
         10,
-        21
+        21,
+        2.39
     ),
     (
         'House Flipper',
@@ -4906,7 +5387,8 @@ VALUES (
         2018,
         'Renovation simulator.',
         20,
-        22
+        22,
+        2.17
     ),
     (
         'PowerWash Simulator',
@@ -4916,7 +5398,8 @@ VALUES (
         2021,
         'Soothing cleaning.',
         30,
-        22
+        22,
+        2.34
     ),
     (
         'PC Building Simulator',
@@ -4926,7 +5409,8 @@ VALUES (
         2018,
         'Meta gaming.',
         20,
-        30
+        30,
+        1.35
     ),
     (
         'Farming Simulator 22',
@@ -4936,7 +5420,8 @@ VALUES (
         2021,
         'Farm life.',
         100,
-        32
+        32,
+        1.69
     ),
     (
         'Euro Truck Simulator 2',
@@ -4946,7 +5431,8 @@ VALUES (
         2012,
         'Trucking across Europe.',
         200,
-        29
+        29,
+        1.59
     ),
     (
         'American Truck Simulator',
@@ -4956,7 +5442,8 @@ VALUES (
         2016,
         'Trucking across USA.',
         150,
-        30
+        30,
+        1.63
     ),
     (
         'SnowRunner',
@@ -4966,7 +5453,8 @@ VALUES (
         2020,
         'Off-road physics.',
         80,
-        29
+        29,
+        1.88
     ),
     (
         'MudRunner',
@@ -4976,7 +5464,8 @@ VALUES (
         2017,
         'Physics engine demo.',
         40,
-        30
+        30,
+        1.25
     ),
     (
         'BeamNG.drive',
@@ -4986,7 +5475,8 @@ VALUES (
         2015,
         'Soft-body physics.',
         100,
-        24
+        24,
+        4.48
     ),
     (
         'Wreckfest',
@@ -4996,7 +5486,8 @@ VALUES (
         2018,
         'Demolition derby.',
         30,
-        28
+        28,
+        4.47
     ),
     (
         'FlatOut 2',
@@ -5006,7 +5497,8 @@ VALUES (
         2006,
         'Driver ejection.',
         15,
-        28
+        28,
+        6.62
     ),
     (
         'Burnout Paradise',
@@ -5016,7 +5508,8 @@ VALUES (
         2008,
         'Take me down to the paradise city.',
         20,
-        28
+        28,
+        4.07
     ),
     (
         'Split/Second',
@@ -5026,7 +5519,8 @@ VALUES (
         2010,
         'Explosive racing.',
         10,
-        23
+        23,
+        5.34
     ),
     (
         'Blur',
@@ -5036,7 +5530,8 @@ VALUES (
         2010,
         'Mario Kart with real cars.',
         12,
-        21
+        21,
+        7.78
     ),
     (
         'Driver: San Francisco',
@@ -5046,7 +5541,8 @@ VALUES (
         2011,
         'Shift cars instantly.',
         15,
-        27
+        27,
+        7.47
     ),
     (
         'L.A. Noire',
@@ -5056,7 +5552,8 @@ VALUES (
         2011,
         'Facial animation tech.',
         20,
-        30
+        30,
+        1.49
     ),
     (
         'Mafia II',
@@ -5066,7 +5563,8 @@ VALUES (
         2010,
         'Empire Bay gangster.',
         15,
-        20
+        20,
+        2.32
     ),
     (
         'Mafia III',
@@ -5076,7 +5574,8 @@ VALUES (
         2016,
         'New Bordeaux revenge.',
         25,
-        28
+        28,
+        2.37
     ),
     (
         'Sleeping Dogs',
@@ -5086,7 +5585,8 @@ VALUES (
         2012,
         'Undercover in Hong Kong.',
         20,
-        27
+        27,
+        2.45
     ),
     (
         'Watch Dogs 2',
@@ -5096,7 +5596,8 @@ VALUES (
         2016,
         'Hacking San Francisco.',
         30,
-        22
+        22,
+        1.37
     ),
     (
         'Saints Row: The Third',
@@ -5106,7 +5607,8 @@ VALUES (
         2011,
         'Purple chaos.',
         20,
-        28
+        28,
+        2.04
     ),
     (
         'Saints Row IV',
@@ -5116,7 +5618,8 @@ VALUES (
         2013,
         'President with superpowers.',
         25,
-        28
+        28,
+        1.81
     ),
     (
         'Agents of Mayhem',
@@ -5126,7 +5629,8 @@ VALUES (
         2017,
         'Saints Row spin-off.',
         15,
-        27
+        27,
+        1.52
     );
 
 -- NEW GAMES TOP 100 & 2025/2026 --
@@ -5138,7 +5642,8 @@ INSERT INTO videoGames (
         release_year,
         more_data,
         average_playgame_duration,
-        average_player_age
+        average_player_age,
+        male_female_ratio
     )
 VALUES (
         'Grand Theft Auto VI',
@@ -5148,7 +5653,8 @@ VALUES (
         2025,
         'The most anticipated game of the decade.',
         100,
-        24
+        24,
+        4.07
     ),
     (
         'Monster Hunter Wilds',
@@ -5158,7 +5664,8 @@ VALUES (
         2025,
         'Next generation hunting experience.',
         200,
-        28
+        28,
+        2.08
     ),
     (
         'Borderlands 4',
@@ -5168,7 +5675,8 @@ VALUES (
         2025,
         'Looter shooter returns.',
         50,
-        25
+        25,
+        6.22
     ),
     (
         'DOOM: The Dark Ages',
@@ -5178,7 +5686,8 @@ VALUES (
         2025,
         'Medieval rip and tear.',
         15,
-        31
+        31,
+        4.77
     ),
     (
         'Fable',
@@ -5188,7 +5697,8 @@ VALUES (
         2025,
         'New beginning for Albion.',
         40,
-        31
+        31,
+        2.00
     ),
     (
         'Metroid Prime 4: Beyond',
@@ -5198,7 +5708,8 @@ VALUES (
         2025,
         'Samus Aran returns.',
         20,
-        28
+        28,
+        2.36
     ),
     (
         'Death Stranding 2: On The Beach',
@@ -5208,7 +5719,8 @@ VALUES (
         2025,
         'Should we have connected?',
         50,
-        25
+        25,
+        2.21
     ),
     (
         'Civilization VII',
@@ -5218,7 +5730,8 @@ VALUES (
         2025,
         'One more turn forever.',
         200,
-        38
+        38,
+        4.91
     ),
     (
         'Mafia: The Old Country',
@@ -5228,7 +5741,8 @@ VALUES (
         2025,
         'Origins of the mob.',
         20,
-        26
+        26,
+        1.40
     ),
     (
         'Hades II',
@@ -5238,7 +5752,8 @@ VALUES (
         2025,
         'Kill time.',
         60,
-        24
+        24,
+        2.31
     ),
     (
         'Judas',
@@ -5248,7 +5763,8 @@ VALUES (
         2025,
         'From the creator of BioShock.',
         20,
-        28
+        28,
+        6.25
     ),
     (
         'Marvel 1943: Rise of Hydra',
@@ -5258,7 +5774,8 @@ VALUES (
         2025,
         'Cap and Panther.',
         15,
-        20
+        20,
+        1.84
     ),
     (
         'South of Midnight',
@@ -5268,7 +5785,8 @@ VALUES (
         2025,
         'Southern gothic magic.',
         12,
-        31
+        31,
+        1.72
     ),
     (
         'Clair Obscur: Expedition 33',
@@ -5278,7 +5796,8 @@ VALUES (
         2025,
         'Turn-based RPG revolution.',
         40,
-        27
+        27,
+        1.73
     ),
     (
         'Atomfall',
@@ -5288,7 +5807,8 @@ VALUES (
         2025,
         'British fallout.',
         30,
-        29
+        29,
+        2.15
     ),
     (
         'Avowed',
@@ -5298,7 +5818,8 @@ VALUES (
         2025,
         'Skyrim competition from Obsidian.',
         60,
-        27
+        27,
+        1.69
     ),
     (
         'Kingdom Come: Deliverance II',
@@ -5308,7 +5829,8 @@ VALUES (
         2025,
         'Henry has come to see us.',
         80,
-        28
+        28,
+        1.83
     ),
     (
         'Little Nightmares III',
@@ -5318,7 +5840,8 @@ VALUES (
         2025,
         'Co-op nightmares.',
         8,
-        24
+        24,
+        2.47
     ),
     (
         'Professor Layton and the New World of Steam',
@@ -5328,7 +5851,8 @@ VALUES (
         2025,
         'Puzzle solving gentleman.',
         20,
-        19
+        19,
+        0.50
     ),
     (
         'Pokémon Legends: Z-A',
@@ -5338,7 +5862,8 @@ VALUES (
         2025,
         'Return to Kalos.',
         30,
-        23
+        23,
+        2.14
     ),
     (
         'Persona 6',
@@ -5348,7 +5873,8 @@ VALUES (
         2026,
         'The next high school journey.',
         100,
-        33
+        33,
+        2.37
     ),
     (
         'Mass Effect 5',
@@ -5358,7 +5884,8 @@ VALUES (
         2026,
         'N7 returns.',
         60,
-        25
+        25,
+        1.56
     ),
     (
         'The Witcher 4: Polaris',
@@ -5368,7 +5895,8 @@ VALUES (
         2026,
         'New saga begins.',
         100,
-        30
+        30,
+        2.39
     ),
     (
         'The Elder Scrolls VI',
@@ -5378,7 +5906,8 @@ VALUES (
         2026,
         'We have waited too long.',
         200,
-        23
+        23,
+        1.62
     ),
     (
         'Physint',
@@ -5388,7 +5917,8 @@ VALUES (
         2026,
         'Espionage action from Kojima.',
         20,
-        22
+        22,
+        1.81
     ),
     (
         'OD',
@@ -5398,7 +5928,8 @@ VALUES (
         2026,
         'Horror experiment.',
         10,
-        28
+        28,
+        2.46
     ),
     (
         'Star Wars: Eclipse',
@@ -5408,7 +5939,8 @@ VALUES (
         2026,
         'High Republic era.',
         40,
-        24
+        24,
+        2.46
     ),
     (
         'Marvel\'s Wolverine',
@@ -5418,7 +5950,8 @@ VALUES (
         2026,
         'Snikt.',
         25,
-        25
+        25,
+        1.38
     ),
     (
         'Wonder Woman',
@@ -5428,7 +5961,8 @@ VALUES (
         2026,
         'Nemesis system returns.',
         25,
-        24
+        24,
+        1.65
     ),
     (
         'Control 2',
@@ -5438,7 +5972,8 @@ VALUES (
         2026,
         'Remedy connective universe.',
         20,
-        26
+        26,
+        1.50
     ),
     (
         'Max Payne 1&2 Remake',
@@ -5448,7 +5983,8 @@ VALUES (
         2026,
         'Bullet time definition.',
         15,
-        26
+        26,
+        1.26
     ),
     (
         'Splinter Cell Remake',
@@ -5458,7 +5994,8 @@ VALUES (
         2026,
         'Sam Fisher is back.',
         15,
-        23
+        23,
+        1.61
     ),
     (
         'Silent Hill f',
@@ -5468,7 +6005,8 @@ VALUES (
         2026,
         'Floral horror.',
         12,
-        32
+        32,
+        1.51
     ),
     (
         'Pragmata',
@@ -5478,7 +6016,8 @@ VALUES (
         2026,
         'Capcom space mystery.',
         15,
-        31
+        31,
+        2.38
     ),
     (
         'Dune: Awakening',
@@ -5488,7 +6027,8 @@ VALUES (
         2025,
         'Survival on Arrakis.',
         100,
-        30
+        30,
+        1.44
     ),
     (
         'Light No Fire',
@@ -5498,7 +6038,8 @@ VALUES (
         2025,
         'Fantasy earth from Hello Games.',
         100,
-        33
+        33,
+        1.97
     ),
     (
         'Honor of Kings',
@@ -5508,7 +6049,8 @@ VALUES (
         2015,
         'Most played MOBA globally.',
         50,
-        25
+        25,
+        2.30
     ),
     (
         'Crossfire',
@@ -5518,7 +6060,8 @@ VALUES (
         2007,
         'Most played FPS globally.',
         60,
-        20
+        20,
+        7.58
     ),
     (
         'Dungeon Fighter Online',
@@ -5528,7 +6071,8 @@ VALUES (
         2005,
         'Massive beat em up revenue.',
         80,
-        29
+        29,
+        6.59
     ),
     (
         'QQ Speed',
@@ -5538,7 +6082,8 @@ VALUES (
         2017,
         'Huge racing game in Asia.',
         30,
-        30
+        30,
+        7.23
     ),
     (
         'Game for Peace',
@@ -5548,7 +6093,8 @@ VALUES (
         2019,
         'Chinese PUBG Mobile.',
         40,
-        24
+        24,
+        1.83
     ),
     (
         'Fantasy Westward Journey',
@@ -5558,7 +6104,8 @@ VALUES (
         2001,
         'Legendary Chinese MMORPG.',
         200,
-        30
+        30,
+        7.59
     ),
     (
         'Westward Journey Online II',
@@ -5568,7 +6115,8 @@ VALUES (
         2004,
         'Classic MMORPG.',
         150,
-        34
+        34,
+        5.88
     ),
     (
         'Free Fire',
@@ -5578,7 +6126,8 @@ VALUES (
         2017,
         'Massive in Latin America/SEA.',
         35,
-        24
+        24,
+        2.40
     ),
     (
         'Knives Out',
@@ -5588,7 +6137,8 @@ VALUES (
         2017,
         'Popular Battle Royale.',
         30,
-        21
+        21,
+        2.33
     ),
     (
         'Naraka: Bladepoint',
@@ -5598,7 +6148,8 @@ VALUES (
         2021,
         'Melee battle royale.',
         40,
-        23
+        23,
+        1.41
     ),
     (
         'Eggy Party',
@@ -5608,7 +6159,8 @@ VALUES (
         2022,
         'Fall Guys mobile competitor.',
         20,
-        21
+        21,
+        1.32
     ),
     (
         'Honkai: Star Rail',
@@ -5618,7 +6170,8 @@ VALUES (
         2023,
         'Space fantasy RPG.',
         100,
-        31
+        31,
+        0.34
     ),
     (
         'Zenless Zone Zero',
@@ -5628,7 +6181,8 @@ VALUES (
         2024,
         'Urban fantasy action.',
         60,
-        24
+        24,
+        5.03
     ),
     (
         'Wuthering Waves',
@@ -5638,7 +6192,8 @@ VALUES (
         2024,
         'Open world action RPG.',
         50,
-        28
+        28,
+        2.41
     ),
     (
         'Solo Leveling: Arise',
@@ -5648,7 +6203,8 @@ VALUES (
         2024,
         'Webtoon adaptation.',
         40,
-        29
+        29,
+        1.30
     ),
     (
         'Squad Busters',
@@ -5658,7 +6214,8 @@ VALUES (
         2024,
         'Supercell crossover.',
         15,
-        28
+        28,
+        7.69
     ),
     (
         'Brawlhalla',
@@ -5668,7 +6225,8 @@ VALUES (
         2017,
         'Platform fighting.',
         30,
-        27
+        27,
+        5.61
     ),
     (
         'Warframe Mobile',
@@ -5678,7 +6236,8 @@ VALUES (
         2024,
         'Ninjas play free on phone.',
         100,
-        27
+        27,
+        2.24
     ),
     (
         'Rainbow Six Mobile',
@@ -5688,7 +6247,8 @@ VALUES (
         2024,
         'Tactical shooter portable.',
         20,
-        24
+        24,
+        4.06
     ),
     (
         'The Division Resurgence',
@@ -5698,7 +6258,8 @@ VALUES (
         2024,
         'Open world shooter mobile.',
         40,
-        29
+        29,
+        2.08
     ),
     (
         'Assassin\'s Creed Jade',
@@ -5708,7 +6269,8 @@ VALUES (
         2025,
         'AC in China on mobile.',
         50,
-        25
+        25,
+        1.40
     ),
     (
         'Valorant Mobile',
@@ -5718,7 +6280,8 @@ VALUES (
         2025,
         'Tactical shooter touch.',
         30,
-        18
+        18,
+        3.24
     ),
     (
         'Destiny: Rising',
@@ -5728,7 +6291,8 @@ VALUES (
         2025,
         'NetEase Destiny game.',
         40,
-        27
+        27,
+        6.87
     ),
     (
         'Need for Speed Mobile',
@@ -5738,7 +6302,8 @@ VALUES (
         2024,
         'Open world racing.',
         20,
-        26
+        26,
+        5.63
     ),
     (
         'NBA Infinite',
@@ -5748,7 +6313,8 @@ VALUES (
         2024,
         'Real-time basketball.',
         15,
-        18
+        18,
+        4.54
     ),
     (
         'EA Sports FC Mobile',
@@ -5758,7 +6324,8 @@ VALUES (
         2023,
         'Football in your pocket.',
         30,
-        31
+        31,
+        1.97
     ),
     (
         'eFootball 2025',
@@ -5768,7 +6335,8 @@ VALUES (
         2024,
         'Konami football.',
         30,
-        36
+        36,
+        1.74
     ),
     (
         'Dream League Soccer 2025',
@@ -5778,7 +6346,8 @@ VALUES (
         2025,
         'Classic mobile soccer.',
         20,
-        30
+        30,
+        2.15
     ),
     (
         '8 Ball Pool',
@@ -5788,7 +6357,8 @@ VALUES (
         2010,
         'Worlds biggest pool game.',
         10,
-        32
+        32,
+        1.68
     ),
     (
         'Ludo King',
@@ -5798,7 +6368,8 @@ VALUES (
         2016,
         'Massive board game app.',
         15,
-        21
+        21,
+        0.43
     ),
     (
         'Garena Undawn',
@@ -5808,7 +6379,8 @@ VALUES (
         2023,
         'Zombie survival.',
         40,
-        30
+        30,
+        2.02
     ),
     (
         'Whiteout Survival',
@@ -5818,7 +6390,8 @@ VALUES (
         2023,
         'Strategy survival.',
         30,
-        20
+        20,
+        7.62
     ),
     (
         'Royal Match',
@@ -5828,7 +6401,8 @@ VALUES (
         2021,
         'King of match-3.',
         20,
-        17
+        17,
+        0.74
     ),
     (
         'Monopoly GO!',
@@ -5838,7 +6412,8 @@ VALUES (
         2023,
         'Social board game.',
         15,
-        20
+        20,
+        0.72
     ),
     (
         'Coin Master',
@@ -5848,7 +6423,8 @@ VALUES (
         2015,
         'Attack your friends villages.',
         10,
-        18
+        18,
+        0.52
     ),
     (
         'Gardenscapes',
@@ -5858,7 +6434,8 @@ VALUES (
         2016,
         'Match-3 renovation.',
         30,
-        20
+        20,
+        0.46
     ),
     (
         'Homescapes',
@@ -5868,7 +6445,8 @@ VALUES (
         2017,
         'More renovation.',
         30,
-        16
+        16,
+        0.42
     ),
     (
         'Fishdom',
@@ -5878,7 +6456,8 @@ VALUES (
         2008,
         'Aquarium puzzles.',
         20,
-        17
+        17,
+        0.68
     ),
     (
         'Township',
@@ -5888,7 +6467,8 @@ VALUES (
         2012,
         'Farming and city building.',
         50,
-        30
+        30,
+        2.50
     ),
     (
         'Hay Day',
@@ -5898,7 +6478,8 @@ VALUES (
         2012,
         'The farmgame.',
         40,
-        26
+        26,
+        2.11
     ),
     (
         'Boom Beach',
@@ -5908,7 +6489,8 @@ VALUES (
         2014,
         'Strategy combat.',
         30,
-        21
+        21,
+        6.51
     ),
     (
         'Brave Frontier',
@@ -5918,7 +6500,8 @@ VALUES (
         2013,
         'Classic gacha RPG.',
         60,
-        27
+        27,
+        1.93
     ),
     (
         'Puzzle & Dragons',
@@ -5928,7 +6511,8 @@ VALUES (
         2012,
         'Match-3 RPG giant.',
         50,
-        22
+        22,
+        2.38
     ),
     (
         'Monster Strike',
@@ -5938,7 +6522,8 @@ VALUES (
         2013,
         'Physics RPG giant.',
         50,
-        30
+        30,
+        1.29
     ),
     (
         'Granblue Fantasy',
@@ -5948,7 +6533,8 @@ VALUES (
         2014,
         'Browser/Mobile RPG.',
         100,
-        28
+        28,
+        1.89
     ),
     (
         'Princess Connect! Re: Dive',
@@ -5958,7 +6544,8 @@ VALUES (
         2018,
         'Anime RPG.',
         40,
-        22
+        22,
+        0.82
     ),
     (
         'Uma Musume Pretty Derby',
@@ -5968,7 +6555,8 @@ VALUES (
         2021,
         'Horse girl racing.',
         50,
-        29
+        29,
+        2.24
     ),
     (
         'Dragon Ball Z Dokkan Battle',
@@ -5978,7 +6566,8 @@ VALUES (
         2015,
         'Bubble popping battles.',
         60,
-        17
+        17,
+        0.76
     ),
     (
         'Dragon Ball Legends',
@@ -5988,7 +6577,8 @@ VALUES (
         2018,
         'Card action battles.',
         40,
-        23
+        23,
+        5.19
     ),
     (
         'One Piece Treasure Cruise',
@@ -5998,7 +6588,8 @@ VALUES (
         2014,
         'Pirate RPG.',
         50,
-        23
+        23,
+        1.93
     ),
     (
         'One Piece Bounty Rush',
@@ -6008,7 +6599,8 @@ VALUES (
         2018,
         '4v4 looting.',
         30,
-        24
+        24,
+        2.43
     ),
     (
         'Bleach: Brave Souls',
@@ -6018,7 +6610,8 @@ VALUES (
         2015,
         'Hack and slash anime.',
         40,
-        24
+        24,
+        5.92
     ),
     (
         'Naruto x Boruto Ninja Voltage',
@@ -6028,7 +6621,8 @@ VALUES (
         2017,
         'Fortress strategy.',
         20,
-        21
+        21,
+        6.45
     ),
     (
         'Yu-Gi-Oh! Duel Links',
@@ -6038,7 +6632,8 @@ VALUES (
         2016,
         'Speed duels.',
         50,
-        30
+        30,
+        1.76
     ),
     (
         'Yu-Gi-Oh! Master Duel',
@@ -6048,7 +6643,8 @@ VALUES (
         2022,
         'Definitive card game.',
         60,
-        23
+        23,
+        1.56
     ),
     (
         'Magic: The Gathering Arena',
@@ -6058,7 +6654,8 @@ VALUES (
         2018,
         'Digital MTG.',
         50,
-        28
+        28,
+        1.23
     ),
     (
         'Shadowverse',
@@ -6068,7 +6665,8 @@ VALUES (
         2016,
         'Anime card battles.',
         40,
-        28
+        28,
+        1.79
     ),
     (
         'Teppen',
@@ -6078,7 +6676,8 @@ VALUES (
         2019,
         'Capcom card battler.',
         20,
-        22
+        22,
+        1.33
     ),
     (
         'Gwent: The Witcher Card Game',
@@ -6088,7 +6687,8 @@ VALUES (
         2018,
         'Round of Gwent?',
         30,
-        30
+        30,
+        1.79
     ),
     (
         'Eternal Card Game',
@@ -6098,7 +6698,8 @@ VALUES (
         2016,
         'Fair F2P card game.',
         30,
-        23
+        23,
+        2.26
     ),
     (
         'Minion Masters',
@@ -6108,7 +6709,8 @@ VALUES (
         2016,
         'Fast paced minion battles.',
         20,
-        26
+        26,
+        4.32
     ),
     (
         'Clash Mini',
@@ -6118,7 +6720,8 @@ VALUES (
         2021,
         'Board game strategy.',
         15,
-        16
+        16,
+        6.34
     ),
     (
         'Warcraft Rumble',
@@ -6128,7 +6731,8 @@ VALUES (
         2023,
         'Tower offense.',
         20,
-        28
+        28,
+        7.43
     );
     
 -- ====================================================== --
@@ -6144,6 +6748,9 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (recommended_game_id) REFERENCES videoGames(id)
 );
+
+
+
 
 
 
