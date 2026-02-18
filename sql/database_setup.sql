@@ -4588,3 +4588,881 @@ VALUES (
         'Saints Row spin-off.',
         15
     );
+
+-- NEW GAMES TOP 100 & 2025/2026 --
+INSERT INTO videoGames (
+        name,
+        platform_id,
+        size_gb,
+        genre_id,
+        release_year,
+        more_data,
+        average_playgame_duration
+    )
+VALUES (
+        'Grand Theft Auto VI',
+        9,
+        150.0,
+        1,
+        2025,
+        'The most anticipated game of the decade.',
+        100
+    ),
+    (
+        'Monster Hunter Wilds',
+        9,
+        90.0,
+        2,
+        2025,
+        'Next generation hunting experience.',
+        200
+    ),
+    (
+        'Borderlands 4',
+        9,
+        80.0,
+        5,
+        2025,
+        'Looter shooter returns.',
+        50
+    ),
+    (
+        'DOOM: The Dark Ages',
+        9,
+        60.0,
+        5,
+        2025,
+        'Medieval rip and tear.',
+        15
+    ),
+    (
+        'Fable',
+        5,
+        100.0,
+        2,
+        2025,
+        'New beginning for Albion.',
+        40
+    ),
+    (
+        'Metroid Prime 4: Beyond',
+        1,
+        15.0,
+        1,
+        2025,
+        'Samus Aran returns.',
+        20
+    ),
+    (
+        'Death Stranding 2: On The Beach',
+        2,
+        120.0,
+        1,
+        2025,
+        'Should we have connected?',
+        50
+    ),
+    (
+        'Civilization VII',
+        3,
+        25.0,
+        43,
+        2025,
+        'One more turn forever.',
+        200
+    ),
+    (
+        'Mafia: The Old Country',
+        9,
+        70.0,
+        1,
+        2025,
+        'Origins of the mob.',
+        20
+    ),
+    ('Hades II', 3, 5.0, 8, 2025, 'Kill time.', 60),
+    (
+        'Judas',
+        9,
+        50.0,
+        5,
+        2025,
+        'From the creator of BioShock.',
+        20
+    ),
+    (
+        'Marvel 1943: Rise of Hydra',
+        9,
+        80.0,
+        1,
+        2025,
+        'Cap and Panther.',
+        15
+    ),
+    (
+        'South of Midnight',
+        5,
+        40.0,
+        1,
+        2025,
+        'Southern gothic magic.',
+        12
+    ),
+    (
+        'Clair Obscur: Expedition 33',
+        9,
+        60.0,
+        20,
+        2025,
+        'Turn-based RPG revolution.',
+        40
+    ),
+    (
+        'Atomfall',
+        9,
+        40.0,
+        18,
+        2025,
+        'British fallout.',
+        30
+    ),
+    (
+        'Avowed',
+        5,
+        80.0,
+        20,
+        2025,
+        'Skyrim competition from Obsidian.',
+        60
+    ),
+    (
+        'Kingdom Come: Deliverance II',
+        9,
+        100.0,
+        20,
+        2025,
+        'Henry has come to see us.',
+        80
+    ),
+    (
+        'Little Nightmares III',
+        9,
+        10.0,
+        17,
+        2025,
+        'Co-op nightmares.',
+        8
+    ),
+    (
+        'Professor Layton and the New World of Steam',
+        1,
+        5.0,
+        47,
+        2025,
+        'Puzzle solving gentleman.',
+        20
+    ),
+    (
+        'Pokémon Legends: Z-A',
+        1,
+        10.0,
+        2,
+        2025,
+        'Return to Kalos.',
+        30
+    ),
+    (
+        'Persona 6',
+        9,
+        50.0,
+        14,
+        2026,
+        'The next high school journey.',
+        100
+    ),
+    (
+        'Mass Effect 5',
+        9,
+        100.0,
+        2,
+        2026,
+        'N7 returns.',
+        60
+    ),
+    (
+        'The Witcher 4: Polaris',
+        9,
+        120.0,
+        20,
+        2026,
+        'New saga begins.',
+        100
+    ),
+    (
+        'The Elder Scrolls VI',
+        9,
+        150.0,
+        20,
+        2026,
+        'We have waited too long.',
+        200
+    ),
+    (
+        'Physint',
+        2,
+        80.0,
+        29,
+        2026,
+        'Espionage action from Kojima.',
+        20
+    ),
+    ('OD', 5, 50.0, 7, 2026, 'Horror experiment.', 10),
+    (
+        'Star Wars: Eclipse',
+        9,
+        100.0,
+        1,
+        2026,
+        'High Republic era.',
+        40
+    ),
+    (
+        'Marvel\'s Wolverine',
+        2,
+        60.0,
+        1,
+        2026,
+        'Snikt.',
+        25
+    ),
+    (
+        'Wonder Woman',
+        9,
+        60.0,
+        1,
+        2026,
+        'Nemesis system returns.',
+        25
+    ),
+    (
+        'Control 2',
+        9,
+        70.0,
+        1,
+        2026,
+        'Remedy connective universe.',
+        20
+    ),
+    (
+        'Max Payne 1&2 Remake',
+        9,
+        50.0,
+        13,
+        2026,
+        'Bullet time definition.',
+        15
+    ),
+    (
+        'Splinter Cell Remake',
+        9,
+        40.0,
+        29,
+        2026,
+        'Sam Fisher is back.',
+        15
+    ),
+    (
+        'Silent Hill f',
+        9,
+        40.0,
+        7,
+        2026,
+        'Floral horror.',
+        12
+    ),
+    (
+        'Pragmata',
+        9,
+        50.0,
+        1,
+        2026,
+        'Capcom space mystery.',
+        15
+    ),
+    (
+        'Dune: Awakening',
+        9,
+        80.0,
+        18,
+        2025,
+        'Survival on Arrakis.',
+        100
+    ),
+    (
+        'Light No Fire',
+        9,
+        30.0,
+        18,
+        2025,
+        'Fantasy earth from Hello Games.',
+        100
+    ),
+    (
+        'Honor of Kings',
+        16,
+        5.0,
+        15,
+        2015,
+        'Most played MOBA globally.',
+        50
+    ),
+    (
+        'Crossfire',
+        3,
+        10.0,
+        5,
+        2007,
+        'Most played FPS globally.',
+        60
+    ),
+    (
+        'Dungeon Fighter Online',
+        3,
+        15.0,
+        35,
+        2005,
+        'Massive beat em up revenue.',
+        80
+    ),
+    (
+        'QQ Speed',
+        16,
+        2.0,
+        11,
+        2017,
+        'Huge racing game in Asia.',
+        30
+    ),
+    (
+        'Game for Peace',
+        16,
+        3.0,
+        6,
+        2019,
+        'Chinese PUBG Mobile.',
+        40
+    ),
+    (
+        'Fantasy Westward Journey',
+        3,
+        5.0,
+        46,
+        2001,
+        'Legendary Chinese MMORPG.',
+        200
+    ),
+    (
+        'Westward Journey Online II',
+        3,
+        5.0,
+        46,
+        2004,
+        'Classic MMORPG.',
+        150
+    ),
+    (
+        'Free Fire',
+        16,
+        1.0,
+        6,
+        2017,
+        'Massive in Latin America/SEA.',
+        35
+    ),
+    (
+        'Knives Out',
+        16,
+        2.0,
+        6,
+        2017,
+        'Popular Battle Royale.',
+        30
+    ),
+    (
+        'Naraka: Bladepoint',
+        9,
+        20.0,
+        6,
+        2021,
+        'Melee battle royale.',
+        40
+    ),
+    (
+        'Eggy Party',
+        16,
+        1.0,
+        4,
+        2022,
+        'Fall Guys mobile competitor.',
+        20
+    ),
+    (
+        'Honkai: Star Rail',
+        16,
+        15.0,
+        14,
+        2023,
+        'Space fantasy RPG.',
+        100
+    ),
+    (
+        'Zenless Zone Zero',
+        16,
+        12.0,
+        35,
+        2024,
+        'Urban fantasy action.',
+        60
+    ),
+    (
+        'Wuthering Waves',
+        16,
+        10.0,
+        2,
+        2024,
+        'Open world action RPG.',
+        50
+    ),
+    (
+        'Solo Leveling: Arise',
+        16,
+        5.0,
+        2,
+        2024,
+        'Webtoon adaptation.',
+        40
+    ),
+    (
+        'Squad Busters',
+        16,
+        0.5,
+        43,
+        2024,
+        'Supercell crossover.',
+        15
+    ),
+    (
+        'Brawlhalla',
+        9,
+        1.0,
+        12,
+        2017,
+        'Platform fighting.',
+        30
+    ),
+    (
+        'Warframe Mobile',
+        16,
+        10.0,
+        2,
+        2024,
+        'Ninjas play free on phone.',
+        100
+    ),
+    (
+        'Rainbow Six Mobile',
+        16,
+        3.0,
+        5,
+        2024,
+        'Tactical shooter portable.',
+        20
+    ),
+    (
+        'The Division Resurgence',
+        16,
+        5.0,
+        13,
+        2024,
+        'Open world shooter mobile.',
+        40
+    ),
+    (
+        'Assassin\'s Creed Jade',
+        16,
+        8.0,
+        2,
+        2025,
+        'AC in China on mobile.',
+        50
+    ),
+    (
+        'Valorant Mobile',
+        16,
+        4.0,
+        5,
+        2025,
+        'Tactical shooter touch.',
+        30
+    ),
+    (
+        'Destiny: Rising',
+        16,
+        6.0,
+        5,
+        2025,
+        'NetEase Destiny game.',
+        40
+    ),
+    (
+        'Need for Speed Mobile',
+        16,
+        5.0,
+        11,
+        2024,
+        'Open world racing.',
+        20
+    ),
+    (
+        'NBA Infinite',
+        16,
+        3.0,
+        34,
+        2024,
+        'Real-time basketball.',
+        15
+    ),
+    (
+        'EA Sports FC Mobile',
+        16,
+        2.0,
+        34,
+        2023,
+        'Football in your pocket.',
+        30
+    ),
+    (
+        'eFootball 2025',
+        16,
+        3.0,
+        34,
+        2024,
+        'Konami football.',
+        30
+    ),
+    (
+        'Dream League Soccer 2025',
+        16,
+        1.0,
+        34,
+        2025,
+        'Classic mobile soccer.',
+        20
+    ),
+    (
+        '8 Ball Pool',
+        16,
+        0.1,
+        34,
+        2010,
+        'Worlds biggest pool game.',
+        10
+    ),
+    (
+        'Ludo King',
+        16,
+        0.1,
+        47,
+        2016,
+        'Massive board game app.',
+        15
+    ),
+    (
+        'Garena Undawn',
+        16,
+        4.0,
+        18,
+        2023,
+        'Zombie survival.',
+        40
+    ),
+    (
+        'Whiteout Survival',
+        16,
+        1.0,
+        43,
+        2023,
+        'Strategy survival.',
+        30
+    ),
+    (
+        'Royal Match',
+        16,
+        0.5,
+        47,
+        2021,
+        'King of match-3.',
+        20
+    ),
+    (
+        'Monopoly GO!',
+        16,
+        0.5,
+        47,
+        2023,
+        'Social board game.',
+        15
+    ),
+    (
+        'Coin Master',
+        16,
+        0.2,
+        47,
+        2015,
+        'Attack your friends villages.',
+        10
+    ),
+    (
+        'Gardenscapes',
+        16,
+        0.5,
+        47,
+        2016,
+        'Match-3 renovation.',
+        30
+    ),
+    (
+        'Homescapes',
+        16,
+        0.5,
+        47,
+        2017,
+        'More renovation.',
+        30
+    ),
+    (
+        'Fishdom',
+        16,
+        0.4,
+        47,
+        2008,
+        'Aquarium puzzles.',
+        20
+    ),
+    (
+        'Township',
+        16,
+        0.6,
+        9,
+        2012,
+        'Farming and city building.',
+        50
+    ),
+    ('Hay Day', 16, 0.4, 9, 2012, 'The farmgame.', 40),
+    (
+        'Boom Beach',
+        16,
+        0.3,
+        43,
+        2014,
+        'Strategy combat.',
+        30
+    ),
+    (
+        'Brave Frontier',
+        16,
+        1.0,
+        20,
+        2013,
+        'Classic gacha RPG.',
+        60
+    ),
+    (
+        'Puzzle & Dragons',
+        16,
+        0.5,
+        17,
+        2012,
+        'Match-3 RPG giant.',
+        50
+    ),
+    (
+        'Monster Strike',
+        16,
+        0.5,
+        2,
+        2013,
+        'Physics RPG giant.',
+        50
+    ),
+    (
+        'Granblue Fantasy',
+        16,
+        2.0,
+        20,
+        2014,
+        'Browser/Mobile RPG.',
+        100
+    ),
+    (
+        'Princess Connect! Re: Dive',
+        16,
+        4.0,
+        20,
+        2018,
+        'Anime RPG.',
+        40
+    ),
+    (
+        'Uma Musume Pretty Derby',
+        16,
+        5.0,
+        9,
+        2021,
+        'Horse girl racing.',
+        50
+    ),
+    (
+        'Dragon Ball Z Dokkan Battle',
+        16,
+        1.0,
+        47,
+        2015,
+        'Bubble popping battles.',
+        60
+    ),
+    (
+        'Dragon Ball Legends',
+        16,
+        20.0,
+        12,
+        2018,
+        'Card action battles.',
+        40
+    ),
+    (
+        'One Piece Treasure Cruise',
+        16,
+        1.5,
+        20,
+        2014,
+        'Pirate RPG.',
+        50
+    ),
+    (
+        'One Piece Bounty Rush',
+        16,
+        1.5,
+        1,
+        2018,
+        '4v4 looting.',
+        30
+    ),
+    (
+        'Bleach: Brave Souls',
+        16,
+        2.0,
+        35,
+        2015,
+        'Hack and slash anime.',
+        40
+    ),
+    (
+        'Naruto x Boruto Ninja Voltage',
+        16,
+        1.0,
+        43,
+        2017,
+        'Fortress strategy.',
+        20
+    ),
+    (
+        'Yu-Gi-Oh! Duel Links',
+        16,
+        3.0,
+        23,
+        2016,
+        'Speed duels.',
+        50
+    ),
+    (
+        'Yu-Gi-Oh! Master Duel',
+        9,
+        5.0,
+        23,
+        2022,
+        'Definitive card game.',
+        60
+    ),
+    (
+        'Magic: The Gathering Arena',
+        3,
+        4.0,
+        23,
+        2018,
+        'Digital MTG.',
+        50
+    ),
+    (
+        'Shadowverse',
+        16,
+        2.0,
+        23,
+        2016,
+        'Anime card battles.',
+        40
+    ),
+    (
+        'Teppen',
+        16,
+        2.0,
+        23,
+        2019,
+        'Capcom card battler.',
+        20
+    ),
+    (
+        'Gwent: The Witcher Card Game',
+        9,
+        3.0,
+        23,
+        2018,
+        'Round of Gwent?',
+        30
+    ),
+    (
+        'Eternal Card Game',
+        9,
+        2.0,
+        23,
+        2016,
+        'Fair F2P card game.',
+        30
+    ),
+    (
+        'Minion Masters',
+        3,
+        2.0,
+        43,
+        2016,
+        'Fast paced minion battles.',
+        20
+    ),
+    (
+        'Clash Mini',
+        16,
+        0.5,
+        43,
+        2021,
+        'Board game strategy.',
+        15
+    ),
+    (
+        'Warcraft Rumble',
+        16,
+        1.0,
+        43,
+        2023,
+        'Tower offense.',
+        20
+    );
