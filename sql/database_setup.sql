@@ -2571,7 +2571,7 @@ VALUES (
         'Interactive gamebook.',
         12
     ),
-    ('Reigns', 16, 0.1, 43, 2016, 'Swipe to rule.', 4),
+    ('Reigns', 16, 0.1, 36, 2016, 'Swipe to rule.', 4),
     (
         'Reigns: Her Majesty',
         16,
