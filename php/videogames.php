@@ -177,8 +177,8 @@ $result = $conn->query($sql);
                 
                 <!-- Gender Ratio -->
                  <div class="filter-group">
-                    <label class="filter-label">Max M/F Ratio: <span id="gender-range-val">8</span></label>
-                    <input type="range" id="gender-range" min="0" max="8" step="0.1" value="8" class="range-slider">
+                    <label class="filter-label">Max M/F Ratio: <span id="gender-range-val">12</span></label>
+                    <input type="range" id="gender-range" min="0" max="12" step="0.1" value="12" class="range-slider">
                     <div style="display: flex; justify-content: space-between; font-size: 10px; color: var(--slate-500); margin-top: 4px;">
                         <span>More Female</span>
                         <span>More Male</span>

@@ -12,7 +12,7 @@ $(document).ready(function() {
         const minYear = parseInt($('#year-range').val()) || 1980;
         const showFreeOnly = $('#free-check').is(':checked');
         const showPurchases = $('#purchases-check').is(':checked');
-        const maxRatio = parseFloat($('#gender-range').val()) || 10; 
+        const maxRatio = parseFloat($('#gender-range').val()) || 12; 
         
         let visibleCount = 0;
 
