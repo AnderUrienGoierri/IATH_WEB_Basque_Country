@@ -1,0 +1,341 @@
+/* Details Page Layout */
+.details-layout {
+    padding-top: 8rem; /* pt-32 */
+    padding-bottom: 5rem; /* pb-20 */
+}
+
+/* Back Button */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--slate-400);
+    margin-bottom: 2rem;
+    transition: color 0.15s;
+}
+
+.back-button:hover {
+    color: white;
+}
+
+.back-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Comparison Bar */
+.comparison-bar {
+    background-color: rgba(30, 41, 59, 0.5); /* slate-800/50 */
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(51, 65, 85, 0.5); /* slate-700/50 */
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .comparison-bar { flex-direction: row; }
+}
+
+.comparison-title {
+    font-weight: 700;
+    color: white;
+    white-space: nowrap;
+}
+
+.comparison-form {
+    width: 100%;
+    max-width: 32rem; /* max-w-lg */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .comparison-form { flex-direction: row; }
+}
+
+.compare-btn {
+    background-color: var(--violet-600);
+    color: white;
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.compare-btn:hover {
+    background-color: var(--violet-500);
+}
+
+/* Comparison Grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.details-grid.has-comparison {
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .details-grid.has-comparison { 
+        grid-template-columns: repeat(2, 1fr); 
+        position: relative;
+    }
+    
+    .details-grid.has-comparison::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        background-color: var(--slate-700);
+    }
+}
+
+/* Game Info Card */
+.game-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.hero-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+    .hero-header { flex-direction: row; }
+}
+
+.cover-art-container {
+    width: 100%;
+    aspect-ratio: 2/3;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+}
+
+@media (min-width: 768px) {
+    .cover-art-container { width: 33.333%; margin-left: 0; }
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.8), transparent, transparent);
+}
+
+.game-content {
+    flex: 1;
+}
+
+.genre-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    color: var(--violet-300);
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.game-title {
+    font-size: 2.25rem; /* 4xl */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+    .game-title { font-size: 3rem; /* 5xl */ }
+}
+
+.game-description {
+    color: var(--slate-400);
+    font-size: 1.125rem; /* lg */
+    line-height: 1.625;
+    margin-bottom: 1.5rem;
+}
+
+.game-price {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.purchases-info {
+    font-size: 0.875rem;
+    color: var(--slate-500);
+    margin-bottom: 2rem;
+}
+
+.text-yes { color: #fb7185; /* rose-400 */ }
+.text-no { color: #4ade80; /* green-400 */ }
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.stat-card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    /* optional subtle bg if needed, currently just plain in provided code */
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--slate-500);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.125rem; /* lg */
+    color: white;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Gender Bar */
+.gender-section {
+    background-color: rgba(30, 41, 59, 0.5);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+.section-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--slate-400);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.gender-bar-container {
+    width: 100%;
+    height: 1rem;
+    background-color: var(--slate-700);
+    border-radius: 9999px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+
+.gender-fill {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.gender-fill.male { background-color: var(--blue-500); }
+.gender-fill.female { background-color: var(--pink-500); }
+
+.gender-legend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.legend-male { color: #60a5fa; /* blue-400 */ }
+.legend-female { color: #f472b6; /* pink-400 */ }
+
+/* Tech Data */
+.tech-data-section {
+    background-color: rgba(30, 41, 59, 0.3);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(51, 65, 85, 0.3);
+}
+
+.tech-code {
+    font-size: 0.75rem;
+    color: var(--slate-400);
+    display: block;
+    word-break: break-all;
+    font-family: monospace;
+}
+
+/* Not Found */
+.not-found-container {
+    text-align: center;
+    color: var(--slate-500);
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid var(--slate-700);
+}
+
+/* Select2 Overrides */
+.select2-container--default .select2-selection--single {
+    background-color: var(--slate-900) !important;
+    border: 1px solid var(--slate-700) !important;
+    height: 42px !important;
+    border-radius: 0.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: var(--slate-300) !important;
+    padding-left: 1rem !important;
+}
+
+.select2-dropdown {
+    background-color: var(--slate-800) !important;
+    border: 1px solid var(--slate-700) !important;
+    color: var(--slate-300) !important;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: var(--violet-500) !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 40px !important;
+}
+
