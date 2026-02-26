@@ -82,8 +82,7 @@ $result = $conn->query($sql);
     <header class="main-header">
         <div class="container header-inner">
             <a href="index.php" class="logo-group">
-                <div class="logo-icon">AI</div>
-                <span class="logo-text">GameMatch</span>
+                <img src="../img/logo.png" alt="GameMatch AI Logo" class="logo-img">
             </a>
             <nav class="main-nav">
                 <a href="index.php" class="nav-link"><?php echo $txt['home']; ?></a>

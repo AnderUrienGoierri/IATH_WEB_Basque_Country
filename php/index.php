@@ -64,12 +64,7 @@ $txt = $t[$lang];
         <div class="container header-inner">
             <!-- Logo -->
             <a href="index.php" class="logo-group">
-                <div class="logo-icon">
-                    AI
-                </div>
-                <span class="logo-text">
-                    GameMatch
-                </span>
+                <img src="../img/logo.png" alt="GameMatch AI Logo" class="logo-img">
             </a>
 
             <!-- Navigation -->
