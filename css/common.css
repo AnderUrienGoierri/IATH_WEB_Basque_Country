@@ -1,0 +1,224 @@
+:root {
+    /* Color Palette - Slate */
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+
+    /* Color Palette - Violet */
+    --violet-300: #c4b5fd;
+    --violet-400: #a78bfa;
+    --violet-500: #8b5cf6;
+    --violet-600: #7c3aed;
+
+    /* Color Palette - Indigo */
+    --indigo-400: #818cf8;
+    --indigo-600: #4f46e5;
+
+    /* Color Palette - Semantic */
+    --green-300: #86efac;
+    --green-500: #22c55e;
+    --pink-500: #ec4899;
+    --blue-500: #3b82f6;
+
+    /* Spacing & Sizes */
+    --header-height: 5rem; /* 20 * 0.25rem = 5rem */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--slate-900);
+    color: var(--slate-200);
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography */
+h1, h2, h3, h4, .font-display {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Common Utilities */
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) { .container { max-width: 640px; } }
+@media (min-width: 768px) { .container { max-width: 768px; } }
+@media (min-width: 1024px) { .container { max-width: 1024px; } }
+@media (min-width: 1280px) { .container { max-width: 1280px; } }
+@media (min-width: 1536px) { .container { max-width: 1536px; } }
+
+/* Header */
+.main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background-color: rgba(15, 23, 42, 0.9); /* slate-900/90 */
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5); /* slate-700/50 */
+}
+
+.header-inner {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.25rem;
+    background: linear-gradient(to bottom right, var(--violet-500), var(--indigo-600));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.2);
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: white;
+    transition: color 0.15s;
+}
+
+.logo-group:hover .logo-text {
+    color: var(--violet-400);
+}
+
+/* Navigation */
+.main-nav {
+    display: none;
+}
+@media (min-width: 768px) {
+    .main-nav { display: flex; align-items: center; gap: 2rem; }
+}
+
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--slate-400);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.nav-link:hover {
+    color: white;
+    border-bottom-color: rgba(139, 92, 246, 0.5);
+}
+
+.nav-link.active {
+    color: white;
+    border-bottom-color: var(--violet-500);
+}
+
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid var(--slate-700);
+}
+
+.lang-link {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--slate-500);
+}
+
+.lang-link:hover {
+    color: var(--slate-300);
+}
+
+.lang-link.active {
+    color: var(--violet-400);
+}
+
+/* Footer */
+.main-footer {
+    border-top: 1px solid var(--slate-800);
+    background-color: var(--slate-900);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: auto;
+}
+
+.footer-text {
+    text-align: center;
+    color: var(--slate-600);
+    font-size: 0.875rem;
+}
+
+/* Utilities */
+.text-white { color: white; }
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Selection */
+::selection {
+    background-color: var(--violet-500);
+    color: white;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: block;
+    color: var(--slate-300);
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu-btn:hover {
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-btn { display: none; }
+}
+
+/* Logo Hover Fix */
+.logo-group:hover .logo-icon {
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.4);
+}
