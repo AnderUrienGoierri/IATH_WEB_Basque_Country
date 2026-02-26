@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="canonical" href="https://playruneterra.com/"/><script>window.dataLayer = window.dataLayer ||[];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent','default',{
+        'ad_storage':'denied',
+        'analytics_storage':'denied',
+        'ad_user_data':'denied',
+        'ad_personalization':'denied',
+         'wait_for_update': 500
+      });
+      gtag("set", "ads_data_redaction", true);</script><script src="https://cmp.osano.com/16BZ95S4qp9Kl2gUA/c84de61e-21d7-4a4a-9591-3d3a28fb5b1d/osano.js"></script><link rel="shortcut icon" type="image/x-icon" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon.ico"/><link rel="apple-touch-icon" sizes="57x57" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/favicon-16x16.png"><meta name="msapplication-TileColor" content="#ffffff"><meta name="msapplication-TileImage" content="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/favicon/ms-icon-144x144.png"><meta name="theme-color" content="#ffffff"><title>Legends of Runeterra</title><meta name="description" content="Choose your champions, make your move, and be legendary in the League of Legends strategy card game: Legends of Runeterra."><meta property="og:type" content="website"><meta property="og:title" content="Legends of Runeterra"><meta property="og:description" content="Choose your champions, make your move, and be legendary in the League of Legends strategy card game: Legends of Runeterra."><meta property="og:image" content="https://playruneterra.com/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/image/share-image.jpg"><meta property="og:locale" content="en_US"><meta property="og:url" content="https://playruneterra.com/"><meta name="twitter:card" content="summary"><meta name="twitter:url" content="https://playruneterra.com/"><meta name="twitter:title" content="Legends of Runeterra"><meta name="twitter:description" content="Choose your champions, make your move, and be legendary in the League of Legends strategy card game: Legends of Runeterra."><meta name="twitter:image" content="https://playruneterra.com/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/static/image/share-image.jpg"><meta name="google-site-verification" content="gJFToFD50F3Vge1XVGmv1pnCQ6QmdvNHu43LjF8mMHs"/><link rel="preload" crossorigin="anonymous" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald:400&display=swa" as="font"><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KV3FPXF');</script><script>(function(h,o,u,n,d) {
+        h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+        d=o.createElement(u);d.async=1;d.src=n
+        n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+      })(window,document,'script','https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js','DD_RUM')
+      window.DD_RUM.onReady(function() {
+        window.DD_RUM.init({
+          clientToken: 'pub4a83dce00a8d6c78e3ebee78e3115524',
+          applicationId: '4574bfed-d35e-4250-b002-7847b01b64ba',
+          // `site` refers to the Datadog site parameter of your organization
+          // see https://docs.datadoghq.com/getting_started/site/
+          site: 'datadoghq.com',
+          service: 'legends-of-runeterra-website',
+          env: 'production',
+          // Specify a version number to identify the deployed version of your application in Datadog
+          // version: '1.0.0',
+          sessionSampleRate: 20,
+          sessionReplaySampleRate: 0,
+          trackUserInteractions: true,
+          trackResources: true,
+          trackLongTasks: true,
+          defaultPrivacyLevel: 'mask-user-input',
+        });
+      })</script><script defer="defer" src="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/script/main.js"></script><link href="/assets/ccc9b55ec5fec88d1a616e7dec4795282a3aba52/style/main.css" rel="stylesheet"></head><body><div id="root"></div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV3FPXF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript></body></html>
