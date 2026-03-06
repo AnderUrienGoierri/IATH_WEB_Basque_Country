@@ -12,6 +12,8 @@ $t = [
         'title' => 'GameMatch AI - Find your perfect game',
         'home' => 'Home',
         'videogames' => 'Videogames',
+        'login' => 'Login',
+        'register' => 'Register',
         'powered_by' => 'Powered by Artificial Intelligence',
         'hero_title_1' => 'Discover your next',
         'hero_title_2' => 'favorite videogame',
@@ -26,6 +28,8 @@ $t = [
         'title' => 'GameMatch AI - Encuentra tu juego perfecto',
         'home' => 'Inicio',
         'videogames' => 'Videojuegos',
+        'login' => 'Iniciar Sesión',
+        'register' => 'Registrarse',
         'powered_by' => 'Desarrollado con Inteligencia Artificial',
         'hero_title_1' => 'Descubre tu próximo',
         'hero_title_2' => 'videojuego favorito',
@@ -71,6 +75,13 @@ $txt = $t[$lang];
             <nav class="main-nav">
                 <a href="index.php" class="nav-link active"><?php echo $txt['home']; ?></a>
                 <a href="videogames.php" class="nav-link"><?php echo $txt['videogames']; ?></a>
+                
+                <!-- Auth Buttons -->
+                <div class="auth-buttons" style="display: flex; gap: 0.5rem; margin-left: 1rem; align-items: center;">
+                    <a href="login.php" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;"><?php echo $txt['login']; ?></a>
+                    <a href="register.php" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;"><?php echo $txt['register']; ?></a>
+                </div>
+
                 <!-- Language Switcher -->
                 <div class="lang-switcher">
                     <a href="?lang=en" class="lang-link <?php echo $lang === 'en' ? 'active' : ''; ?>">EN</a>
