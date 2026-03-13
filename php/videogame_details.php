@@ -27,7 +27,10 @@ $t = [
         'origin' => 'Developer Origin',
         'free' => 'Free',
         'yes' => 'Yes',
-        'no' => 'No'
+        'no' => 'No',
+        'rate_game' => 'Rate this game',
+        'login_to_rate' => 'to rate this game.',
+        'login_link' => 'Log in'
     ],
     'es' => [
         'home' => 'Inicio',
@@ -48,7 +51,10 @@ $t = [
         'origin' => 'Origen del Desarrollador',
         'free' => 'Gratis',
         'yes' => 'Sí',
-        'no' => 'No'
+        'no' => 'No',
+        'rate_game' => 'Valorar juego',
+        'login_to_rate' => 'para valorar este juego.',
+        'login_link' => 'Inicia sesión'
     ]
 ];
 $txt = $t[$lang];
@@ -88,6 +94,20 @@ if ($id2 > 0) {
 // Fetch list for search/dropdown
 $sqlList = "SELECT id, name FROM videoGames ORDER BY name ASC";
 $resultList = $conn->query($sqlList);
+
+// Fetch user ratings if logged in
+$userRatings = [];
+if (isset($_SESSION['user_id'])) {
+    $uid = $_SESSION['user_id'];
+    $rStmt = $conn->prepare("SELECT game_id, rating FROM user_game_interactions WHERE user_id = ? AND interaction_type = 'liked'");
+    $rStmt->bind_param("i", $uid);
+    $rStmt->execute();
+    $rResult = $rStmt->get_result();
+    while ($r = $rResult->fetch_assoc()) {
+        $userRatings[$r['game_id']] = $r['rating'];
+    }
+    $rStmt->close();
+}
 
 ?>
 <!DOCTYPE html>
@@ -156,11 +176,11 @@ $resultList = $conn->query($sqlList);
         <div class="details-grid <?php echo $game2 ? 'has-comparison' : ''; ?>">
             
             <!-- Game 1 -->
-            <?php renderGameCard($game1, $txt, $game2 ? true : false); ?>
+            <?php renderGameCard($game1, $txt, $game2 ? true : false, $userRatings); ?>
 
             <!-- Game 2 -->
             <?php if ($game2): ?>
-                <?php renderGameCard($game2, $txt, true); ?>
+                <?php renderGameCard($game2, $txt, true, $userRatings); ?>
             <?php elseif ($id2 > 0): ?>
                 <div class="not-found-container">
                     <p>Game not found.</p>
@@ -184,7 +204,7 @@ $resultList = $conn->query($sqlList);
 </html>
 
 <?php
-function renderGameCard($row, $txt, $isComparison) {
+function renderGameCard($row, $txt, $isComparison, $userRatings = []) {
     if (!$row) return;
 
     // Data Processing
@@ -200,6 +220,9 @@ function renderGameCard($row, $txt, $isComparison) {
     $pctMale = 100 - $pctFemale;
 
     $purchases = $row["purchases_on_game"] ? '<span class="text-yes">'.$txt['yes'].'</span>' : '<span class="text-no">'.$txt['no'].'</span>';
+    
+    // Current user rating for this game
+    $currentRating = isset($userRatings[$row['id']]) ? intval($userRatings[$row['id']]) : 0;
 ?>
     <div class="game-info-container">
         <!-- Hero Header for Card -->
@@ -247,6 +270,25 @@ function renderGameCard($row, $txt, $isComparison) {
                 <span class="legend-male">Male: <?php echo $pctMale; ?>%</span>
                 <span class="legend-female">Female: <?php echo $pctFemale; ?>%</span>
             </div>
+        </div>
+
+        <!-- Rating Section -->
+        <div class="rating-section">
+            <h4 class="section-title"><?php echo $txt['rate_game']; ?></h4>
+            <?php if (isset($_SESSION['user_id'])): ?>
+                <div class="rating-stars" data-game-id="<?php echo $row['id']; ?>" data-current-rating="<?php echo $currentRating; ?>">
+                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                        <svg class="star" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    <?php endfor; ?>
+                </div>
+                <div class="rating-message"></div>
+            <?php else: ?>
+                <p class="rating-login-hint">
+                    <a href="login.php"><?php echo $txt['login_link']; ?></a> <?php echo $txt['login_to_rate']; ?>
+                </p>
+            <?php endif; ?>
         </div>
 
         <?php if (!empty($row["more_data"])): ?>
