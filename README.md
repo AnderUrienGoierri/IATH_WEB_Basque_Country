@@ -17,7 +17,7 @@ GameMatch AI is a web-based recommendation engine designed to help users discove
 - **Interactive Quiz Interface**: A multi-step form with smooth transitions (slide-up, fade-in) that feels like a modern native app.
 - **"Simulated AI" Experience**: The app features a processing screen with loading animations and dynamic text to simulate a complex algorithm analyzing the user's data.
 - **Smart Filtering Algorithm**: Recommendations are not random. The app filters compatibility based on hardware and scores games based on the user's specific constraints.
-- **Visual Polish**: Built with a "Gamer" aesthetic using a dark mode color palette (Slate 900) and neon accents (Violet 500), fully styled with Tailwind CSS.
+- **Visual Polish**: Built with a "Gamer" aesthetic using a dark mode color palette (Slate 900) and neon accents (Violet 500), fully styled with Vanilla CSS.
 
 ## 3. How the "AI" Logic Works
 
@@ -43,7 +43,7 @@ The array of games is sorted by their calculated score. The game with the highes
 ## 4. Technical Stack
 
 - **HTML5**: Structural semantic markup.
-- **Tailwind CSS**: Used for rapid styling, responsive grid layouts, and hover effects.
+- **Vanilla CSS**: Used for modular styling, responsive grid layouts, and hover effects.
 - **JavaScript (Vanilla)**: Handles state management (tracking current step), DOM manipulation (updating the screen), and the recommendation logic.
 - **Lucide Icons**: Provides lightweight, scalable SVG icons for the UI.
 
