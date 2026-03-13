@@ -20,7 +20,12 @@ $t = [
         'view_details' => 'View details',
         'free' => 'Free to Play',
         'no_games' => 'No games found in the database.',
-        'footer' => '&copy; 2026 GameMatch AI. All rights reserved.'
+        'footer' => '&copy; 2026 GameMatch AI. All rights reserved.',
+        'login' => 'Login',
+        'register' => 'Register',
+        'logout' => 'Logout',
+        'welcome' => 'Welcome',
+        'quiz_link' => 'Start Quiz'
     ],
     'es' => [
         'title' => 'Catálogo - GameMatch AI',
@@ -34,7 +39,12 @@ $t = [
         'view_details' => 'Ver detalles',
         'free' => 'Gratis',
         'no_games' => 'No se encontraron juegos en la base de datos.',
-        'footer' => '&copy; 2026 GameMatch AI. Todos los derechos reservados.'
+        'footer' => '&copy; 2026 GameMatch AI. Todos los derechos reservados.',
+        'login' => 'Iniciar Sesión',
+        'register' => 'Registrarse',
+        'logout' => 'Cerrar Sesión',
+        'welcome' => 'Bienvenido',
+        'quiz_link' => 'Iniciar Quiz'
     ]
 ];
 $txt = $t[$lang];
@@ -71,9 +81,9 @@ $result = $conn->query($sql);
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     
     <!-- CSS -->
-    <!-- Note: Tailwind CDN removed to enforce CSS usage as requested, or kept if needed for other files not yet refactored. 
-         But since we are refactoring THIS file, we use our CSS. -->
+    <!-- Note: Vanilla CSS is used to enforce modular styling as requested. -->
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/videogames.css">
 </head>
 <body>
@@ -87,6 +97,23 @@ $result = $conn->query($sql);
             <nav class="main-nav">
                 <a href="index.php" class="nav-link"><?php echo $txt['home']; ?></a>
                 <a href="videogames.php" class="nav-link active"><?php echo $txt['videogames']; ?></a>
+                <!-- Auth / User Area -->
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <div class="user-welcome">
+                        <span class="welcome-text"><?php echo $txt['welcome']; ?>, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></span>
+                        <a href="quiz.php" class="btn-quiz-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>
+                            <?php echo $txt['quiz_link']; ?>
+                        </a>
+                        <a href="logout.php" class="btn-logout"><?php echo $txt['logout']; ?></a>
+                    </div>
+                <?php else: ?>
+                    <div class="auth-buttons" style="display: flex; gap: 0.5rem; margin-left: 1rem; align-items: center;">
+                        <a href="login.php" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;"><?php echo $txt['login']; ?></a>
+                        <a href="register.php" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;"><?php echo $txt['register']; ?></a>
+                    </div>
+                <?php endif; ?>
+
                 <!-- Language Switcher -->
                 <div class="lang-switcher">
                     <a href="?lang=en" class="lang-link <?php echo $lang === 'en' ? 'active' : ''; ?>">EN</a>

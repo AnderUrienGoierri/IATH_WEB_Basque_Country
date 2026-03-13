@@ -13,6 +13,9 @@ $t = [
         'home' => 'Home',
         'videogames' => 'Videogames',
         'login' => 'Login',
+        'logout' => 'Logout',
+        'welcome' => 'Welcome',
+        'quiz_link' => 'Start Quiz',
         'register' => 'Register',
         'powered_by' => 'Powered by Artificial Intelligence',
         'hero_title_1' => 'Discover your next',
@@ -29,6 +32,9 @@ $t = [
         'home' => 'Inicio',
         'videogames' => 'Videojuegos',
         'login' => 'Iniciar Sesión',
+        'logout' => 'Cerrar Sesión',
+        'welcome' => 'Bienvenido',
+        'quiz_link' => 'Iniciar Quiz',
         'register' => 'Registrarse',
         'powered_by' => 'Desarrollado con Inteligencia Artificial',
         'hero_title_1' => 'Descubre tu próximo',
@@ -56,6 +62,7 @@ $txt = $t[$lang];
     
     <!-- CSS -->
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
@@ -76,11 +83,22 @@ $txt = $t[$lang];
                 <a href="index.php" class="nav-link active"><?php echo $txt['home']; ?></a>
                 <a href="videogames.php" class="nav-link"><?php echo $txt['videogames']; ?></a>
                 
-                <!-- Auth Buttons -->
-                <div class="auth-buttons" style="display: flex; gap: 0.5rem; margin-left: 1rem; align-items: center;">
-                    <a href="login.php" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;"><?php echo $txt['login']; ?></a>
-                    <a href="register.php" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;"><?php echo $txt['register']; ?></a>
-                </div>
+                <!-- Auth / User Area -->
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <div class="user-welcome">
+                        <span class="welcome-text"><?php echo $txt['welcome']; ?>, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong></span>
+                        <a href="quiz.php" class="btn-quiz-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" /></svg>
+                            <?php echo $txt['quiz_link']; ?>
+                        </a>
+                        <a href="logout.php" class="btn-logout"><?php echo $txt['logout']; ?></a>
+                    </div>
+                <?php else: ?>
+                    <div class="auth-buttons" style="display: flex; gap: 0.5rem; margin-left: 1rem; align-items: center;">
+                        <a href="login.php" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;"><?php echo $txt['login']; ?></a>
+                        <a href="register.php" class="btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;"><?php echo $txt['register']; ?></a>
+                    </div>
+                <?php endif; ?>
 
                 <!-- Language Switcher -->
                 <div class="lang-switcher">
@@ -108,7 +126,7 @@ $txt = $t[$lang];
             </div>
 
             <h1 class="hero-title animate-fade-in-up">
-                <?php echo $txt['hero_title_1']; ?> <br class="hidden md:block" />
+                <?php echo $txt['hero_title_1']; ?> <br />
                 <span class="hero-title-gradient"><?php echo $txt['hero_title_2']; ?></span>
             </h1>
 
