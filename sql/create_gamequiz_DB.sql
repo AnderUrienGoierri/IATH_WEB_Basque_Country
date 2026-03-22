@@ -1,4 +1,52 @@
+-- CREATE SCRIPT WITH CONSTRAINTS
 USE video_games_quiz_db;
+
+DROP DATABASE IF EXISTS video_games_quiz_db;
+
+CREATE DATABASE video_games_quiz_db;
+
+-- ====================================================== --
+-- GENRES TABLE --
+-- ====================================================== --
+CREATE TABLE genres (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- ====================================================== --
+-- PLATFORMS TABLE --
+-- ====================================================== --
+CREATE TABLE platforms (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- ====================================================== --
+-- VIDEOGAMES TABLE --
+-- ====================================================== --
+CREATE TABLE videoGames (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    platform_id INT,
+    size_gb DECIMAL(10, 2),
+    genre_id INT,
+    release_year INT,
+    first_release_date DATE,
+    game_description TEXT,
+    more_data TEXT,
+    image VARCHAR(255) DEFAULT NULL,
+    originated VARCHAR(100) DEFAULT NULL,
+    actual_price DECIMAL(10, 2) DEFAULT 0.00,
+    purchases_on_game BOOLEAN DEFAULT FALSE,
+    average_playgame_duration INT,
+    average_player_age INT,
+    male_female_ratio DECIMAL(5, 2),
+    FOREIGN KEY (genre_id) REFERENCES genres(id) 
+        ON DELETE SET NULL ON UPDATE CASCADE,
+    FOREIGN KEY (platform_id) REFERENCES platforms(id) 
+        ON DELETE SET NULL ON UPDATE CASCADE
+);
+
 -- ====================================================== --
 -- ====================================================== --
 -- USERS TABLE (PROFILES) --
@@ -6,13 +54,15 @@ USE video_games_quiz_db;
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255) NOT NULL UNIQUE,
-    email VARCHAR(255) UNIQUE,
-    password_hash VARCHAR(255),
-    age INT,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    age INT UNSIGNED NOT NULL,
     gender ENUM('male', 'female', 'non-binary') DEFAULT NULL,
+    role ENUM('user', 'admin') DEFAULT 'user',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
 -- ====================================================== --
 -- GAME MATCH SESSIONS (QUIZ DATA) --
 -- ====================================================== --
@@ -26,9 +76,10 @@ CREATE TABLE game_match_sessions (
     mood_preference VARCHAR(100),
     -- 'Relaxing', 'Action', etc.
     session_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE
-    SET NULL
+    FOREIGN KEY (user_id) REFERENCES users(id) 
+        ON DELETE SET NULL
 );
+
 -- ====================================================== --
 -- RECOMMENDATIONS (RESULTS) --
 -- ====================================================== --
@@ -42,9 +93,12 @@ CREATE TABLE recommendations (
     -- 1 for top match, 2 for second, etc.
     is_selected BOOLEAN DEFAULT FALSE,
     -- If user clicked/viewed this specific recommendation
-    FOREIGN KEY (session_id) REFERENCES game_match_sessions(id) ON DELETE CASCADE,
-    FOREIGN KEY (game_id) REFERENCES videoGames(id) ON DELETE CASCADE
+    FOREIGN KEY (session_id) REFERENCES game_match_sessions(id) 
+        ON DELETE CASCADE,
+    FOREIGN KEY (game_id) REFERENCES videoGames(id) 
+        ON DELETE CASCADE
 );
+
 -- ====================================================== --
 -- USER GAME INTERACTIONS (FEEDBACK/HISTORY) --
 -- ====================================================== --
@@ -65,7 +119,10 @@ CREATE TABLE user_game_interactions (
     ),
     -- Optional 1-5 rating
     interaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (game_id) REFERENCES videoGames(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) 
+        ON DELETE CASCADE,
+    FOREIGN KEY (game_id) REFERENCES videoGames(id) 
+        ON DELETE CASCADE,
     UNIQUE KEY unique_user_game_interaction (user_id, game_id, interaction_type)
 );
+
