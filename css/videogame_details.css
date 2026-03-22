@@ -1,6 +1,6 @@
 /* Details Page Layout */
 .details-layout {
-    padding-top: 8rem; /* pt-32 */
+    padding-top: calc(var(--header-height) + 2rem); /* pt-32 */
     padding-bottom: 5rem; /* pb-20 */
 }
 

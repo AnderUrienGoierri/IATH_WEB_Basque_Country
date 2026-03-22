@@ -2,9 +2,9 @@
 .catalog-layout {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  padding-top: 8rem; /* pt-32 */
-  padding-bottom: 5rem; /* pb-20 */
+  gap: 1.5rem;
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: 3rem;
 }
 
 @media (min-width: 1024px) {
@@ -13,14 +13,8 @@
   }
 }
 
-/* Sidebar */
 .filters-sidebar {
   width: 100%;
-}
-@media (min-width: 1024px) {
-  .filters-sidebar {
-    width: 25%;
-  }
 }
 
 .filters-panel {
@@ -29,7 +23,17 @@
   border-radius: 1rem;
   border: 1px solid rgba(51, 65, 85, 0.5); /* slate-700/50 */
   position: sticky;
-  top: 6rem; /* top-24 */
+  top: var(--header-height); /* top-24 */
+}
+
+/* On mobile, we hide content by default */
+.filters-content {
+  display: none;
+}
+
+/* When active (on mobile), we show it */
+.filters-panel.active .filters-content {
+  display: block;
 }
 
 .filters-title {
@@ -37,10 +41,26 @@
   font-weight: 700;
   font-size: 1.25rem;
   color: white;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0; /* No margin when closed on mobile */
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between; /* Space for the arrow */
+  cursor: pointer;
+}
+
+.filters-title::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: var(--violet-500);
+  transition: transform 0.3s;
+}
+
+.filters-panel.active .filters-title {
+  margin-bottom: 1.5rem;
+}
+
+.filters-panel.active .filters-title::after {
+  content: '−';
 }
 
 .filter-group {
@@ -330,4 +350,43 @@
   text-align: center;
   padding: 5rem 0;
   color: var(--slate-500);
+}
+
+/* ==========================================================================
+   Media Queries (Mobile First)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .catalog-layout {
+    gap: 2.5rem;
+    padding-top: calc(var(--header-height) + 2rem);
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .catalog-layout {
+    flex-direction: row;
+  }
+
+  .filters-sidebar {
+    width: 25%;
+  }
+
+  /* Always show content on desktop */
+  .filters-content {
+    display: block !important;
+  }
+
+  .filters-title {
+    cursor: default;
+    margin-bottom: 1.5rem;
+  }
+
+  .filters-title::after {
+    display: none;
+  }
+
+  .catalog-content {
+    width: 75%;
+  }
 }
