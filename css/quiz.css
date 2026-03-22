@@ -146,10 +146,21 @@
     font-weight: 700;
 }
 
-.option-icon {
-    font-size: 2rem;
+.option-icon-svg {
+    width: 2.25rem;
+    height: 2.25rem;
     margin-bottom: 0.5rem;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    filter: invert(1); /* Turns black SVG stroke to white */
+    opacity: 0.9;
+    transition: all 0.25s ease;
+}
+
+.option-card.selected .option-icon-svg {
+    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(240deg); /* Violet tint */
+    opacity: 1;
 }
 
 .option-label {

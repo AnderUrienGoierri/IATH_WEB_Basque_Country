@@ -103,4 +103,12 @@ $(document).ready(function() {
     $('#free-check, #purchases-check').on('change', filterGames);
     $('#sort-select').on('change', sortGames);
     
+    // Sidebar Toggle (Mobile)
+    $('.filters-title').on('click', function() {
+        // Only toggle on mobile (check if the ::after element is visible or just use window width)
+        if (window.innerWidth < 1024) {
+            $('.filters-panel').toggleClass('active');
+        }
+    });
+    
 });
