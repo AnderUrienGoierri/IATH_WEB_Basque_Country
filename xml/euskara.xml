@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <title>Katalogoa - GameMatch AI</title>
+    <home>Hasiera</home>
+    <videogames>Bideojokoak</videogames>
+    <login>Hasi Saioa</login>
+    <logout>Amaitu Saioa</logout>
+    <welcome>Ongi etorri</welcome>
+    <quiz_link>Hasi Galdetegia</quiz_link>
+    <register>Erregistratu</register>
+    <powered_by>Adimen Artifizialak Gidatuta</powered_by>
+    <hero_title_1>Ezagutu zure hurrengo</hero_title_1>
+    <hero_title_2>bideojoko gogokoena</hero_title_2>
+    <hero_desc>Ez dakizu zertara jolastu? Gure algoritmoak zure lehentasunak, denbora eta jolas-estiloa aztertzen ditu itxaroten zenuen joko perfektua gomendatzeko.</hero_desc>
+    <btn_quiz>Hasi Galdetegia</btn_quiz>
+    <btn_catalog>Katalogoa Ikusi</btn_catalog>
+    <stats_games>+500 Joko</stats_games>
+    <stats_ai>IA Aurreratua</stats_ai>
+    <stats_updated>2026 Eguneratua</stats_updated>
+    <page_title>Kontua Sortu</page_title>
+    <page_subtitle>Batu GameMatch AI-ra eta ezagutu zure joko perfektua.</page_subtitle>
+    <username>Erabiltzaile-izena</username>
+    <password>Pasahitza</password>
+    <submit>Bidali</submit>
+    <remember>Pasahitza Gogoratu</remember>
+    <no_account>Ez duzu konturik?</no_account>
+    <register_link>Erregistratu</register_link>
+    <err_required>All fields are required.</err_required>
+    <err_invalid>Invalid username or password.</err_invalid>
+    <err_username_email_missing>Username or Email is missing or does not exist.</err_username_email_missing>
+    <msg_password_is>Zure pasahitza da:</msg_password_is>
+    <progress>Pausoa</progress>
+    <of>/</of>
+    <step1_title>Zure plataforma</step1_title>
+    <step1_subtitle>Zertan jolasten duzu normalean?</step1_subtitle>
+    <device_pc>PC</device_pc>
+    <device_ps>PlayStation</device_ps>
+    <device_xbox>Xbox</device_xbox>
+    <device_switch>Nintendo Switch</device_switch>
+    <device_mobile>Mugikorra</device_mobile>
+    <device_any>Edozein plataforma</device_any>
+    <step2_title>Zure denbora</step2_title>
+    <step2_subtitle>Zenbat denbora duzu jolasteko?</step2_subtitle>
+    <time_short>Saio motza</time_short>
+    <time_short_desc>&lt; 30 min</time_short_desc>
+    <time_medium>Saio normala</time_medium>
+    <time_medium_desc>30–90 min</time_medium_desc>
+    <time_long>Saio luzea</time_long>
+    <time_long_desc>90+ min</time_long_desc>
+    <step3_title>Zure aldartea</step3_title>
+    <step3_subtitle>Zer nolako esperientzia bilatzen duzu?</step3_subtitle>
+    <mood_action>Ekintza</mood_action>
+    <mood_action_desc>Adrenaline &amp; combat</mood_action_desc>
+    <mood_adventure>Abentura</mood_adventure>
+    <mood_adventure_desc>Explore &amp; discover</mood_adventure_desc>
+    <mood_strategy>Estrategia</mood_strategy>
+    <mood_strategy_desc>Think &amp; plan</mood_strategy_desc>
+    <mood_relax>Erlaxagarria</mood_relax>
+    <mood_relax_desc>Chill &amp; unwind</mood_relax_desc>
+    <mood_horror>Beldurra</mood_horror>
+    <mood_horror_desc>Fear &amp; suspense</mood_horror_desc>
+    <mood_sport>Kirolak/Lasterketak</mood_sport>
+    <mood_sport_desc>Compete &amp; speed</mood_sport_desc>
+    <next>Hurrengoa</next>
+    <back>Katalogora Itzuli</back>
+    <error_select>Please select an option to continue.</error_select>
+    <email>Posta elektronikoa</email>
+    <confirm_password>Pasahitza Egiaztatu</confirm_password>
+    <age>Batez besteko adina</age>
+    <gender>Generoa</gender>
+    <gender_select>Aukeratu...</gender_select>
+    <gender_male>Gizonezkoa</gender_male>
+    <gender_female>Emakumezkoa</gender_female>
+    <gender_nb>Ez Bitarra</gender_nb>
+    <has_account>Baduzu kontua?</has_account>
+    <login_link>Hasi Saioa</login_link>
+    <err_password_match>Passwords do not match.</err_password_match>
+    <err_password_length>Password must be at least 6 characters.</err_password_length>
+    <err_email>Invalid email format.</err_email>
+    <err_username_taken>Username is already taken.</err_username_taken>
+    <err_email_taken>Email is already registered.</err_email_taken>
+    <err_generic>An error occurred. Please try again.</err_generic>
+    <subtitle>Zure lehentasunetan oinarrituta, zuretzako joko perfektuak aurkitu ditugu.</subtitle>
+    <match>KINTZIDENTZIA</match>
+    <top_match>ZURE #1 AUKERA</top_match>
+    <others>BESTE GOMENDIOAK</others>
+    <see_details>Xehetasunak Ikusi</see_details>
+    <platform>Plataforma</platform>
+    <duration>Batez besteko iraupena</duration>
+    <genre>Generoa</genre>
+    <rank>POSTUA</rank>
+    <loading>Kintzidentziak kalkulatzen...</loading>
+    <compare>Konparatu honekin...</compare>
+    <search_placeholder>Bilatu jokoa konparatzeko...</search_placeholder>
+    <vs>VS</vs>
+    <release_year>Argitaratze urtea</release_year>
+    <price>Prezioa</price>
+    <size>Tamaina</size>
+    <playtime>Batez besteko jolastordua</playtime>
+    <purchases>Jokoko Eskuraketak</purchases>
+    <origin>Garatzailearen Jatorria</origin>
+    <free>Doan (Free to Play)</free>
+    <yes>Bai</yes>
+    <no>Ez</no>
+    <rate_game>Baloratu jokoa</rate_game>
+    <login_to_rate>joko hau baloratzeko.</login_to_rate>
+    <catalog_title>Joko Katalogoa</catalog_title>
+    <catalog_subtitle>Arakatu gure bilduma osoa.</catalog_subtitle>
+    <showing>Erakusten</showing>
+    <results>emaitza</results>
+    <no_desc>Ez dago deskribapenik.</no_desc>
+    <view_details>Xehetasunak ikusi</view_details>
+    <no_games>Ez da jokorik aurkitu.</no_games>
+    <footer>&amp;copy; 2026 GameMatch AI. Eskubide guztiak erreserbatuta.</footer>
+    <login_title>Hasi Saioa</login_title>
+    <login_subtitle>Sartu zure kontuan zure bideojoko gogokoenak ikusteko.</login_subtitle>
+    <login_btn>Hasi Saioa</login_btn>
+    <register_title>Kontua Sortu</register_title>
+    <register_subtitle>Batu GameMatch AI-ra eta ezagutu zure joko perfektua.</register_subtitle>
+    <register_btn>Erregistratu</register_btn>
+</translations>
