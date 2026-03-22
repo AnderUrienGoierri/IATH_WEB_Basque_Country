@@ -1,9 +1,9 @@
 -- CREATE SCRIPT WITH CONSTRAINTS
-USE video_games_quiz_db;
 
 DROP DATABASE IF EXISTS video_games_quiz_db;
 
 CREATE DATABASE video_games_quiz_db;
+USE video_games_quiz_db;
 
 -- ====================================================== --
 -- GENRES TABLE --
