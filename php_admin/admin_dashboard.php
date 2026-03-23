@@ -25,6 +25,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || $_SESSION['role
     
     <!-- CSS -->
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>

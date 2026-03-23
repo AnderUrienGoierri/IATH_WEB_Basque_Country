@@ -18,7 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $genre_id = $_POST['genre_id'] ?? null;
     $release_year = $_POST['release_year'] ?? date('Y');
     $desc = $_POST['game_description'] ?? '';
-    $image = $_POST['image'] ?? 'https://placehold.co/600x900?text=No+Image';
+    
+    // Default image if upload fails or is skipped
+    $imagePath = 'https://placehold.co/600x900?text=No+Image';
+    
     $originated = $_POST['originated'] ?? '';
     $price = $_POST['actual_price'] ?? 0;
     $purchases = isset($_POST['purchases_on_game']) ? 1 : 0;
@@ -29,12 +32,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($name) || empty($platform_id) || empty($genre_id)) {
         $error = "Name, Platform, and Genre are required.";
     } else {
-        $stmt = $conn->prepare("INSERT INTO videoGames 
+        // Handle file upload
+        if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+            $uploadDir = '../videogame_images/';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+            // Generate safe filename based on game name
+            $safeName = preg_replace('/[^a-zA-Z0-9_-]/', '_', strtolower($name));
+            $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+            
+            $allowedExts = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+            if (in_array($ext, $allowedExts)) {
+                $filename = $safeName . '_' . time() . '.' . $ext;
+                $destFile = $uploadDir . $filename;
+                
+                if (move_uploaded_file($_FILES['image']['tmp_name'], $destFile)) {
+                    $imagePath = 'videogame_images/' . $filename;
+                } else {
+                    $error = "Failed to save the uploaded image.";
+                }
+            } else {
+                $error = "Invalid image format. Only JPG, PNG, WEBP, and GIF are allowed.";
+            }
+        }
+
+        if (empty($error)) {
+            $stmt = $conn->prepare("INSERT INTO videoGames 
             (name, platform_id, size_gb, genre_id, release_year, game_description, image, originated, actual_price, purchases_on_game, average_playgame_duration, average_player_age, male_female_ratio) 
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         
         $stmt->bind_param("sidiisssdiiid", 
-            $name, $platform_id, $size_gb, $genre_id, $release_year, $desc, $image, $originated, 
+            $name, $platform_id, $size_gb, $genre_id, $release_year, $desc, $imagePath, $originated, 
             $price, $purchases, $avg_time, $avg_age, $ratio
         );
 
@@ -45,6 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $stmt->close();
     }
+}
+
 }
 
 $genres = $conn->query("SELECT * FROM genres ORDER BY name ASC");
@@ -114,21 +145,22 @@ $platforms = $conn->query("SELECT * FROM platforms ORDER BY name ASC");
                 </div>
             <?php endif; ?>
 
-            <form method="POST" action="admin_add_game.php" class="auth-form" style="width: 100%; max-width: 100%;">
+            <div class="admin-form-panel">
+                <form method="POST" action="admin_add_game.php" enctype="multipart/form-data" class="auth-form" style="width: 100%; max-width: 100%;">
                 <div class="form-grid">
-                    <div class="input-group">
-                        <label class="input-label">Game Name *</label>
-                        <input type="text" name="name" class="input-field" required>
+                    <div class="form-group">
+                        <label class="form-label">Game Name *</label>
+                        <input type="text" name="name" class="form-input" required>
                     </div>
                     
-                    <div class="input-group">
-                        <label class="input-label">Release Year *</label>
-                        <input type="number" name="release_year" class="input-field" value="2026" required>
+                    <div class="form-group">
+                        <label class="form-label">Release Year *</label>
+                        <input type="number" name="release_year" class="form-input" value="2026" required>
                     </div>
 
-                    <div class="input-group">
-                        <label class="input-label">Platform *</label>
-                        <select name="platform_id" class="input-field" required>
+                    <div class="form-group">
+                        <label class="form-label">Platform *</label>
+                        <select name="platform_id" class="form-select" required>
                             <option value="">Select Platform</option>
                             <?php while($p = $platforms->fetch_assoc()): ?>
                                 <option value="<?php echo $p['id']; ?>"><?php echo htmlspecialchars($p['name']); ?></option>
@@ -136,9 +168,9 @@ $platforms = $conn->query("SELECT * FROM platforms ORDER BY name ASC");
                         </select>
                     </div>
 
-                    <div class="input-group">
-                        <label class="input-label">Genre *</label>
-                        <select name="genre_id" class="input-field" required>
+                    <div class="form-group">
+                        <label class="form-label">Genre *</label>
+                        <select name="genre_id" class="form-select" required>
                             <option value="">Select Genre</option>
                             <?php while($g = $genres->fetch_assoc()): ?>
                                 <option value="<?php echo $g['id']; ?>"><?php echo htmlspecialchars($g['name']); ?></option>
@@ -146,56 +178,57 @@ $platforms = $conn->query("SELECT * FROM platforms ORDER BY name ASC");
                         </select>
                     </div>
 
-                    <div class="input-group">
-                        <label class="input-label">Price ($)</label>
-                        <input type="number" step="0.01" name="actual_price" class="input-field" value="59.99">
+                    <div class="form-group">
+                        <label class="form-label">Price ($)</label>
+                        <input type="number" step="0.01" name="actual_price" class="form-input" value="59.99">
                     </div>
 
-                    <div class="input-group">
-                        <label class="input-label">Size (GB)</label>
-                        <input type="number" step="0.01" name="size_gb" class="input-field" value="50.00">
+                    <div class="form-group">
+                        <label class="form-label">Size (GB)</label>
+                        <input type="number" step="0.01" name="size_gb" class="form-input" value="50.00">
                     </div>
 
-                    <div class="input-group">
-                        <label class="input-label">Developer Origin</label>
-                        <input type="text" name="originated" class="input-field" placeholder="USA, Japan, etc.">
+                    <div class="form-group">
+                        <label class="form-label">Developer Origin</label>
+                        <input type="text" name="originated" class="form-input" placeholder="USA, Japan, etc.">
                     </div>
 
-                    <div class="input-group">
-                        <label class="input-label">Image URL / Path</label>
-                        <input type="text" name="image" class="input-field" placeholder="https://... or filepath">
+                    <div class="form-group">
+                        <label class="form-label">Cover Image</label>
+                        <input type="file" name="image" class="form-input" accept="image/*" style="padding: 0.5rem 1rem;">
                     </div>
 
-                    <div class="input-group">
-                        <label class="input-label">Average Playtime (hours)</label>
-                        <input type="number" name="average_playgame_duration" class="input-field" value="30">
+                    <div class="form-group">
+                        <label class="form-label">Average Playtime (hours)</label>
+                        <input type="number" name="average_playgame_duration" class="form-input" value="30">
                     </div>
 
-                    <div class="input-group">
-                        <label class="input-label">Average Player Age</label>
-                        <input type="number" name="average_player_age" class="input-field" value="25">
+                    <div class="form-group">
+                        <label class="form-label">Average Player Age</label>
+                        <input type="number" name="average_player_age" class="form-input" value="25">
                     </div>
                     
-                    <div class="input-group">
-                        <label class="input-label">Male/Female Ratio</label>
-                        <input type="number" step="0.01" name="male_female_ratio" class="input-field" value="1.00">
+                    <div class="form-group">
+                        <label class="form-label">Male/Female Ratio</label>
+                        <input type="number" step="0.01" name="male_female_ratio" class="form-input" value="1.00">
                     </div>
 
-                    <div class="input-group" style="display: flex; align-items: center; gap: 0.5rem; margin-top: 2rem;">
+                    <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem; margin-top: 2rem; flex-direction: row;">
                         <input type="checkbox" name="purchases_on_game" style="width: 20px; height: 20px;">
-                        <label class="input-label" style="margin-bottom: 0;">Has In-App Purchases?</label>
+                        <label class="form-label" style="margin-bottom: 0;">Has In-App Purchases?</label>
                     </div>
                 </div>
 
-                <div class="input-group" style="margin-top: 1.5rem;">
-                    <label class="input-label">Game Description</label>
-                    <textarea name="game_description" class="input-field" rows="4"></textarea>
+                <div class="form-group" style="margin-top: 1.5rem;">
+                    <label class="form-label">Game Description</label>
+                    <textarea name="game_description" class="form-input" rows="4"></textarea>
                 </div>
 
                 <div style="margin-top: 2rem;">
                     <button type="submit" class="btn-primary" style="width: auto;">Add to Database</button>
                 </div>
-            </form>
+                </form>
+            </div>
         </section>
     </main>
 
