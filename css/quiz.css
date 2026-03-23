@@ -153,13 +153,13 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    filter: invert(1); /* Turns black SVG stroke to white */
+    filter: invert(1);
     opacity: 0.9;
     transition: all 0.25s ease;
 }
 
 .option-card.selected .option-icon-svg {
-    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(240deg); /* Violet tint */
+    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(240deg);
     opacity: 1;
 }
 
@@ -274,15 +274,15 @@
     font-weight: 500;
 }
 
-/* Responsive */
+/* ==========================================================================
+   Media Queries (Mobile First)
+   ========================================================================== */
 @media (max-width: 640px) {
     .quiz-container {
         padding: 1.5rem;
         margin: 0 1rem;
     }
-    .option-grid {
-        grid-template-columns: 1fr;
-    }
+    .option-grid,
     .option-grid.three-col {
         grid-template-columns: 1fr;
     }
