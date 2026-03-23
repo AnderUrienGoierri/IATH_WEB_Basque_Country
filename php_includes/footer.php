@@ -1,5 +1,7 @@
 <?php
-$isSubfolder = str_contains($_SERVER['PHP_SELF'], '/php_user/') || str_contains($_SERVER['PHP_SELF'], '/php_admin/');
+$isSubfolder = stripos($_SERVER['PHP_SELF'], '/php_user/') !== false || 
+               stripos($_SERVER['PHP_SELF'], '/php_admin/') !== false || 
+               stripos($_SERVER['PHP_SELF'], '/php_generic/') !== false;
 $prefix = $isSubfolder ? '../' : '';
 ?>
 <!-- Global Footer -->
