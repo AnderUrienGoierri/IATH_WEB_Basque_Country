@@ -5,9 +5,9 @@
 $currentPage = basename($_SERVER['PHP_SELF']);
 
 // Determine path prefix based on whether we are in a subfolder
-$isSubfolder = str_contains($_SERVER['PHP_SELF'], '/php_user/') || 
-               str_contains($_SERVER['PHP_SELF'], '/php_admin/') || 
-               str_contains($_SERVER['PHP_SELF'], '/php_generic/');
+$isSubfolder = stripos($_SERVER['PHP_SELF'], '/php_user/') !== false || 
+               stripos($_SERVER['PHP_SELF'], '/php_admin/') !== false || 
+               stripos($_SERVER['PHP_SELF'], '/php_generic/') !== false;
 $prefix = $isSubfolder ? '../' : '';
 
 // Admin-specific path logic
