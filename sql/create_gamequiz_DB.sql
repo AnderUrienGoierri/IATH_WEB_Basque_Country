@@ -33,6 +33,7 @@ CREATE TABLE videoGames (
     release_year INT,
     first_release_date DATE,
     game_description TEXT,
+    full_description TEXT,
     more_data TEXT,
     image VARCHAR(255) DEFAULT NULL,
     originated VARCHAR(100) DEFAULT NULL,

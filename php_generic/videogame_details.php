@@ -228,12 +228,12 @@ function renderGameCard($row, $txt, $isComparison, $userRatings = []) {
             <?php endif; ?>
         </div>
 
-        <?php if (!empty($row["more_data"])): ?>
-        <div class="tech-data-section">
-            <h4 class="section-title">Technical Data</h4>
-            <code class="tech-code">
-                <?php echo htmlspecialchars($row["more_data"]); ?>
-            </code>
+        <?php if (!empty($row["full_description"])): ?>
+        <div class="full-description-section">
+            <h4 class="section-title">Full Biography</h4>
+            <div class="bio-text">
+                <?php echo nl2br(htmlspecialchars($row["full_description"])); ?>
+            </div>
         </div>
         <?php endif; ?>
     </div>

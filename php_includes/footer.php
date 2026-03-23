@@ -17,3 +17,4 @@ $prefix = $isSubfolder ? '../' : '';
         </div>
     </div>
 </footer>
+ 

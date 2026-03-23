@@ -70,7 +70,7 @@ require_once 'php_helpers/language.php';
 
         </div>
     </main>
-
+    
     <?php include_once 'php_includes/footer.php'; ?>
 
     <!-- JS -->

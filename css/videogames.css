@@ -23,7 +23,7 @@
   border-radius: 1rem;
   border: 1px solid rgba(51, 65, 85, 0.5); /* slate-700/50 */
   position: sticky;
-  top: var(--header-height); /* top-24 */
+  top: calc(var(--header-height) + 2rem); /* Keep a margin below header */
 }
 
 /* On mobile, we hide content by default */
