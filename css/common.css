@@ -273,9 +273,10 @@ body.mobile-menu-active .auth-buttons {
 }
 
 .footer-logo img {
-  height: 2.5rem;
+  height: 4rem;
   width: auto;
-  opacity: 0.7;
+  opacity: 1;
+  display: block;
 }
 
 .footer-links {
