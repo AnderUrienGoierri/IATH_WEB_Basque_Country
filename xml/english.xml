@@ -22,4 +22,17 @@
     <sort_id_high>ID (High-Low)</sort_id_high>
     <sort_ratio>Male-Female Audience %</sort_ratio>
     <search_placeholder_catalog>Minecraft, GTA...</search_placeholder_catalog>
+    <user_panel>User Panel</user_panel>
+    <admin_panel>Admin Panel</admin_panel>
+    <dashboard>Dashboard</dashboard>
+    <add_game>Add New Game</add_game>
+    <manage_users>Manage Users</manage_users>
+    <my_profile>My Profile</my_profile>
+    <my_ratings>My Ratings</my_ratings>
+    <recommendations_nav>Recommendations</recommendations_nav>
+    <live_chat>Live Chat</live_chat>
+    <quiz_submit>See Results</quiz_submit>
+    <analyzing_prefs>Analyzing your preferences...</analyzing_prefs>
+    <player>Player</player>
+    <friends_chat>Friends &amp; Chat</friends_chat>
 </translations>

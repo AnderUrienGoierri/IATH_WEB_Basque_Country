@@ -39,4 +39,17 @@
     <sort_id_high>ID (Alto-Bajo)</sort_id_high>
     <sort_ratio>Audiencia M/F %</sort_ratio>
     <search_placeholder_catalog>Minecraft, GTA...</search_placeholder_catalog>
+    <user_panel>Panel de Usuario</user_panel>
+    <admin_panel>Panel de Administrador</admin_panel>
+    <dashboard>Tablero</dashboard>
+    <add_game>Añadir Nuevo Juego</add_game>
+    <manage_users>Gestionar Usuarios</manage_users>
+    <my_profile>Mi Perfil</my_profile>
+    <my_ratings>Mis Valoraciones</my_ratings>
+    <recommendations_nav>Recomendaciones</recommendations_nav>
+    <live_chat>Chat en Vivo</live_chat>
+    <quiz_submit>Ver Resultados</quiz_submit>
+    <analyzing_prefs>Analizando tus preferencias...</analyzing_prefs>
+    <player>Jugador</player>
+    <friends_chat>Amigos y Chat</friends_chat>
 </translations>

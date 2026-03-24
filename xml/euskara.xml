@@ -135,4 +135,17 @@
     <sort_id_high>ID (Altua-Baxua)</sort_id_high>
     <sort_ratio>G/E Publizitate %</sort_ratio>
     <search_placeholder_catalog>Minecraft, GTA...</search_placeholder_catalog>
+    <user_panel>Erabiltzaile Panela</user_panel>
+    <admin_panel>Administrazio Panela</admin_panel>
+    <dashboard>Arrela-panela</dashboard>
+    <add_game>Gehitu Joko Berria</add_game>
+    <manage_users>Kudeatu Erabiltzaileak</manage_users>
+    <my_profile>Nire Profila</my_profile>
+    <my_ratings>Nire Balorazioak</my_ratings>
+    <recommendations_nav>Gomendioak</recommendations_nav>
+    <live_chat>Zuzeneko Txata</live_chat>
+    <quiz_submit>Emaitzak Ikusi</quiz_submit>
+    <analyzing_prefs>Zure lehentasunak aztertzen...</analyzing_prefs>
+    <player>Erabiltzailea</player>
+    <friends_chat>Lagunak eta Txata</friends_chat>
 </translations>

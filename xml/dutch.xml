@@ -28,4 +28,16 @@
     <sort_id_high>ID (Hoog-Laag)</sort_id_high>
     <sort_ratio>M/V Publiek %</sort_ratio>
     <search_placeholder_catalog>Minecraft, GTA...</search_placeholder_catalog>
+    <user_panel>Gebruikerspaneel</user_panel>
+    <admin_panel>Beheerderspaneel</admin_panel>
+    <dashboard>Dashboard</dashboard>
+    <add_game>Nieuw Spel Toevoegen</add_game>
+    <manage_users>Gebruikers Beheren</manage_users>
+    <my_profile>Mijn Profiel</my_profile>
+    <my_ratings>Mijn Beoordelingen</my_ratings>
+    <recommendations_nav>Aanbevelingen</recommendations_nav>
+    <live_chat>Live Chat</live_chat>
+    <analyzing_prefs>Uw voorkeuren analyseren...</analyzing_prefs>
+    <player>Speler</player>
+    <friends_chat>Vrienden &amp; Chat</friends_chat>
 </translations>

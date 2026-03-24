@@ -173,7 +173,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button id="btn-back" class="btn-quiz-back" style="display: none;"><?php echo $txt['back']; ?></button>
                 <button id="btn-next" class="btn-quiz-next" disabled 
                         data-next-text="<?php echo $txt['next']; ?>" 
-                        data-submit-text="<?php echo $txt['submit']; ?>">
+                        data-submit-text="<?php echo $txt['quiz_submit']; ?>">
                     <?php echo $txt['next']; ?>
                 </button>
             </div>
@@ -183,7 +183,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- Loading State -->
         <div id="quiz-loading" class="quiz-loading">
             <div class="loading-spinner"></div>
-            <p class="loading-text">Analyzing your preferences...</p>
+            <p class="loading-text"><?php echo $txt['analyzing_prefs']; ?></p>
         </div>
     </main>
 
