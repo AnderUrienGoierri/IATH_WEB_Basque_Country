@@ -25,9 +25,9 @@
     <remember>Pasahitza Gogoratu</remember>
     <no_account>Ez duzu konturik?</no_account>
     <register_link>Erregistratu</register_link>
-    <err_required>All fields are required.</err_required>
-    <err_invalid>Invalid username or password.</err_invalid>
-    <err_username_email_missing>Username or Email is missing or does not exist.</err_username_email_missing>
+    <err_required>Eremu guztiak derrigorrezkoak dira.</err_required>
+    <err_invalid>Erabiltzaile edo pasahitz baliogabea.</err_invalid>
+    <err_username_email_missing>Erabiltzaile edo posta elektronikoa falta da edo ez dago erregistratuta.</err_username_email_missing>
     <msg_password_is>Zure pasahitza da:</msg_password_is>
     <progress>Pausoa</progress>
     <of>/</of>
@@ -50,20 +50,20 @@
     <step3_title>Zure aldartea</step3_title>
     <step3_subtitle>Zer nolako esperientzia bilatzen duzu?</step3_subtitle>
     <mood_action>Ekintza</mood_action>
-    <mood_action_desc>Adrenaline &amp; combat</mood_action_desc>
+    <mood_action_desc>Adrenalina eta borroka</mood_action_desc>
     <mood_adventure>Abentura</mood_adventure>
-    <mood_adventure_desc>Explore &amp; discover</mood_adventure_desc>
+    <mood_adventure_desc>Esploratu eta aurkitu</mood_adventure_desc>
     <mood_strategy>Estrategia</mood_strategy>
-    <mood_strategy_desc>Think &amp; plan</mood_strategy_desc>
+    <mood_strategy_desc>Pentsatu eta planifikatu</mood_strategy_desc>
     <mood_relax>Erlaxagarria</mood_relax>
-    <mood_relax_desc>Chill &amp; unwind</mood_relax_desc>
+    <mood_relax_desc>Lasaitu eta deskonektatu</mood_relax_desc>
     <mood_horror>Beldurra</mood_horror>
-    <mood_horror_desc>Fear &amp; suspense</mood_horror_desc>
+    <mood_horror_desc>Beldurra eta suspensea</mood_horror_desc>
     <mood_sport>Kirolak/Lasterketak</mood_sport>
-    <mood_sport_desc>Compete &amp; speed</mood_sport_desc>
+    <mood_sport_desc>Lehiatu eta abiadura</mood_sport_desc>
     <next>Hurrengoa</next>
     <back>Atzera</back>
-    <error_select>Please select an option to continue.</error_select>
+    <error_select>Mesedez, aukeratu aukera bat jarraitzeko.</error_select>
     <email>Posta elektronikoa</email>
     <confirm_password>Pasahitza Egiaztatu</confirm_password>
     <age>Batez besteko adina</age>
@@ -74,12 +74,12 @@
     <gender_nb>Ez Bitarra</gender_nb>
     <has_account>Baduzu kontua?</has_account>
     <login_link>Hasi Saioa</login_link>
-    <err_password_match>Passwords do not match.</err_password_match>
-    <err_password_length>Password must be at least 6 characters.</err_password_length>
-    <err_email>Invalid email format.</err_email>
-    <err_username_taken>Username is already taken.</err_username_taken>
-    <err_email_taken>Email is already registered.</err_email_taken>
-    <err_generic>An error occurred. Please try again.</err_generic>
+    <err_password_match>Pasahitzak ez datoz bat.</err_password_match>
+    <err_password_length>Pasahitzak gutxienez 6 karaktere izan behar ditu.</err_password_length>
+    <err_email>Posta formatu baliogabea.</err_email>
+    <err_username_taken>Erabiltzaile-izen hori hartuta dago.</err_username_taken>
+    <err_email_taken>Posta elektroniko hori erregistratuta dago.</err_email_taken>
+    <err_generic>Errore bat gertatu da. Saiatu berriro.</err_generic>
     <subtitle>Zure lehentasunetan oinarrituta, zuretzako joko perfektuak aurkitu ditugu.</subtitle>
     <match>KINTZIDENTZIA</match>
     <top_match>ZURE #1 AUKERA</top_match>
