@@ -16,7 +16,7 @@ $users = $conn->query("SELECT id, username, email, age, gender, role, created_at
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Users - Admin - GameMatch AI</title>
-    <!-- Google Fonts -->
+    <link rel="icon" type="image/png" href="/IATH_WEB_Basque_Country/img/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
@@ -90,7 +90,7 @@ $users = $conn->query("SELECT id, username, email, age, gender, role, created_at
                                 </td>
                                 <td><?php echo date('M j, Y', strtotime($u['created_at'])); ?></td>
                                 <td>
-                                    <a href="admin_user_details.php?id=<?php echo $u['id']; ?>" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem; width: auto;">View Quiz Data</a>
+                                    <a href="admin_user_details.php?id=<?php echo $u['id']; ?>" class="btn-secondary action-btn">View Quiz Data</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
