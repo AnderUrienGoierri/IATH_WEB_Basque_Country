@@ -266,6 +266,9 @@ $result = $conn->query($sql);
                 ?>
 
             </div>
+
+            <!-- Pagination -->
+            <nav id="pagination" class="pagination-nav" aria-label="Pagination"></nav>
         </div>
     </main>
 
