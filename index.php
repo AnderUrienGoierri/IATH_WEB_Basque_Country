@@ -7,6 +7,7 @@ require_once 'php_helpers/language.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $txt['title']; ?></title>
+    <link rel="icon" type="image/png" href="/IATH_WEB_Basque_Country/img/logo.png">
     <!-- Google Fonts: Inter & Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +27,14 @@ require_once 'php_helpers/language.php';
 
     <!-- Hero Section -->
     <main class="hero-section">
+        <!-- Background Video -->
+        <div class="hero-video-wrap">
+            <video class="hero-video" autoplay muted loop playsinline poster="mp4/hero_bg.png">
+                <source src="mp4/hero_video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
+
         <div class="container hero-content">
             
             <div class="powered-by-badge animate-fade-in-up">
@@ -68,7 +77,6 @@ require_once 'php_helpers/language.php';
                 <span class="stat-item"><span class="dot dot-violet"></span> <?php echo $txt['stats_updated']; ?></span>
             </div>
 
-        </div>
     </main>
     
     <?php include_once 'php_includes/footer.php'; ?>

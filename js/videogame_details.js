@@ -44,7 +44,7 @@ $(document).ready(function() {
         // Disable clicks during request
         container.style.pointerEvents = 'none';
 
-        fetch('api/rate_game.php', {
+        fetch('/IATH_WEB_Basque_Country/php_helpers/api/rate_game.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ game_id: parseInt(gameId), rating: rating })

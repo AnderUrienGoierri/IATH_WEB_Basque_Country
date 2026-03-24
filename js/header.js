@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
             body.classList.toggle('mobile-menu-active');
             
+            // Close all dropdowns when toggling mobile menu
+            document.querySelectorAll('.header-dropdown').forEach(d => d.classList.remove('active'));
+            
             const icon = mobileMenuBtn.querySelector('svg path');
             if (body.classList.contains('mobile-menu-active')) {
                 icon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // X icon
@@ -27,18 +30,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Admin Dropdown Toggle
-    const adminDropBtn = document.querySelector('.admin-dropdown-btn');
-    const adminDrop = document.querySelector('.admin-dropdown');
-
-    if (adminDropBtn && adminDrop) {
-        adminDropBtn.addEventListener('click', function(e) {
+    // Generic Dropdown Toggle
+    document.querySelectorAll('.header-dropdown-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
             e.stopPropagation();
-            adminDrop.classList.toggle('active');
+            const parent = this.closest('.header-dropdown');
+            
+            // Close other dropdowns
+            document.querySelectorAll('.header-dropdown').forEach(d => {
+                if (d !== parent) d.classList.remove('active');
+            });
+            
+            parent.classList.toggle('active');
         });
+    });
 
-        document.addEventListener('click', function() {
-            adminDrop.classList.remove('active');
+    document.addEventListener('click', function() {
+        document.querySelectorAll('.header-dropdown').forEach(d => {
+            d.classList.remove('active');
         });
-    }
+    });
+
+    // Close dropdown when an item is clicked (especially for hash links)
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const parent = this.closest('.header-dropdown');
+            if (parent) parent.classList.remove('active');
+        });
+    });
 });
