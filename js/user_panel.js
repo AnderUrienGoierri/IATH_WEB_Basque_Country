@@ -4,7 +4,7 @@ $(document).ready(function () {
     let chatUserName = '';
     let lastMessageId = 0;
     let chatPollTimer = null;
-    let onlinePollTimer = null;
+    let friendsPollTimer = null;
 
     // ===== Tab Switching =====
     $('.panel-link').on('click', function (e) {
@@ -19,10 +19,11 @@ $(document).ready(function () {
 
         // Start polling when on friends tab
         if (tab === 'friends') {
-            loadOnlineUsers();
-            startOnlinePolling();
+            loadFriends();
+            loadFriendRequests();
+            startFriendsPolling();
         } else {
-            stopOnlinePolling();
+            stopFriendsPolling();
         }
     });
 
@@ -79,40 +80,171 @@ $(document).ready(function () {
     sendHeartbeat();
     setInterval(sendHeartbeat, 30000);
 
-    // ===== Online Users =====
-    function loadOnlineUsers() {
-        $.getJSON(API + '/get_online_users.php', function (res) {
-            const $list = $('#online-users-list');
-            if (!res.success || res.users.length === 0) {
-                $list.html('<div class="no-users">No users online</div>');
+    // ===== Friend Search =====
+    let searchTimeout = null;
+    $('#friend-search-input').on('input', function() {
+        clearTimeout(searchTimeout);
+        const query = $(this).val().trim();
+        const $results = $('#friend-search-results');
+
+        if (query.length < 3) {
+            $results.hide().empty();
+            return;
+        }
+
+        searchTimeout = setTimeout(() => {
+            $.getJSON(API + '/search_users.php?q=' + encodeURIComponent(query), function(res) {
+                if (!res.success || res.users.length === 0) {
+                    $results.html('<div class="no-results" style="padding:1rem;color:var(--slate-500);font-size:0.8rem;">No users found</div>').show();
+                    return;
+                }
+
+                let html = '';
+                res.users.forEach(u => {
+                    let actionHtml = '';
+                    if (!u.friend_status) {
+                        actionHtml = `<button class="btn-add-friend" data-id="${u.id}">Add Friend</button>`;
+                    } else if (u.friend_status === 'pending') {
+                        actionHtml = u.is_sender ? '<span class="status-label">Request Sent</span>' : '<span class="status-label">Pending...</span>';
+                    } else if (u.friend_status === 'accepted') {
+                        actionHtml = '<span class="status-label">Friends</span>';
+                    }
+
+                    html += `
+                        <div class="search-result-item">
+                            <div class="search-result-info">
+                                <span class="sr-username">${u.username}</span>
+                                <span class="sr-email">${u.email}</span>
+                            </div>
+                            <div class="sr-actions">${actionHtml}</div>
+                        </div>
+                    `;
+                });
+                $results.html(html).show();
+            });
+        }, 300);
+    });
+
+    // Hide search results when clicking outside
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.search-box').length) {
+            $('#friend-search-results').hide();
+        }
+    });
+
+    // Send Friend Request
+    $(document).on('click', '.btn-add-friend', function() {
+        const targetId = $(this).data('id');
+        const $btn = $(this);
+        $btn.prop('disabled', true).text('Sending...');
+
+        $.ajax({
+            url: API + '/friend_actions.php',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ action: 'send_request', target_id: targetId }),
+            success: function(res) {
+                if (res.success) {
+                    $btn.parent().html('<span class="status-label">Request Sent</span>');
+                    loadFriendRequests();
+                } else {
+                    alert(res.error || 'Failed to send request');
+                    $btn.prop('disabled', false).text('Add Friend');
+                }
+            }
+        });
+    });
+
+    // ===== Friend Requests =====
+    function loadFriendRequests() {
+        $.getJSON(API + '/get_friend_requests.php', function(res) {
+            const $container = $('#friend-requests-container');
+            const $list = $('#incoming-requests');
+
+            if (!res.success || res.incoming.length === 0) {
+                $container.hide();
                 return;
             }
 
             let html = '';
-            res.users.forEach(function (u) {
+            res.incoming.forEach(r => {
+                html += `
+                    <div class="request-item" data-id="${r.user_id}">
+                        <div class="request-info">
+                            <span class="sr-username">${r.username}</span>
+                        </div>
+                        <div class="request-actions">
+                            <button class="btn-request btn-accept" data-id="${r.user_id}">Accept</button>
+                            <button class="btn-request btn-decline" data-id="${r.user_id}">Decline</button>
+                        </div>
+                    </div>
+                `;
+            });
+            $list.html(html);
+            $container.show();
+        });
+    }
+
+    $(document).on('click', '.btn-request', function() {
+        const targetId = $(this).data('id');
+        const action = $(this).hasClass('btn-accept') ? 'accept_request' : 'decline_request';
+        
+        $.ajax({
+            url: API + '/friend_actions.php',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ action: action, target_id: targetId }),
+            success: function(res) {
+                if (res.success) {
+                    loadFriendRequests();
+                    loadFriends();
+                } else {
+                    alert(res.error || 'Action failed');
+                }
+            }
+        });
+    });
+
+    // ===== Friends List =====
+    function loadFriends() {
+        $.getJSON(API + '/get_friends.php', function (res) {
+            const $list = $('#friends-list');
+            if (!res.success || res.friends.length === 0) {
+                $list.html('<div class="no-users">No friends added yet</div>');
+                return;
+            }
+
+            let html = '';
+            res.friends.forEach(function (u) {
                 const isActive = chatUserId == u.id ? ' active' : '';
-                html += '<div class="user-item' + isActive + '" data-id="' + u.id + '" data-name="' + u.username + '">' +
-                    '<span class="user-item-dot"></span>' +
-                    u.username +
-                    '</div>';
+                const onlineClass = u.is_online ? '' : ' offline';
+                html += `
+                    <div class="user-item${isActive}" data-id="${u.id}" data-name="${u.username}">
+                        <span class="user-item-dot${onlineClass}"></span>
+                        ${u.username}
+                    </div>
+                `;
             });
             $list.html(html);
         });
     }
 
-    function startOnlinePolling() {
-        stopOnlinePolling();
-        onlinePollTimer = setInterval(loadOnlineUsers, 10000);
+    function startFriendsPolling() {
+        stopFriendsPolling();
+        friendsPollTimer = setInterval(() => {
+            loadFriends();
+            loadFriendRequests();
+        }, 10000);
     }
 
-    function stopOnlinePolling() {
-        if (onlinePollTimer) {
-            clearInterval(onlinePollTimer);
-            onlinePollTimer = null;
+    function stopFriendsPolling() {
+        if (friendsPollTimer) {
+            clearInterval(friendsPollTimer);
+            friendsPollTimer = null;
         }
     }
 
-    // Click on a user to open chat
+    // Click on a friend to open chat
     $(document).on('click', '.user-item', function () {
         const id = $(this).data('id');
         const name = $(this).data('name');
@@ -120,6 +252,27 @@ $(document).ready(function () {
         
         $('.user-item').removeClass('active');
         $(this).addClass('active');
+    });
+
+    // Remove Friend
+    $('#btn-remove-friend').on('click', function() {
+        if (!chatUserId) return;
+        if (!confirm('Are you sure you want to remove ' + chatUserName + ' from your friends?')) return;
+
+        $.ajax({
+            url: API + '/friend_actions.php',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ action: 'remove_friend', target_id: chatUserId }),
+            success: function(res) {
+                if (res.success) {
+                    closeChat();
+                    loadFriends();
+                } else {
+                    alert(res.error || 'Failed to remove friend');
+                }
+            }
+        });
     });
 
     // ===== Chat =====
