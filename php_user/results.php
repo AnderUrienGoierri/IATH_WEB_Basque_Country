@@ -165,7 +165,7 @@ $check_stmt->close();
                             </div>
                         </div>
 
-                        <a href="videogame_details.php?id=<?php echo $best['id']; ?>" class="btn-primary" style="padding: 1rem 2.5rem; width: fit-content;">
+                        <a href="../php_generic/videogame_details.php?id=<?php echo $best['id']; ?>" class="btn-primary" style="padding: 1rem 2.5rem; width: fit-content;">
                             <?php echo $txt['see_details']; ?>
                         </a>
                     </div>
@@ -194,7 +194,7 @@ $check_stmt->close();
                                 
                                 <div class="card-footer">
                                     <span class="card-rank">#<?php echo $i + 1; ?></span>
-                                    <a href="videogame_details.php?id=<?php echo $game['id']; ?>" class="btn-secondary" style="font-size: 0.8125rem; padding: 0.5rem 1rem;">
+                                    <a href="../php_generic/videogame_details.php?id=<?php echo $game['id']; ?>" class="btn-secondary" style="font-size: 0.8125rem; padding: 0.5rem 1rem;">
                                         <?php echo $txt['see_details']; ?>
                                     </a>
                                 </div>
