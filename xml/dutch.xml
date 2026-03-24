@@ -11,4 +11,21 @@
     <register_title>Account aanmaken</register_title>
     <register_subtitle>Word lid van GameMatch AI en ontdek je perfecte game.</register_subtitle>
     <register_btn>Account aanmaken</register_btn>
+    <filters_title>Filters</filters_title>
+    <search>Zoeken</search>
+    <sort_by>Sorteren Op</sort_by>
+    <max_price>Maximale Prijs</max_price>
+    <min_year>Minimum Jaar</min_year>
+    <max_ratio>Maximale M/V Ratio</max_ratio>
+    <free_only>Alleen Gratis</free_only>
+    <purchases_check>Met In-Game Aankopen</purchases_check>
+    <sort_newest>Nieuwste eerst</sort_newest>
+    <sort_oldest>Oudste eerst</sort_oldest>
+    <sort_name_az>Naam (A-Z)</sort_name_az>
+    <sort_name_za>Naam (Z-A)</sort_name_za>
+    <sort_price_low>Prijs (Laag-Hoog)</sort_price_low>
+    <sort_id_low>ID (Laag-Hoog)</sort_id_low>
+    <sort_id_high>ID (Hoog-Laag)</sort_id_high>
+    <sort_ratio>M/V Publiek %</sort_ratio>
+    <search_placeholder_catalog>Minecraft, GTA...</search_placeholder_catalog>
 </translations>

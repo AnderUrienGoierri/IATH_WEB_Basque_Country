@@ -118,4 +118,21 @@
     <register_title>Kontua Sortu</register_title>
     <register_subtitle>Batu GameMatch AI-ra eta ezagutu zure joko perfektua.</register_subtitle>
     <register_btn>Erregistratu</register_btn>
+    <filters_title>Iragazkiak</filters_title>
+    <search>Bilatu</search>
+    <sort_by>Ordenatu Honela</sort_by>
+    <max_price>Gehienezko Prezioa</max_price>
+    <min_year>Gutxieneko Urtea</min_year>
+    <max_ratio>M/E Ratio Maximoa</max_ratio>
+    <free_only>Doakoak Bakarrik</free_only>
+    <purchases_check>Jokoko Erosketekin</purchases_check>
+    <sort_newest>Berrienak lehenengo</sort_newest>
+    <sort_oldest>Zaharrenak lehenengo</sort_oldest>
+    <sort_name_az>Izena (A-Z)</sort_name_az>
+    <sort_name_za>Izena (Z-A)</sort_name_za>
+    <sort_price_low>Prezioa (Baxua-Altua)</sort_price_low>
+    <sort_id_low>ID (Baxua-Altua)</sort_id_low>
+    <sort_id_high>ID (Altua-Baxua)</sort_id_high>
+    <sort_ratio>G/E Publizitate %</sort_ratio>
+    <search_placeholder_catalog>Minecraft, GTA...</search_placeholder_catalog>
 </translations>

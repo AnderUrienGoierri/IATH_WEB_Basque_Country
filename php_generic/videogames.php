@@ -60,21 +60,21 @@ $result = $conn->query($sql);
             <div class="filters-panel">
                 <h3 class="filters-title">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" style="color: var(--violet-500)"><path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd" /></svg>
-                    Filters
+                    <?php echo $txt['filters_title']; ?>
                 </h3>
                 
                 <div class="filters-content">
                 <!-- Search -->
                 <div class="filter-group">
-                    <label class="filter-label">Search</label>
-                    <input type="text" id="search-input" placeholder="Minecraft, GTA..." class="filter-input">
+                    <label class="filter-label"><?php echo $txt['search']; ?></label>
+                    <input type="text" id="search-input" placeholder="<?php echo $txt['search_placeholder_catalog']; ?>" class="filter-input">
                 </div>
 
                 <!-- Genre Filter -->
                 <div class="filter-group">
-                    <label class="filter-label">Genre</label>
+                    <label class="filter-label"><?php echo $txt['genre']; ?></label>
                     <select id="genre-select" class="filter-select">
-                        <option value="">All Genres</option>
+                        <option value=""><?php echo $txt['gender_select']; ?></option>
                         <?php while($g = $genres->fetch_assoc()): ?>
                             <option value="<?php echo htmlspecialchars($g['name']); ?>"><?php echo htmlspecialchars($g['name']); ?></option>
                         <?php endwhile; ?>
@@ -83,9 +83,9 @@ $result = $conn->query($sql);
 
                 <!-- Platform Filter (Device) -->
                 <div class="filter-group">
-                    <label class="filter-label">Device</label>
+                    <label class="filter-label"><?php echo $txt['platform']; ?></label>
                     <select id="device-select" class="filter-select">
-                        <option value="">All Devices</option>
+                        <option value=""><?php echo $txt['device_any']; ?></option>
                         <?php while($p = $platforms->fetch_assoc()): ?>
                             <option value="<?php echo htmlspecialchars($p['name']); ?>"><?php echo htmlspecialchars($p['name']); ?></option>
                         <?php endwhile; ?>
@@ -94,9 +94,9 @@ $result = $conn->query($sql);
 
                 <!-- Origin Filter -->
                 <div class="filter-group">
-                    <label class="filter-label">Origin</label>
+                    <label class="filter-label"><?php echo $txt['origin']; ?></label>
                     <select id="origin-select" class="filter-select">
-                        <option value="">All Origins</option>
+                        <option value=""><?php echo $txt['gender_select']; ?></option>
                         <?php while($o = $origins->fetch_assoc()): ?>
                             <option value="<?php echo htmlspecialchars($o['originated']); ?>"><?php echo htmlspecialchars($o['originated']); ?></option>
                         <?php endwhile; ?>
@@ -105,34 +105,34 @@ $result = $conn->query($sql);
 
                 <!-- Sort -->
                 <div class="filter-group">
-                    <label class="filter-label">Sort By</label>
+                    <label class="filter-label"><?php echo $txt['sort_by']; ?></label>
                     <select id="sort-select" class="filter-select">
-                        <option value="year-desc">Newest First</option>
-                        <option value="year-asc">Oldest First</option>
-                        <option value="name-asc">Name (A-Z)</option>
-                        <option value="name-desc">Name (Z-A)</option>
-                        <option value="price-asc">Price (Low-High)</option>
-                        <option value="id-asc">ID (Low-High)</option>
-                        <option value="id-desc">ID (High-Low)</option>
-                        <option value="ratio-desc">Male-Female Audience %</option>
+                        <option value="year-desc"><?php echo $txt['sort_newest']; ?></option>
+                        <option value="year-asc"><?php echo $txt['sort_oldest']; ?></option>
+                        <option value="name-asc"><?php echo $txt['sort_name_az']; ?></option>
+                        <option value="name-desc"><?php echo $txt['sort_name_za']; ?></option>
+                        <option value="price-asc"><?php echo $txt['sort_price_low']; ?></option>
+                        <option value="id-asc"><?php echo $txt['sort_id_low']; ?></option>
+                        <option value="id-desc"><?php echo $txt['sort_id_high']; ?></option>
+                        <option value="ratio-desc"><?php echo $txt['sort_ratio']; ?></option>
                     </select>
                 </div>
 
                 <!-- Price Range -->
                 <div class="filter-group">
-                    <label class="filter-label">Max Price: $<span id="price-range-val">60</span></label>
+                    <label class="filter-label"><?php echo $txt['max_price']; ?>: $<span id="price-range-val">60</span></label>
                     <input type="range" id="price-range" min="0" max="100" value="70" class="range-slider">
                 </div>
 
                 <!-- Year Range -->
                 <div class="filter-group">
-                    <label class="filter-label">Min Year: <span id="year-range-val">2000</span></label>
+                    <label class="filter-label"><?php echo $txt['min_year']; ?>: <span id="year-range-val">2000</span></label>
                     <input type="range" id="year-range" min="1980" max="2026" value="2000" class="range-slider">
                 </div>
                 
                 <!-- Gender Ratio -->
                  <div class="filter-group">
-                    <label class="filter-label">Max M/F Ratio: <span id="gender-range-val">12</span></label>
+                    <label class="filter-label"><?php echo $txt['max_ratio']; ?>: <span id="gender-range-val">12</span></label>
                     <input type="range" id="gender-range" min="0" max="12" step="0.1" value="12" class="range-slider">
                     <div style="display: flex; justify-content: space-between; font-size: 10px; color: var(--slate-500); margin-top: 4px;">
                         <span>More Female</span>
@@ -144,11 +144,11 @@ $result = $conn->query($sql);
                 <div style="display: flex; flex-direction: column; gap: 0.75rem;">
                     <label class="checkbox-label">
                         <input type="checkbox" id="free-check" class="custom-checkbox">
-                        <span>Free to Play Only</span>
+                        <span><?php echo $txt['free_only']; ?></span>
                     </label>
                     <label class="checkbox-label">
                         <input type="checkbox" id="purchases-check" class="custom-checkbox">
-                        <span>With In-App Purchases</span>
+                        <span><?php echo $txt['purchases_check']; ?></span>
                     </label>
                 </div>
                 </div>

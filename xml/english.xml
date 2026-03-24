@@ -5,4 +5,21 @@
     <register_title>Create Account</register_title>
     <register_subtitle>Join GameMatch AI and discover your perfect game.</register_subtitle>
     <register_btn>Create Account</register_btn>
+    <filters_title>Filters</filters_title>
+    <search>Search</search>
+    <sort_by>Sort By</sort_by>
+    <max_price>Max Price</max_price>
+    <min_year>Min Year</min_year>
+    <max_ratio>Max M/F Ratio</max_ratio>
+    <free_only>Free to Play Only</free_only>
+    <purchases_check>With In-App Purchases</purchases_check>
+    <sort_newest>Newest First</sort_newest>
+    <sort_oldest>Oldest First</sort_oldest>
+    <sort_name_az>Name (A-Z)</sort_name_az>
+    <sort_name_za>Name (Z-A)</sort_name_za>
+    <sort_price_low>Price (Low-High)</sort_price_low>
+    <sort_id_low>ID (Low-High)</sort_id_low>
+    <sort_id_high>ID (High-Low)</sort_id_high>
+    <sort_ratio>Male-Female Audience %</sort_ratio>
+    <search_placeholder_catalog>Minecraft, GTA...</search_placeholder_catalog>
 </translations>

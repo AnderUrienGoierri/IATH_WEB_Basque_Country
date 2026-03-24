@@ -22,4 +22,21 @@
     <register_title>Crear Cuenta</register_title>
     <register_subtitle>Únete a GameMatch AI y descubre tu juego perfecto.</register_subtitle>
     <register_btn>Crear Cuenta</register_btn>
+    <filters_title>Filtros</filters_title>
+    <search>Buscar</search>
+    <sort_by>Ordenar Por</sort_by>
+    <max_price>Precio Máximo</max_price>
+    <min_year>Año Mínimo</min_year>
+    <max_ratio>Ratio M/F Máximo</max_ratio>
+    <free_only>Solo Gratis</free_only>
+    <purchases_check>Con Compras Integradas</purchases_check>
+    <sort_newest>Más nuevos primero</sort_newest>
+    <sort_oldest>Más antiguos primero</sort_oldest>
+    <sort_name_az>Nombre (A-Z)</sort_name_az>
+    <sort_name_za>Nombre (Z-A)</sort_name_za>
+    <sort_price_low>Precio (Bajo-Alto)</sort_price_low>
+    <sort_id_low>ID (Bajo-Alto)</sort_id_low>
+    <sort_id_high>ID (Alto-Bajo)</sort_id_high>
+    <sort_ratio>Audiencia M/F %</sort_ratio>
+    <search_placeholder_catalog>Minecraft, GTA...</search_placeholder_catalog>
 </translations>
