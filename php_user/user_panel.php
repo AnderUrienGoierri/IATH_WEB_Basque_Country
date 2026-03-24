@@ -260,24 +260,47 @@ $conn->query("UPDATE users SET last_active = NOW() WHERE id = $userId");
             <!-- TAB: Friends & Chat -->
             <div class="tab-pane" id="tab-friends">
                 <h2 class="section-title">Friends & Chat</h2>
+                
+                <div class="friends-management">
+                    <!-- Search Section -->
+                    <div class="friend-search-container">
+                        <h3 class="subsection-title">Find Friends</h3>
+                        <div class="search-box">
+                            <input type="text" id="friend-search-input" placeholder="Search by username or email..." autocomplete="off">
+                            <div id="friend-search-results" class="search-results-dropdown"></div>
+                        </div>
+                    </div>
+
+                    <!-- Requests Section -->
+                    <div id="friend-requests-container" class="friend-requests-container" style="display:none;">
+                        <h3 class="subsection-title">Friend Requests</h3>
+                        <div id="incoming-requests" class="requests-list"></div>
+                    </div>
+                </div>
+
                 <div class="chat-layout">
                     <div class="chat-users-panel">
                         <h3 class="chat-panel-title">
-                            <span class="online-dot"></span> Online Users
+                            <span class="online-dot"></span> Friends List
                         </h3>
-                        <div id="online-users-list" class="online-users-list">
-                            <div class="loading-users">Loading...</div>
+                        <div id="friends-list" class="friends-list">
+                            <div class="loading-users">Loading friends...</div>
                         </div>
                     </div>
                     <div class="chat-window" id="chat-window">
                         <div class="chat-placeholder">
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-                            <p>Select a user to start chatting</p>
+                            <p>Select a friend to start chatting</p>
                         </div>
                         <div class="chat-active" id="chat-active" style="display:none;">
                             <div class="chat-header" id="chat-header">
                                 <span class="chat-with"></span>
-                                <button class="chat-close" id="chat-close-btn">&times;</button>
+                                <div class="chat-actions">
+                                    <button class="btn-remove-friend" id="btn-remove-friend" title="Remove Friend">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7a4 4 0 11-8 0 4 4 0 018 0zM9 14a6 6 0 00-6 6v1h12v-1a6 6 0 00-6-6zM21 12h-6"/></svg>
+                                    </button>
+                                    <button class="chat-close" id="chat-close-btn">&times;</button>
+                                </div>
                             </div>
                             <div class="chat-messages" id="chat-messages"></div>
                             <form class="chat-input-form" id="chat-form">
