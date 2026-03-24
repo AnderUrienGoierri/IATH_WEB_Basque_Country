@@ -127,3 +127,17 @@ CREATE TABLE user_game_interactions (
     UNIQUE KEY unique_user_game_interaction (user_id, game_id, interaction_type)
 );
 
+-- ====================================================== --
+-- MESSAGES TABLE (USER CHAT)                             --
+-- ====================================================== --
+CREATE TABLE messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sender_id INT NOT NULL,
+    receiver_id INT NOT NULL,
+    message TEXT NOT NULL,
+    sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    is_read BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (sender_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (receiver_id) REFERENCES users(id) ON DELETE CASCADE
+);
+

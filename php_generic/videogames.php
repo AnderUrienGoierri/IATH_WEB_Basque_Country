@@ -18,12 +18,12 @@ $sql = "SELECT v.*, g.name AS genre_name, p.name AS platform_name
 $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="<?php echo $lang; ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $txt['title']; ?></title>
+    <link rel="icon" type="image/png" href="/IATH_WEB_Basque_Country/img/logo.png">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +41,14 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="../css/videogames.css">
 </head>
 <body>
+
+    <!-- Background Video -->
+    <div class="catalog-video-wrap">
+        <video class="catalog-video" autoplay muted loop playsinline poster="../mp4/catalog_bg.png">
+            <source src="../mp4/catalog_video.mp4" type="video/mp4">
+        </video>
+        <div class="catalog-video-overlay"></div>
+    </div>
 
     <?php include_once '../php_includes/header.php'; ?>
 
@@ -199,7 +207,8 @@ $result = $conn->query($sql);
                         <img src="<?php echo htmlspecialchars($image); ?>" 
                              alt="<?php echo htmlspecialchars($row["name"]); ?>" 
                              class="game-image"
-                             loading="lazy">
+                             loading="lazy"
+                             decoding="async">
                         <div class="image-overlay"></div>
                         <div class="price-badge <?php echo $badgeClass; ?>">
                             <?php echo $price; ?>
