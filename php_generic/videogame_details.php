@@ -109,11 +109,11 @@ if (isset($_SESSION['user_id'])) {
         <div class="details-grid <?php echo $game2 ? 'has-comparison' : ''; ?>">
             
             <!-- Game 1 -->
-            <?php renderGameCard($game1, $txt, $game2 ? true : false, $userRatings); ?>
+            <?php renderGameCard($game1, $txt, $game2 ? true : false, $userRatings, $lang); ?>
 
             <!-- Game 2 -->
             <?php if ($game2): ?>
-                <?php renderGameCard($game2, $txt, true, $userRatings); ?>
+                <?php renderGameCard($game2, $txt, true, $userRatings, $lang); ?>
             <?php elseif ($id2 > 0): ?>
                 <div class="not-found-container">
                     <p>Game not found.</p>
@@ -139,7 +139,7 @@ if (isset($_SESSION['user_id'])) {
 </html>
 
 <?php
-function renderGameCard($row, $txt, $isComparison, $userRatings = []) {
+function renderGameCard($row, $txt, $isComparison, $userRatings = [], $lang = 'en') {
     if (!$row) return;
 
     // Data Processing
@@ -178,7 +178,8 @@ function renderGameCard($row, $txt, $isComparison, $userRatings = []) {
                 </h1>
                 <p class="game-description">
                     <?php 
-                        $description = !empty($row["game_description"]) ? $row["game_description"] : (!empty($row["more_data"]) ? $row["more_data"] : $txt['no_desc']);
+                        $desc_col = "game_desc_" . $lang;
+                        $description = !empty($row[$desc_col]) ? $row[$desc_col] : (!empty($row["game_desc_en"]) ? $row["game_desc_en"] : (!empty($row["more_data"]) ? $row["more_data"] : $txt['no_desc']));
                         echo htmlspecialchars($description); 
                     ?>
                 </p>
