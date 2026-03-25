@@ -66,12 +66,16 @@
     <error_select>Mesedez, aukeratu aukera bat jarraitzeko.</error_select>
     <email>Posta elektronikoa</email>
     <confirm_password>Pasahitza Egiaztatu</confirm_password>
-    <age>Batez besteko adina</age>
+    <age>Adina</age>
+    <territory>Lurraldea</territory>
+    <territory_select>Hautatu lurraldea...</territory_select>
     <gender>Generoa</gender>
-    <gender_select>Aukeratu...</gender_select>
+    <gender_select>Hautatu generoa...</gender_select>
     <gender_male>Gizonezkoa</gender_male>
     <gender_female>Emakumezkoa</gender_female>
     <gender_nb>Ez Bitarra</gender_nb>
+    <filter_more_female>Emakumezko gehiago</filter_more_female>
+    <filter_more_male>Gizonezko gehiago</filter_more_male>
     <has_account>Baduzu kontua?</has_account>
     <login_link>Hasi Saioa</login_link>
     <err_password_match>Pasahitzak ez datoz bat.</err_password_match>
@@ -148,4 +152,20 @@
     <analyzing_prefs>Zure lehentasunak aztertzen...</analyzing_prefs>
     <player>Erabiltzailea</player>
     <friends_chat>Lagunak eta Txata</friends_chat>
+    <country_us>Ameriketako Estatu Batuak</country_us>
+    <country_es>Espainia</country_es>
+    <country_fr>Frantzia</country_fr>
+    <country_gb>Erresuma Batua</country_gb>
+    <country_de>Alemania</country_de>
+    <country_it>Italia</country_it>
+    <country_nl>Herbehereak</country_nl>
+    <country_pt>Portugal</country_pt>
+    <country_jp>Japonia</country_jp>
+    <country_kr>Hego Korea</country_kr>
+    <country_ca>Kanada</country_ca>
+    <country_au>Australia</country_au>
+    <country_eu>Euskal Herria</country_eu>
+    <country_br>Brasil</country_br>
+    <country_mx>Mexiko</country_mx>
+    <country_cn>Txina</country_cn>
 </translations>
