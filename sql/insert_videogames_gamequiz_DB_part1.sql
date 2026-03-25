@@ -10,7 +10,7 @@ INSERT INTO videoGames (
         size_gb,
         genre_id,
         release_year,
-        game_description,
+        game_desc_en,
         full_description,
         image,
         originated,
@@ -1531,7 +1531,7 @@ INSERT INTO videoGames (
         size_gb,
         genre_id,
         release_year,
-        game_description,
+        game_desc_en,
         full_description,
         image,
         originated,
@@ -2887,7 +2887,7 @@ INSERT INTO videoGames (
         size_gb,
         genre_id,
         release_year,
-        game_description,
+        game_desc_en,
         full_description,
         image,
         originated,
@@ -4383,4 +4383,5 @@ INSERT INTO videoGames (
         26,
         2.21
     );
+
 
