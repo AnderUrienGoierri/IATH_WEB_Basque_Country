@@ -135,8 +135,8 @@ $result = $conn->query($sql);
                     <label class="filter-label"><?php echo $txt['max_ratio']; ?>: <span id="gender-range-val">12</span></label>
                     <input type="range" id="gender-range" min="0" max="12" step="0.1" value="12" class="range-slider">
                     <div style="display: flex; justify-content: space-between; font-size: 10px; color: var(--slate-500); margin-top: 4px;">
-                        <span>More Female</span>
-                        <span>More Male</span>
+                        <span><?php echo $txt['filter_more_female']; ?></span>
+                        <span><?php echo $txt['filter_more_male']; ?></span>
                     </div>
                 </div>
 
@@ -171,7 +171,10 @@ $result = $conn->query($sql);
                 
                 <?php
                 if ($result->num_rows > 0) {
+                    $counter = 0;
                     while($row = $result->fetch_assoc()) {
+                        $counter++;
+                        $hiddenClass = ($counter > 20) ? 'page-hidden' : '';
                         // Safety check for image
                         $image = !empty($row["image"]) ? $row["image"] : 'https://placehold.co/600x900?text=No+Image';
                         if (!str_starts_with($image, 'http')) {
@@ -190,7 +193,7 @@ $result = $conn->query($sql);
                         $dataRatio = $row["male_female_ratio"]; 
                 ?>
                 
-                <a href="videogame_details.php?id=<?php echo $row['id']; ?>" class="game-link"
+                <a href="videogame_details.php?id=<?php echo $row['id']; ?>" class="game-link <?php echo $hiddenClass; ?>"
                    data-id="<?php echo $row['id']; ?>"
                    data-name="<?php echo $dataName; ?>"
                    data-price="<?php echo $dataPrice; ?>"
@@ -242,7 +245,8 @@ $result = $conn->query($sql);
 
                         <p class="card-desc">
                             <?php 
-                                $description = !empty($row["game_description"]) ? $row["game_description"] : (!empty($row["more_data"]) ? $row["more_data"] : $txt['no_desc']);
+                                $desc_col = "game_desc_" . $lang;
+                                $description = !empty($row[$desc_col]) ? $row[$desc_col] : (!empty($row["game_desc_en"]) ? $row["game_desc_en"] : (!empty($row["more_data"]) ? $row["more_data"] : $txt['no_desc']));
                                 echo htmlspecialchars($description); 
                             ?>
                         </p>

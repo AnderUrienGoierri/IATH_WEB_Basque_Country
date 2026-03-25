@@ -73,13 +73,13 @@ VALUES ('Nintendo Switch'),
 -- USERS TABLE (PROFILES)
 -- Admin password: admin123, User passwords: user123
 -- ====================================================== --
-INSERT INTO users (username, email, password_hash, age, gender, role) VALUES
-('Ander_Admin', 'ander.admin@gamematch.ai', '$2y$10$dcBGKSl8IzVTSru4LdmRwO8QRCUD6n7JGPkClGXKW4JIQzivI6OFu', 35, 'male', 'admin'),
-('Ander', 'ander@gamematch.ai', '$2y$10$3lFQy9E6g3c3KWBgkeaGDuRDcOTmY1klDHMqXORVYILibe1KGyE/q', 28, 'male', 'user'),
-('Oihan', 'oihan@gamematch.ai', '$2y$10$3lFQy9E6g3c3KWBgkeaGDuRDcOTmY1klDHMqXORVYILibe1KGyE/q', 22, 'male', 'user'),
-('Julen', 'julen@gamematch.ai', '$2y$10$3lFQy9E6g3c3KWBgkeaGDuRDcOTmY1klDHMqXORVYILibe1KGyE/q', 25, 'male', 'user'),
-('Liz', 'liz@gamematch.ai', '$2y$10$3lFQy9E6g3c3KWBgkeaGDuRDcOTmY1klDHMqXORVYILibe1KGyE/q', 24, 'female', 'user'),
-('Sanne', 'sanne@gamematch.ai', '$2y$10$3lFQy9E6g3c3KWBgkeaGDuRDcOTmY1klDHMqXORVYILibe1KGyE/q', 26, 'female', 'user');
+INSERT INTO users (username, email, password_hash, age, gender, territory, role) VALUES
+('Ander_Admin', 'ander.admin@gamematch.ai', '$2y$10$dcBGKSl8IzVTSru4LdmRwO8QRCUD6n7JGPkClGXKW4JIQzivI6OFu', 35, 'male', 'Basque Country', 'admin'),
+('Ander', 'ander@gamematch.ai', '$2y$10$3lFQy9E6g3c3KWBgkeaGDuRDcOTmY1klDHMqXORVYILibe1KGyE/q', 28, 'male', 'Basque Country', 'user'),
+('Oihan', 'oihan@gamematch.ai', '$2y$10$3lFQy9E6g3c3KWBgkeaGDuRDcOTmY1klDHMqXORVYILibe1KGyE/q', 22, 'male', 'Basque Country', 'user'),
+('Julen', 'julen@gamematch.ai', '$2y$10$3lFQy9E6g3c3KWBgkeaGDuRDcOTmY1klDHMqXORVYILibe1KGyE/q', 25, 'male', 'Basque Country', 'user'),
+('Liz', 'liz@gamematch.ai', '$2y$10$3lFQy9E6g3c3KWBgkeaGDuRDcOTmY1klDHMqXORVYILibe1KGyE/q', 24, 'female', 'Basque Country', 'user'),
+('Sanne', 'sanne@gamematch.ai', '$2y$10$3lFQy9E6g3c3KWBgkeaGDuRDcOTmY1klDHMqXORVYILibe1KGyE/q', 26, 'female', 'Netherlands', 'user');
 
 -- ====================================================== --
 -- GAME MATCH SESSIONS
