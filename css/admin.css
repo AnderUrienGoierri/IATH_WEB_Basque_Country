@@ -26,6 +26,13 @@
 .rec-item.selected { border-color: var(--violet-500); box-shadow: 0 0 10px rgba(139, 92, 246, 0.2); }
 .rec-img { width: 100%; height: 100px; object-fit: cover; }
 
+/* Action Buttons in tables */
+.action-btn {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap;
+}
+
 /* Admin Form Panel */
 .admin-form-panel {
     background: rgba(30, 41, 59, 0.6);
