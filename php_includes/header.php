@@ -18,7 +18,7 @@ $adminPath = $inAdmin ? '' : ($prefix . 'php_admin/');
 <header class="main-header">
     <div class="container header-inner">
         <a href="<?php echo $prefix; ?>index.php" class="logo-group">
-            <img src="<?php echo $prefix; ?>img/logo.png" alt="GameMatch AI Logo" class="logo-img">
+            <img src="<?php echo $prefix; ?>img/logo_spectacular.png" alt="GameMatch AI Logo" class="logo-img">
         </a>
         <nav class="main-nav">
             <a href="<?php echo $prefix; ?>index.php" class="nav-link <?php echo $currentPage === 'index.php' ? 'active' : ''; ?>"><?php echo $txt['home']; ?></a>

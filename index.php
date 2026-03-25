@@ -37,14 +37,21 @@ require_once 'php_helpers/language.php';
 
         <div class="container hero-content">
             
-            <div class="powered-by-badge animate-fade-in-up">
-                <?php echo $txt['powered_by']; ?>
-            </div>
-
             <h1 class="hero-title animate-fade-in-up">
                 <?php echo $txt['hero_title_1']; ?> <br />
                 <span class="hero-title-gradient"><?php echo $txt['hero_title_2']; ?></span>
             </h1>
+
+            <!-- Showcase Video -->
+            <div class="hero-showcase animate-fade-in-up">
+                <div class="showcase-glow"></div>
+                <div class="showcase-frame">
+                    <video class="showcase-video" autoplay muted loop playsinline>
+                        <source src="mp4/hero_video1..mp4" type="video/mp4">
+                    </video>
+                    <div class="showcase-overlay"></div>
+                </div>
+            </div>
 
             <p class="hero-desc animate-fade-in-up">
                 <?php echo $txt['hero_desc']; ?>
@@ -84,7 +91,6 @@ require_once 'php_helpers/language.php';
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/header.js"></script>
-    <script src="js/index.js"></script>
 </body>
 </html>
 

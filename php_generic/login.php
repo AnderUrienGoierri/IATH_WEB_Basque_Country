@@ -58,9 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }
                     exit();
                 } else {
+                    error_log("Login failed for user $username: Password mismatch. Input pass: $password, DB hash: " . $user['password_hash']);
                     $error = $txt['err_invalid'];
                 }
             } else {
+                error_log("Login failed: Username $username not found.");
                 $error = $txt['err_invalid'];
             }
             $stmt->close();
